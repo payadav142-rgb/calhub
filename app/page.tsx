@@ -78,7 +78,15 @@ export default function Home() {
     </button>
   </div>
 </section>
-
+<section className="px-6 pb-16">
+  <div className="mx-auto max-w-2xl">
+    <input
+      type="text"
+      placeholder="Search calculators..."
+      className="w-full rounded-3xl border border-gray-200 bg-white p-5 text-lg shadow-lg outline-none transition focus:border-black"
+    />
+  </div>
+</section>
       <section className="grid gap-6 px-6 pb-16 md:grid-cols-2 lg:grid-cols-3">
         {calculators.map((calculator) => (
           <CalculatorCard
