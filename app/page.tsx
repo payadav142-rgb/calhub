@@ -1,7 +1,9 @@
 import CalculatorCard from "./components/CalculatorCard";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+"use client";
 
+import { useState } from "react";
 const calculators = [
   {
     title: "Brick Calculator",
@@ -51,6 +53,14 @@ const calculators = [
 ];
 
 export default function Home() {
+  const [search, setSearch] = useState("");
+
+const filteredCalculators =
+  calculators.filter((calculator) =>
+    calculator.title
+      .toLowerCase()
+      .includes(search.toLowerCase())
+  );
   return (
     <main className="min-h-screen bg-gray-100">
       <Navbar />
@@ -86,6 +96,10 @@ export default function Home() {
           <input
             type="text"
             placeholder="Search calculators..."
+            value={search}
+  onChange={(e) =>
+    setSearch(e.target.value)
+  }
             className="w-full rounded-3xl border border-gray-200 bg-white p-5 text-lg shadow-lg outline-none transition focus:border-black"
           />
         </div>
@@ -194,7 +208,7 @@ export default function Home() {
       {/* Calculator Cards */}
       <section className="px-6 pb-20">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {calculators.map((calculator) => (
+          {filteredCalculators.map((calculator) => (
             <CalculatorCard
               key={calculator.title}
               title={calculator.title}
