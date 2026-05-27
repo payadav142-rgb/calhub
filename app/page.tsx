@@ -1,7 +1,8 @@
+"use client";
 import CalculatorCard from "./components/CalculatorCard";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-"use client";
+
 
 import { useState } from "react";
 const calculators = [
