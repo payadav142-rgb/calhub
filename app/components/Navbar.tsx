@@ -1,21 +1,37 @@
 import Link from "next/link";
+
 export default function Navbar() {
   return (
-    <nav className="flex items-center justify-between border-b bg-white px-6 py-4">
-      <Link
-        href="/"
-        className="text-2xl font-bold text-black"
-      >
-        Calculator Hub
-      </Link>
-
-      <div className="flex gap-6 text-gray-700">
-        <Link href="/">Home</Link>
-        <Link href="/brick-calculator">
-          Calculators
+    <nav className="sticky top-0 z-50 border-b border-gray-200 bg-white/80 backdrop-blur-lg">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+        <Link href="/">
+          <h1 className="text-3xl font-extrabold text-black">
+            Calculator Hub
+          </h1>
         </Link>
-        <Link href="/about">About</Link>
-        <Link href="/contact">Contact</Link>
+
+        <div className="hidden gap-8 md:flex">
+          <Link
+            href="/"
+            className="font-medium text-gray-700 transition hover:text-black"
+          >
+            Home
+          </Link>
+
+          <Link
+            href="/about"
+            className="font-medium text-gray-700 transition hover:text-black"
+          >
+            About
+          </Link>
+
+          <Link
+            href="/contact"
+            className="font-medium text-gray-700 transition hover:text-black"
+          >
+            Contact
+          </Link>
+        </div>
       </div>
     </nav>
   );
