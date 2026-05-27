@@ -57,19 +57,19 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="bg-gradient-to-b from-gray-100 to-white px-6 py-24 text-center">
-        <h1 className="mx-auto max-w-4xl text-6xl font-extrabold leading-tight text-black">
+        <h1 className="mx-auto max-w-4xl text-4xl md:text-4xl md:text-6xl font-extrabold leading-tight text-black">
           Free Construction Calculators
           for Builders & Engineers
         </h1>
 
-        <p className="mx-auto mt-6 max-w-2xl text-xl leading-8 text-gray-600">
+        <p className="mx-auto mt-6 max-w-2xl text-lg md:text-xl leading-8 text-gray-600">
           Calculate bricks, cement, concrete,
           plaster, steel weight, sand, gravel,
           paint, tiles, and more instantly with
           our professional construction tools.
         </p>
 
-        <div className="mt-10 flex justify-center gap-4">
+        <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
           <button className="rounded-2xl bg-black px-8 py-4 text-lg text-white transition hover:scale-105 hover:bg-gray-800">
             Explore Calculators
           </button>
