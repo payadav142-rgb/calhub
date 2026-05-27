@@ -33,6 +33,11 @@ const calculators = [
   description: "Calculate steel bar weight easily.",
   link: "/steel-weight-calculator",
 },
+{
+  title: "Sand Calculator",
+  description: "Calculate sand quantity easily.",
+  link: "/sand-calculator",
+},
 ];
 export default function Home() {
   return (
