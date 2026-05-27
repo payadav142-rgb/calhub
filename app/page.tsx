@@ -43,6 +43,11 @@ const calculators = [
   description: "Calculate gravel quantity easily.",
   link: "/gravel-calculator",
 },
+{
+  title: "Plaster Calculator",
+  description: "Calculate plaster quantity easily.",
+  link: "/plaster-calculator",
+},
 ];
 export default function Home() {
   return (
