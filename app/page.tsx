@@ -55,15 +55,29 @@ export default function Home() {
     <main className="min-h-screen bg-gray-100">
       <Navbar />
 
-      <section className="px-6 py-16 text-center">
-        <h1 className="text-5xl font-bold text-black">
-          Calculator Hub
-        </h1>
+      <section className="px-6 py-24 text-center bg-gradient-to-b from-gray-100 to-white">
+  <h1 className="mx-auto max-w-4xl text-6xl font-extrabold leading-tight text-black">
+    Free Construction Calculators
+    for Builders & Engineers
+  </h1>
 
-        <p className="mt-4 text-lg text-gray-600">
-          Fast & Free Construction Calculators
-        </p>
-      </section>
+  <p className="mx-auto mt-6 max-w-2xl text-xl text-gray-600 leading-8">
+    Calculate bricks, cement, concrete,
+    plaster, steel weight, sand, gravel,
+    paint, tiles, and more instantly with
+    our professional construction tools.
+  </p>
+
+  <div className="mt-10 flex justify-center gap-4">
+    <button className="rounded-2xl bg-black px-8 py-4 text-lg text-white transition hover:scale-105 hover:bg-gray-800">
+      Explore Calculators
+    </button>
+
+    <button className="rounded-2xl border border-black px-8 py-4 text-lg text-black transition hover:bg-black hover:text-white">
+      Learn More
+    </button>
+  </div>
+</section>
 
       <section className="grid gap-6 px-6 pb-16 md:grid-cols-2 lg:grid-cols-3">
         {calculators.map((calculator) => (
