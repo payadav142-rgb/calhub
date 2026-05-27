@@ -89,6 +89,39 @@ export default function Home() {
           />
         ))}
       </section>
+      <section className="px-6 pb-20">
+  <div className="grid gap-6 md:grid-cols-3">
+    <div className="rounded-3xl bg-black p-10 text-center text-white shadow-xl">
+      <h2 className="text-5xl font-extrabold">
+        9+
+      </h2>
+
+      <p className="mt-3 text-lg text-gray-300">
+        Construction Calculators
+      </p>
+    </div>
+
+    <div className="rounded-3xl bg-white p-10 text-center shadow-xl">
+      <h2 className="text-5xl font-extrabold text-black">
+        100%
+      </h2>
+
+      <p className="mt-3 text-lg text-gray-600">
+        Free To Use
+      </p>
+    </div>
+
+    <div className="rounded-3xl bg-black p-10 text-center text-white shadow-xl">
+      <h2 className="text-5xl font-extrabold">
+        24/7
+      </h2>
+
+      <p className="mt-3 text-lg text-gray-300">
+        Available Online
+      </p>
+    </div>
+  </div>
+</section>
 
       <section className="px-6 pb-20">
         <div className="rounded-2xl bg-white p-8 shadow-md">
