@@ -12,17 +12,17 @@ export default function CalculatorCard({
   link,
 }: CalculatorCardProps) {
   return (
-    <div className="rounded-2xl bg-white p-6 shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
-      <h2 className="text-2xl font-semibold text-black">
+    <div className="rounded-3xl bg-white p-7 shadow-lg transition duration-300 hover:-translate-y-3 hover:shadow-2xl border border-gray-100">
+      <h2 className="text-3xl font-bold text-black">
         {title}
       </h2>
 
-      <p className="mt-2 text-gray-600">
+      <p className="mt-3 text-gray-600 leading-7">
         {description}
       </p>
 
       <Link href={link}>
-        <button className="mt-4 rounded-xl bg-black px-4 py-2 text-white transition hover:scale-105 hover:bg-gray-800">
+        <button className="mt-6 rounded-2xl bg-black px-6 py-3 text-white transition duration-300 hover:scale-105 hover:bg-gray-800">
           Open Calculator
         </button>
       </Link>
