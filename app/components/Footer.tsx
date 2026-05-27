@@ -1,25 +1,53 @@
 import Link from "next/link";
+
 export default function Footer() {
   return (
-    <footer className="border-t bg-white px-6 py-6">
-      <div className="text-center text-gray-600">
-        <p>
-          © 2026 Calculator Hub. All rights reserved.
-        </p>
+    <footer className="border-t border-gray-200 bg-white">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 py-10 md:flex-row">
+        <div>
+          <h2 className="text-2xl font-bold text-black">
+            Calculator Hub
+          </h2>
 
-        <div className="mt-3 flex justify-center gap-6">
-  <Link href="/privacy-policy">
-    Privacy Policy
-  </Link>
+          <p className="mt-2 text-gray-600">
+            Free Construction Calculators for
+            Builders & Engineers.
+          </p>
+        </div>
 
-  <Link href="/disclaimer">
-    Disclaimer
-  </Link>
+        <div className="flex gap-6">
+          <Link
+            href="/"
+            className="text-gray-600 transition hover:text-black"
+          >
+            Home
+          </Link>
 
-  <Link href="/about">
-    About
-  </Link>
-</div>
+          <Link
+            href="/about"
+            className="text-gray-600 transition hover:text-black"
+          >
+            About
+          </Link>
+
+          <Link
+            href="/contact"
+            className="text-gray-600 transition hover:text-black"
+          >
+            Contact
+          </Link>
+
+          <Link
+            href="/privacy-policy"
+            className="text-gray-600 transition hover:text-black"
+          >
+            Privacy Policy
+          </Link>
+        </div>
+      </div>
+
+      <div className="border-t border-gray-200 py-4 text-center text-gray-500">
+        © 2026 Calculator Hub. All rights reserved.
       </div>
     </footer>
   );
