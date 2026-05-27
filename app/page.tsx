@@ -51,6 +51,66 @@ const calculators = [
     description: "Calculate plaster quantity easily.",
     link: "/plaster-calculator",
   },
+  {
+  title: "Construction Cost Calculator",
+  description:
+    "Estimate total building cost easily.",
+  link: "/construction-cost-calculator",
+},
+{
+  title: "Area Calculator",
+  description:
+    "Calculate total area instantly.",
+  link: "/area-calculator",
+},
+{
+  title: "Flooring Calculator",
+  description:
+    "Estimate flooring area and cost easily.",
+  link: "/flooring-calculator",
+},
+{
+  title: "Roofing Calculator",
+  description:
+    "Estimate roofing area and roofing cost.",
+  link: "/roofing-calculator",
+},
+{
+  title: "Excavation Calculator",
+  description:
+    "Calculate excavation volume easily.",
+  link: "/excavation-calculator",
+},
+{
+  title: "Paver Calculator",
+  description:
+    "Calculate pavers needed instantly.",
+  link: "/paver-calculator",
+},
+{
+  title: "Asphalt Calculator",
+  description:
+    "Estimate asphalt quantity easily.",
+  link: "/asphalt-calculator",
+},
+{
+  title: "Drywall Calculator",
+  description:
+    "Calculate drywall sheets required.",
+  link: "/drywall-calculator",
+},
+{
+  title: "Stair Calculator",
+  description:
+    "Calculate number of stairs easily.",
+  link: "/stair-calculator",
+},
+{
+  title: "Unit Converter",
+  description:
+    "Convert construction units instantly.",
+  link: "/unit-converter",
+},
 ];
 
 export default function Home() {
@@ -294,6 +354,75 @@ export default function Home() {
           </p>
         </div>
       </section>
+      {/* SEO Content Section */}
+<section className="px-6 pb-20">
+  <div className="rounded-3xl bg-white p-10 shadow-xl">
+    <h2 className="text-4xl font-extrabold text-black">
+      Free Online Construction Calculators
+    </h2>
+
+    <p className="mt-6 leading-8 text-gray-600">
+      Calculator Hub provides professional
+      construction calculators for builders,
+      engineers, contractors, architects, and
+      homeowners. Easily calculate bricks,
+      cement, concrete, plaster, paint, steel
+      weight, sand, gravel, and tile quantity
+      instantly.
+    </p>
+
+    <p className="mt-6 leading-8 text-gray-600">
+      Our calculators are designed to save time,
+      improve estimation accuracy, and simplify
+      construction planning for residential and
+      commercial projects.
+    </p>
+  </div>
+</section>
+{/* FAQ Section */}
+<section className="px-6 pb-20">
+  <h2 className="text-center text-4xl font-extrabold text-black">
+    Frequently Asked Questions
+  </h2>
+
+  <div className="mx-auto mt-12 max-w-4xl space-y-6">
+    <div className="rounded-3xl bg-white p-6 shadow-lg">
+      <h3 className="text-2xl font-bold text-black">
+        Are these construction calculators free?
+      </h3>
+
+      <p className="mt-3 leading-7 text-gray-600">
+        Yes, all construction calculators on
+        Calculator Hub are completely free to use.
+      </p>
+    </div>
+
+    <div className="rounded-3xl bg-white p-6 shadow-lg">
+      <h3 className="text-2xl font-bold text-black">
+        Who can use these calculators?
+      </h3>
+
+      <p className="mt-3 leading-7 text-gray-600">
+        Builders, contractors, engineers,
+        architects, students, and homeowners can
+        use our calculators.
+      </p>
+    </div>
+
+    <div className="rounded-3xl bg-white p-6 shadow-lg">
+      <h3 className="text-2xl font-bold text-black">
+        Which construction calculations are
+        available?
+      </h3>
+
+      <p className="mt-3 leading-7 text-gray-600">
+        Brick, cement, concrete, paint, plaster,
+        tile, steel weight, sand, and gravel
+        calculators are currently available.
+      </p>
+    </div>
+  </div>
+</section>
 
       <Footer />
     </main>

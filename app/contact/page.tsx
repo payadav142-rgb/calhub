@@ -18,33 +18,45 @@ export default function ContactPage() {
           </p>
 
           <div className="mt-10 space-y-6">
-            <div>
+            <div className="rounded-2xl bg-gray-100 p-6">
               <h2 className="text-2xl font-bold text-black">
                 Email
               </h2>
 
-              <p className="mt-2 text-gray-600">
+              <p className="mt-3 text-gray-600">
                 support@calculatorhub.com
               </p>
             </div>
 
-            <div>
+            <div className="rounded-2xl bg-gray-100 p-6">
               <h2 className="text-2xl font-bold text-black">
                 Working Hours
               </h2>
 
-              <p className="mt-2 text-gray-600">
+              <p className="mt-3 text-gray-600">
                 Monday - Saturday | 9 AM - 6 PM
               </p>
             </div>
 
-            <div>
+            <div className="rounded-2xl bg-gray-100 p-6">
               <h2 className="text-2xl font-bold text-black">
                 Support
               </h2>
 
-              <p className="mt-2 text-gray-600">
+              <p className="mt-3 text-gray-600">
                 We usually reply within 24 hours.
+              </p>
+            </div>
+
+            <div className="rounded-2xl bg-gray-100 p-6">
+              <h2 className="text-2xl font-bold text-black">
+                Business Inquiries
+              </h2>
+
+              <p className="mt-3 text-gray-600">
+                Contact us for partnerships,
+                advertising, and business-related
+                queries.
               </p>
             </div>
           </div>

@@ -12,50 +12,51 @@ export default function PrivacyPolicyPage() {
             Privacy Policy
           </h1>
 
-          <p className="mt-6 text-lg leading-8 text-gray-600">
+          <p className="mt-8 text-lg leading-8 text-gray-600">
             Calculator Hub respects your privacy
             and is committed to protecting your
             personal information.
           </p>
 
           <h2 className="mt-10 text-3xl font-bold text-black">
-            Information We Collect
+            Information Collection
           </h2>
 
-          <p className="mt-4 text-lg leading-8 text-gray-600">
+          <p className="mt-4 leading-8 text-gray-600">
             We may collect non-personal
             information such as browser type,
             device information, and usage data to
-            improve our website experience.
+            improve our services.
           </p>
 
           <h2 className="mt-10 text-3xl font-bold text-black">
             Cookies
           </h2>
 
-          <p className="mt-4 text-lg leading-8 text-gray-600">
+          <p className="mt-4 leading-8 text-gray-600">
             Our website may use cookies to improve
-            functionality and user experience.
+            user experience and analyze website
+            traffic.
           </p>
 
           <h2 className="mt-10 text-3xl font-bold text-black">
             Third-Party Services
           </h2>
 
-          <p className="mt-4 text-lg leading-8 text-gray-600">
+          <p className="mt-4 leading-8 text-gray-600">
             We may use third-party services such
             as analytics and advertising providers
-            that may collect information according
-            to their own privacy policies.
+            to improve website performance.
           </p>
 
           <h2 className="mt-10 text-3xl font-bold text-black">
-            Contact
+            Contact Us
           </h2>
 
-          <p className="mt-4 text-lg leading-8 text-gray-600">
-            If you have any questions about this
-            Privacy Policy, please contact us.
+          <p className="mt-4 leading-8 text-gray-600">
+            If you have any questions regarding
+            this Privacy Policy, please contact
+            us through our Contact page.
           </p>
         </div>
       </section>

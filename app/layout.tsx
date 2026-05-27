@@ -1,45 +1,70 @@
-import "./globals.css";
 import type { Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title:
     "Calculator Hub - Free Construction Calculators",
-
+    
   description:
-    "Free online construction calculators for bricks, cement, concrete, plaster, paint, tiles, steel weight, sand and gravel estimation.",
+    "Free online construction calculators for bricks, cement, concrete, steel weight, paint, tiles, plaster, excavation, roofing, flooring, asphalt, drywall, stairs, and more.",
 
   keywords: [
     "construction calculator",
     "brick calculator",
     "cement calculator",
     "concrete calculator",
+    "paint calculator",
+    "tile calculator",
     "steel weight calculator",
-    "plaster calculator",
+    "roofing calculator",
+    "excavation calculator",
+    "drywall calculator",
+    "construction tools",
+    "online calculators",
   ],
+
+  authors: [
+    {
+      name: "Calculator Hub",
+    },
+  ],
+
+  creator: "Calculator Hub",
+
+  publisher: "Calculator Hub",
+
+  metadataBase: new URL(
+    "https://calculator-hub-murex.vercel.app"
+  ),
+
+  alternates: {
+    canonical: "/",
+  },
 
   openGraph: {
     title:
       "Calculator Hub - Free Construction Calculators",
 
     description:
-      "Free online construction calculators for builders, contractors and engineers.",
+      "Professional online construction calculators for builders, engineers, contractors, and homeowners.",
 
-    url: "https://calculator-hub-murex.vercel.app/",
+    url:
+      "https://calculator-hub-murex.vercel.app",
 
     siteName: "Calculator Hub",
 
-    locale: "en_US",
-
-    type: "website",
-
     images: [
       {
-        url: "https://calculator-hub-murex.vercel.app/og-image.jpg",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Calculator Hub",
       },
     ],
+
+    locale: "en_US",
+
+    type: "website",
   },
 
   twitter: {
@@ -49,11 +74,22 @@ export const metadata: Metadata = {
       "Calculator Hub - Free Construction Calculators",
 
     description:
-      "Free online construction calculators.",
+      "Professional online calculators for construction projects.",
 
-    images: [
-      "https://calculator-hub-murex.vercel.app/og-image.jpg",
-    ],
+    images: ["/og-image.jpg"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -64,13 +100,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <meta
-          name="google-site-verification"
-          content="wA8HV4Y7ch5wdp2uwV5UPt7W1iLepkqanS0r6LBw9hc"
-        />
-      </head>
-
       <body>{children}</body>
     </html>
   );

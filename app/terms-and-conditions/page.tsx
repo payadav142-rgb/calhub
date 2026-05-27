@@ -12,50 +12,51 @@ export default function TermsPage() {
             Terms & Conditions
           </h1>
 
-          <p className="mt-6 text-lg leading-8 text-gray-600">
+          <p className="mt-8 text-lg leading-8 text-gray-600">
             By using Calculator Hub, you agree to
-            comply with our terms and conditions.
+            the following terms and conditions.
           </p>
 
           <h2 className="mt-10 text-3xl font-bold text-black">
             Use of Website
           </h2>
 
-          <p className="mt-4 text-lg leading-8 text-gray-600">
-            The calculators provided on this
-            website are for informational and
-            estimation purposes only.
+          <p className="mt-4 leading-8 text-gray-600">
+            Calculator Hub provides free online
+            construction calculators for
+            informational and estimation purposes
+            only.
           </p>
 
           <h2 className="mt-10 text-3xl font-bold text-black">
             Accuracy
           </h2>
 
-          <p className="mt-4 text-lg leading-8 text-gray-600">
-            While we try to provide accurate
-            calculations, we do not guarantee
-            complete accuracy for all projects and
-            construction scenarios.
+          <p className="mt-4 leading-8 text-gray-600">
+            While we aim to provide accurate
+            calculations, results should be
+            verified by professionals before use
+            in real construction projects.
           </p>
 
           <h2 className="mt-10 text-3xl font-bold text-black">
             Limitation of Liability
           </h2>
 
-          <p className="mt-4 text-lg leading-8 text-gray-600">
-            Calculator Hub will not be responsible
-            for any losses or damages resulting
-            from the use of our calculators.
+          <p className="mt-4 leading-8 text-gray-600">
+            Calculator Hub is not responsible for
+            any losses, damages, or construction
+            issues arising from the use of this
+            website.
           </p>
 
           <h2 className="mt-10 text-3xl font-bold text-black">
-            Updates
+            Changes to Terms
           </h2>
 
-          <p className="mt-4 text-lg leading-8 text-gray-600">
-            We may update these terms and
-            conditions at any time without prior
-            notice.
+          <p className="mt-4 leading-8 text-gray-600">
+            We may update these terms at any time
+            without prior notice.
           </p>
         </div>
       </section>

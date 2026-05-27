@@ -32,6 +32,37 @@ export default function AboutPage() {
             plaster, sand, gravel, paint, tiles,
             and many more construction materials.
           </p>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+  <div className="rounded-2xl bg-black p-8 text-white">
+    <h2 className="text-4xl font-extrabold">
+      9+
+    </h2>
+
+    <p className="mt-3 text-gray-300">
+      Construction Calculators
+    </p>
+  </div>
+
+  <div className="rounded-2xl bg-gray-100 p-8">
+    <h2 className="text-4xl font-extrabold text-black">
+      100%
+    </h2>
+
+    <p className="mt-3 text-gray-600">
+      Free To Use
+    </p>
+  </div>
+
+  <div className="rounded-2xl bg-black p-8 text-white">
+    <h2 className="text-4xl font-extrabold">
+      24/7
+    </h2>
+
+    <p className="mt-3 text-gray-300">
+      Available Online
+    </p>
+  </div>
+</div>
         </div>
       </section>
 

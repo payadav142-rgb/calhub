@@ -39,6 +39,13 @@ export default function Navbar() {
           >
             Contact
           </Link>
+
+          <Link
+            href="/privacy-policy"
+            className="font-medium text-gray-700 transition hover:text-black"
+          >
+            Privacy
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -88,6 +95,26 @@ export default function Navbar() {
               className="text-lg font-medium text-gray-700 transition hover:text-black"
             >
               Contact
+            </Link>
+
+            <Link
+              href="/privacy-policy"
+              onClick={() =>
+                setMenuOpen(false)
+              }
+              className="text-lg font-medium text-gray-700 transition hover:text-black"
+            >
+              Privacy Policy
+            </Link>
+
+            <Link
+              href="/terms-and-conditions"
+              onClick={() =>
+                setMenuOpen(false)
+              }
+              className="text-lg font-medium text-gray-700 transition hover:text-black"
+            >
+              Terms & Conditions
             </Link>
           </div>
         </div>

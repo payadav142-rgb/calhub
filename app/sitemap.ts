@@ -72,5 +72,47 @@ export default function sitemap():
       changeFrequency: "weekly",
       priority: 0.9,
     },
+    {
+  url: "https://calculator-hub-murex.vercel.app/construction-cost-calculator",
+  lastModified: new Date(),
+},
+{
+  url: "https://calculator-hub-murex.vercel.app/area-calculator",
+  lastModified: new Date(),
+},
+{
+  url: "https://calculator-hub-murex.vercel.app/flooring-calculator",
+  lastModified: new Date(),
+},
+{
+  url: "https://calculator-hub-murex.vercel.app/roofing-calculator",
+  lastModified: new Date(),
+},
+{
+  url: "https://calculator-hub-murex.vercel.app/excavation-calculator",
+  lastModified: new Date(),
+},
+{
+  url: "https://calculator-hub-murex.vercel.app/paver-calculator",
+  lastModified: new Date(),
+},
+{
+  url: "https://calculator-hub-murex.vercel.app/asphalt-calculator",
+  lastModified: new Date(),
+},
+{
+  url: "https://calculator-hub-murex.vercel.app/drywall-calculator",
+  lastModified: new Date(),
+},
+{
+  url: "https://calculator-hub-murex.vercel.app/stair-calculator",
+  lastModified: new Date(),
+},
+{
+  url: "https://calculator-hub-murex.vercel.app/unit-converter",
+  lastModified: new Date(),
+},
+
   ];
+  
 }
