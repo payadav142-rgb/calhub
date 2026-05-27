@@ -6,22 +6,33 @@ export default function AboutPage() {
     <main className="min-h-screen bg-gray-100">
       <Navbar />
 
-      <section className="mx-auto max-w-4xl px-6 py-16">
-        <h1 className="text-4xl font-bold text-black">
-          About Calculator Hub
-        </h1>
+      <section className="mx-auto max-w-5xl px-6 py-20">
+        <div className="rounded-3xl bg-white p-10 shadow-xl">
+          <h1 className="text-5xl font-extrabold text-black">
+            About Calculator Hub
+          </h1>
 
-        <p className="mt-6 text-lg text-gray-600">
-          Calculator Hub provides free online
-          construction calculators for builders,
-          contractors, engineers, and homeowners.
-        </p>
+          <p className="mt-6 text-lg leading-8 text-gray-600">
+            Calculator Hub is a free online
+            platform providing professional
+            construction calculators for builders,
+            engineers, contractors, and
+            homeowners.
+          </p>
 
-        <p className="mt-4 text-lg text-gray-600">
-          Our goal is to make construction
-          calculations simple, fast, and accessible
-          for everyone.
-        </p>
+          <p className="mt-6 text-lg leading-8 text-gray-600">
+            Our mission is to make construction
+            calculations fast, simple, and
+            accessible for everyone.
+          </p>
+
+          <p className="mt-6 text-lg leading-8 text-gray-600">
+            We provide calculators for bricks,
+            cement, concrete, steel weight,
+            plaster, sand, gravel, paint, tiles,
+            and many more construction materials.
+          </p>
+        </div>
       </section>
 
       <Footer />
