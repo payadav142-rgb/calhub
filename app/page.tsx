@@ -215,18 +215,24 @@ export default function Home() {
       </section>
 
       {/* Calculator Cards */}
-      <section className="px-6 pb-20">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {filteredCalculators.map((calculator) => (
-            <CalculatorCard
-              key={calculator.title}
-              title={calculator.title}
-              description={calculator.description}
-              link={calculator.link}
-            />
-          ))}
-        </div>
-      </section>
+<section className="px-6 pb-20">
+  <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+    {filteredCalculators.length > 0 ? (
+      filteredCalculators.map((calculator) => (
+        <CalculatorCard
+          key={calculator.title}
+          title={calculator.title}
+          description={calculator.description}
+          link={calculator.link}
+        />
+      ))
+    ) : (
+      <div className="col-span-full text-center text-2xl font-semibold text-gray-500">
+        No calculators found.
+      </div>
+    )}
+  </div>
+</section>
 
       {/* Stats Section */}
       <section className="px-6 pb-20">
