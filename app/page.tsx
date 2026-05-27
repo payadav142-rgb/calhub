@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import { useState } from "react";
 import CalculatorCard from "./components/CalculatorCard";
 import Footer from "./components/Footer";
@@ -82,14 +82,18 @@ export default function Home() {
         </p>
 
         <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-          <button className="rounded-2xl bg-black px-8 py-4 text-lg text-white transition hover:scale-105 hover:bg-gray-800">
-            Explore Calculators
-          </button>
+  <Link href="#calculators">
+    <button className="rounded-2xl bg-black px-8 py-4 text-lg text-white transition hover:scale-105 hover:bg-gray-800">
+      Explore Calculators
+    </button>
+  </Link>
 
-          <button className="rounded-2xl border border-black px-8 py-4 text-lg text-black transition hover:bg-black hover:text-white">
-            Learn More
-          </button>
-        </div>
+  <Link href="/about">
+    <button className="rounded-2xl border border-black px-8 py-4 text-lg text-black transition hover:bg-black hover:text-white">
+      Learn More
+    </button>
+  </Link>
+</div>
       </section>
 
       {/* Search Bar */}
@@ -108,7 +112,10 @@ export default function Home() {
       </section>
 
       {/* Featured Section */}
-      <section className="px-6 pb-20">
+      <section
+  id="calculators"
+  className="px-6 pb-20"
+>
         <div className="rounded-3xl bg-black p-10 text-white shadow-2xl">
           <h2 className="text-4xl font-extrabold">
             Professional Construction Tools
