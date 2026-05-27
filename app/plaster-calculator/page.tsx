@@ -105,7 +105,33 @@ export default function PlasterCalculator() {
           )}
         </div>
       </section>
+      <section className="mx-auto max-w-4xl px-6 pb-16">
+  <div className="rounded-2xl bg-white p-8 shadow-md">
+    <h2 className="text-3xl font-bold text-black">
+      How to Calculate Plaster Quantity?
+    </h2>
 
+    <p className="mt-4 text-gray-600">
+      Plaster quantity is calculated by multiplying
+      wall length, wall height, and plaster
+      thickness.
+    </p>
+
+    <p className="mt-4 text-gray-600">
+      This calculator helps builders and homeowners
+      estimate plaster volume quickly for
+      construction projects.
+    </p>
+
+    <h3 className="mt-6 text-2xl font-semibold text-black">
+      Plaster Formula
+    </h3>
+
+    <p className="mt-3 text-gray-600">
+      Volume = Length × Height × Thickness
+    </p>
+  </div>
+</section>
       <Footer />
     </main>
   );
