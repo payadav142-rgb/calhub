@@ -6,22 +6,49 @@ export default function ContactPage() {
     <main className="min-h-screen bg-gray-100">
       <Navbar />
 
-      <section className="mx-auto max-w-4xl px-6 py-16">
-        <h1 className="text-4xl font-bold text-black">
-          Contact Us
-        </h1>
+      <section className="mx-auto max-w-4xl px-6 py-20">
+        <div className="rounded-3xl bg-white p-10 shadow-xl">
+          <h1 className="text-5xl font-extrabold text-black">
+            Contact Us
+          </h1>
 
-        <p className="mt-6 text-lg text-gray-600">
-          Have questions or suggestions?
-        </p>
+          <p className="mt-6 text-lg leading-8 text-gray-600">
+            Have questions, suggestions, or
+            feedback? We'd love to hear from you.
+          </p>
 
-        <p className="mt-4 text-gray-600">
-          Email us at:
-        </p>
+          <div className="mt-10 space-y-6">
+            <div>
+              <h2 className="text-2xl font-bold text-black">
+                Email
+              </h2>
 
-        <p className="mt-2 text-xl font-semibold text-black">
-          support@calculatorhub.com
-        </p>
+              <p className="mt-2 text-gray-600">
+                support@calculatorhub.com
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-bold text-black">
+                Working Hours
+              </h2>
+
+              <p className="mt-2 text-gray-600">
+                Monday - Saturday | 9 AM - 6 PM
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-bold text-black">
+                Support
+              </h2>
+
+              <p className="mt-2 text-gray-600">
+                We usually reply within 24 hours.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       <Footer />
