@@ -38,6 +38,11 @@ const calculators = [
   description: "Calculate sand quantity easily.",
   link: "/sand-calculator",
 },
+{
+  title: "Gravel Calculator",
+  description: "Calculate gravel quantity easily.",
+  link: "/gravel-calculator",
+},
 ];
 export default function Home() {
   return (
