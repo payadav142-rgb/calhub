@@ -28,6 +28,11 @@ const calculators = [
     description: "Calculate tiles needed for flooring.",
     link: "/tile-calculator",
   },
+  {
+  title: "Steel Weight Calculator",
+  description: "Calculate steel bar weight easily.",
+  link: "/steel-weight-calculator",
+},
 ];
 export default function Home() {
   return (
