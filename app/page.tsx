@@ -1,10 +1,10 @@
 "use client";
+
+import { useState } from "react";
 import CalculatorCard from "./components/CalculatorCard";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 
-
-import { useState } from "react";
 const calculators = [
   {
     title: "Brick Calculator",
@@ -56,19 +56,20 @@ const calculators = [
 export default function Home() {
   const [search, setSearch] = useState("");
 
-const filteredCalculators =
-  calculators.filter((calculator) =>
-    calculator.title
-      .toLowerCase()
-      .includes(search.toLowerCase())
-  );
+  const filteredCalculators =
+    calculators.filter((calculator) =>
+      calculator.title
+        .toLowerCase()
+        .includes(search.toLowerCase())
+    );
+
   return (
     <main className="min-h-screen bg-gray-100">
       <Navbar />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-b from-gray-100 to-white px-6 py-24 text-center">
-        <h1 className="mx-auto max-w-4xl text-4xl md:text-4xl md:text-6xl font-extrabold leading-tight text-black">
+        <h1 className="mx-auto max-w-4xl text-4xl md:text-6xl font-extrabold leading-tight text-black">
           Free Construction Calculators
           for Builders & Engineers
         </h1>
@@ -98,9 +99,9 @@ const filteredCalculators =
             type="text"
             placeholder="Search calculators..."
             value={search}
-  onChange={(e) =>
-    setSearch(e.target.value)
-  }
+            onChange={(e) =>
+              setSearch(e.target.value)
+            }
             className="w-full rounded-3xl border border-gray-200 bg-white p-5 text-lg shadow-lg outline-none transition focus:border-black"
           />
         </div>
