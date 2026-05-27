@@ -123,6 +123,65 @@ export default function Home() {
     </div>
   </div>
 </section>
+<section className="px-6 pb-20">
+  <h2 className="text-center text-4xl font-extrabold text-black">
+    Trusted by Builders & Engineers
+  </h2>
+
+  <p className="mt-4 text-center text-lg text-gray-600">
+    Professionals use Calculator Hub for fast and
+    reliable construction calculations.
+  </p>
+
+  <div className="mt-12 grid gap-6 md:grid-cols-3">
+    <div className="rounded-3xl bg-white p-8 shadow-xl">
+      <p className="text-gray-600 leading-7">
+        “Very useful calculators for quick
+        construction estimates. Clean and easy to
+        use.”
+      </p>
+
+      <h3 className="mt-6 text-xl font-bold text-black">
+        Rajesh Kumar
+      </h3>
+
+      <p className="text-gray-500">
+        Civil Contractor
+      </p>
+    </div>
+
+    <div className="rounded-3xl bg-white p-8 shadow-xl">
+      <p className="text-gray-600 leading-7">
+        “The steel and cement calculators saved a
+        lot of my time on-site.”
+      </p>
+
+      <h3 className="mt-6 text-xl font-bold text-black">
+        Amit Sharma
+      </h3>
+
+      <p className="text-gray-500">
+        Site Engineer
+      </p>
+    </div>
+
+    <div className="rounded-3xl bg-white p-8 shadow-xl">
+      <p className="text-gray-600 leading-7">
+        “Professional UI and very easy to use even
+        on mobile devices.”
+      </p>
+
+      <h3 className="mt-6 text-xl font-bold text-black">
+        Vikram Patel
+      </h3>
+
+      <p className="text-gray-500">
+        Builder
+      </p>
+    </div>
+  </div>
+</section>
+
       <section className="grid gap-6 px-6 pb-16 md:grid-cols-2 lg:grid-cols-3">
         {calculators.map((calculator) => (
           <CalculatorCard
