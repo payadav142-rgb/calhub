@@ -87,6 +87,42 @@ export default function Home() {
     />
   </div>
 </section>
+<section className="px-6 pb-20">
+  <div className="rounded-3xl bg-black p-10 text-white shadow-2xl">
+    <h2 className="text-4xl font-extrabold">
+      Professional Construction Tools
+    </h2>
+
+    <p className="mt-4 max-w-3xl text-lg text-gray-300 leading-8">
+      Use our free online construction calculators
+      to estimate materials quickly and accurately.
+      Designed for builders, engineers,
+      contractors, and homeowners.
+    </p>
+
+    <div className="mt-8 flex flex-wrap gap-4">
+      <span className="rounded-full bg-white/10 px-5 py-3 text-sm">
+        Brick Calculation
+      </span>
+
+      <span className="rounded-full bg-white/10 px-5 py-3 text-sm">
+        Cement Estimation
+      </span>
+
+      <span className="rounded-full bg-white/10 px-5 py-3 text-sm">
+        Steel Weight
+      </span>
+
+      <span className="rounded-full bg-white/10 px-5 py-3 text-sm">
+        Concrete Volume
+      </span>
+
+      <span className="rounded-full bg-white/10 px-5 py-3 text-sm">
+        Paint Area
+      </span>
+    </div>
+  </div>
+</section>
       <section className="grid gap-6 px-6 pb-16 md:grid-cols-2 lg:grid-cols-3">
         {calculators.map((calculator) => (
           <CalculatorCard
