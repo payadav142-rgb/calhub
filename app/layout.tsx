@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title:
     "Calculator Hub - Free Construction Calculators",
-    
+
   description:
     "Free online construction calculators for bricks, cement, concrete, steel weight, paint, tiles, plaster, excavation, roofing, flooring, asphalt, drywall, stairs, and more.",
 
@@ -39,6 +39,11 @@ export const metadata: Metadata = {
 
   alternates: {
     canonical: "/",
+  },
+
+  verification: {
+    google:
+      "c2E0Y9rYTzrEi_aYV43C725aFKUMCcaoyREP1or5amo",
   },
 
   openGraph: {
