@@ -1,8 +1,12 @@
+
+
 "use client";
 
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+
+
 
 export default function DrywallCalculator() {
   const [wallLength, setWallLength] =
@@ -32,6 +36,7 @@ export default function DrywallCalculator() {
     <main className="min-h-screen bg-gray-100">
       <Navbar />
 
+      {/* Calculator Section */}
       <section className="mx-auto max-w-2xl px-6 py-16">
         <h1 className="text-4xl font-bold text-black">
           Drywall Calculator
@@ -128,6 +133,13 @@ export default function DrywallCalculator() {
             construction planning.
           </p>
 
+          <p className="mt-4 text-gray-600">
+            Builders and contractors commonly use
+            drywall calculators to estimate sheet
+            requirements for residential and
+            commercial projects.
+          </p>
+
           <h3 className="mt-6 text-2xl font-semibold text-black">
             Formula
           </h3>
@@ -189,3 +201,4 @@ export default function DrywallCalculator() {
     </main>
   );
 }
+

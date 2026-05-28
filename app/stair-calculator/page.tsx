@@ -1,9 +1,12 @@
+
 "use client";
 
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+import CalculatorInput from "../components/CalculatorInput";
+import CalculatorResult from "../components/CalculatorResult";
 export default function StairCalculator() {
   const [totalHeight, setTotalHeight] =
     useState("");
@@ -166,3 +169,4 @@ export default function StairCalculator() {
     </main>
   );
 }
+

@@ -1,8 +1,12 @@
+
 "use client";
 
 import { useState } from "react";
+
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+
+import CalculatorResult from "../components/CalculatorResult";
 
 export default function TileCalculator() {
   const [floorLength, setFloorLength] =
@@ -21,6 +25,15 @@ export default function TileCalculator() {
     useState<number | null>(null);
 
   const calculateTiles = () => {
+    if (
+      !floorLength ||
+      !floorWidth ||
+      !tileLength ||
+      !tileWidth
+    ) {
+      return;
+    }
+
     const floorArea =
       parseFloat(floorLength) *
       parseFloat(floorWidth);
@@ -51,8 +64,9 @@ export default function TileCalculator() {
         </p>
 
         <div className="mt-8 rounded-2xl bg-white p-6 shadow-md">
+
           <div className="mb-4">
-            <label className="mb-2 block text-black">
+            <label className="block text-sm font-medium text-gray-700">
               Floor Length (ft)
             </label>
 
@@ -62,13 +76,13 @@ export default function TileCalculator() {
               onChange={(e) =>
                 setFloorLength(e.target.value)
               }
-              className="w-full rounded-xl border p-3"
               placeholder="Enter floor length"
+              className="mt-2 w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-black outline-none focus:border-black focus:ring-2 focus:ring-black/10"
             />
           </div>
 
           <div className="mb-4">
-            <label className="mb-2 block text-black">
+            <label className="block text-sm font-medium text-gray-700">
               Floor Width (ft)
             </label>
 
@@ -78,13 +92,13 @@ export default function TileCalculator() {
               onChange={(e) =>
                 setFloorWidth(e.target.value)
               }
-              className="w-full rounded-xl border p-3"
               placeholder="Enter floor width"
+              className="mt-2 w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-black outline-none focus:border-black focus:ring-2 focus:ring-black/10"
             />
           </div>
 
           <div className="mb-4">
-            <label className="mb-2 block text-black">
+            <label className="block text-sm font-medium text-gray-700">
               Tile Length (ft)
             </label>
 
@@ -94,13 +108,13 @@ export default function TileCalculator() {
               onChange={(e) =>
                 setTileLength(e.target.value)
               }
-              className="w-full rounded-xl border p-3"
               placeholder="Enter tile length"
+              className="mt-2 w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-black outline-none focus:border-black focus:ring-2 focus:ring-black/10"
             />
           </div>
 
-          <div className="mb-4">
-            <label className="mb-2 block text-black">
+          <div className="mb-6">
+            <label className="block text-sm font-medium text-gray-700">
               Tile Width (ft)
             </label>
 
@@ -110,8 +124,8 @@ export default function TileCalculator() {
               onChange={(e) =>
                 setTileWidth(e.target.value)
               }
-              className="w-full rounded-xl border p-3"
               placeholder="Enter tile width"
+              className="mt-2 w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-black outline-none focus:border-black focus:ring-2 focus:ring-black/10"
             />
           </div>
 
@@ -123,10 +137,9 @@ export default function TileCalculator() {
           </button>
 
           {result !== null && (
-            <div className="mt-6 rounded-xl bg-gray-100 p-4">
-              <h2 className="text-2xl font-bold text-black">
-                Tiles Needed: {result}
-              </h2>
+            <div className="mt-6">
+              <h3 className="mb-2 text-lg font-medium text-gray-700">Tiles Needed</h3>
+              <CalculatorResult title={"Tiles Needed"} result={String(result)} />
             </div>
           )}
         </div>
@@ -286,3 +299,4 @@ export default function TileCalculator() {
     </main>
   );
 }
+

@@ -1,8 +1,11 @@
 "use client";
+"use client";
 
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+
+
 
 export default function AreaCalculator() {
   const [length, setLength] =
@@ -80,7 +83,8 @@ export default function AreaCalculator() {
           {result !== null && (
             <div className="mt-6 rounded-xl bg-gray-100 p-4">
               <h2 className="text-2xl font-bold text-black">
-                Total Area: {result.toFixed(2)} sq ft
+                Total Area: {result.toFixed(2)} sq
+                ft
               </h2>
             </div>
           )}
@@ -99,6 +103,13 @@ export default function AreaCalculator() {
             length and width. This calculator is
             useful for flooring, painting,
             construction, and land measurement.
+          </p>
+
+          <p className="mt-4 text-gray-600">
+            Builders, engineers, architects, and
+            homeowners commonly use area
+            calculations for construction planning
+            and material estimation.
           </p>
 
           <h3 className="mt-6 text-2xl font-semibold text-black">
@@ -161,3 +172,4 @@ export default function AreaCalculator() {
     </main>
   );
 }
+

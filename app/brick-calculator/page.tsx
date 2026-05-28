@@ -1,15 +1,27 @@
 "use client";
 
+"use client";
+
 import { useState } from "react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+
+
+
 export default function BrickCalculator() {
-  const [length, setLength] = useState("");
-  const [height, setHeight] = useState("");
-  const [result, setResult] = useState<number | null>(null);
+  const [length, setLength] =
+    useState("");
+
+  const [height, setHeight] =
+    useState("");
+
+  const [result, setResult] =
+    useState<number | null>(null);
 
   const calculateBricks = () => {
     const wallArea =
-      parseFloat(length) * parseFloat(height);
+      parseFloat(length) *
+      parseFloat(height);
 
     const bricksNeeded = wallArea * 50;
 
@@ -104,6 +116,12 @@ export default function BrickCalculator() {
             Standard brick estimation may vary
             depending on brick size, mortar
             thickness, and wall type.
+          </p>
+
+          <p className="mt-4 leading-8 text-gray-600">
+            Builders, contractors, and engineers
+            use brick calculations for residential
+            and commercial construction projects.
           </p>
         </div>
       </section>
@@ -227,6 +245,9 @@ export default function BrickCalculator() {
           </a>
         </div>
       </section>
+
+      <Footer />
     </main>
   );
 }
+

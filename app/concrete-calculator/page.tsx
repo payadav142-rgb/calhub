@@ -1,14 +1,25 @@
 "use client";
 
+"use client";
+
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+
+
 export default function ConcreteCalculator() {
-  const [length, setLength] = useState("");
-  const [width, setWidth] = useState("");
-  const [depth, setDepth] = useState("");
-  const [result, setResult] = useState<number | null>(null);
+  const [length, setLength] =
+    useState("");
+
+  const [width, setWidth] =
+    useState("");
+
+  const [depth, setDepth] =
+    useState("");
+
+  const [result, setResult] =
+    useState<number | null>(null);
 
   const calculateConcrete = () => {
     const volume =
@@ -93,7 +104,8 @@ export default function ConcreteCalculator() {
           {result !== null && (
             <div className="mt-6 rounded-xl bg-gray-100 p-4">
               <h2 className="text-2xl font-bold text-black">
-                Concrete Volume: {result} ft³
+                Concrete Volume:{" "}
+                {result.toFixed(2)} ft³
               </h2>
             </div>
           )}
@@ -121,9 +133,15 @@ export default function ConcreteCalculator() {
 
           <p className="mt-6 leading-8 text-gray-600">
             This concrete calculator helps
-            builders and contractors estimate
-            concrete requirements quickly and
-            accurately.
+            builders, contractors, and engineers
+            estimate concrete requirements
+            quickly and accurately.
+          </p>
+
+          <p className="mt-4 leading-8 text-gray-600">
+            Accurate concrete estimation reduces
+            material waste and improves project
+            planning efficiency.
           </p>
         </div>
       </section>
@@ -253,3 +271,4 @@ export default function ConcreteCalculator() {
     </main>
   );
 }
+

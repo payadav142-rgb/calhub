@@ -1,14 +1,25 @@
 "use client";
 
+"use client";
+
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+
+
 export default function CementCalculator() {
-  const [length, setLength] = useState("");
-  const [width, setWidth] = useState("");
-  const [height, setHeight] = useState("");
-  const [result, setResult] = useState<number | null>(null);
+  const [length, setLength] =
+    useState("");
+
+  const [width, setWidth] =
+    useState("");
+
+  const [height, setHeight] =
+    useState("");
+
+  const [result, setResult] =
+    useState<number | null>(null);
 
   const calculateCement = () => {
     const volume =
@@ -124,6 +135,12 @@ export default function CementCalculator() {
           <p className="mt-6 leading-8 text-gray-600">
             Cement estimation may vary depending
             on mix ratio and construction type.
+          </p>
+
+          <p className="mt-4 leading-8 text-gray-600">
+            Contractors, engineers, and builders
+            commonly use cement calculations for
+            residential and commercial projects.
           </p>
         </div>
       </section>
@@ -253,3 +270,4 @@ export default function CementCalculator() {
     </main>
   );
 }
+

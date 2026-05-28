@@ -1,8 +1,12 @@
+
 "use client";
 
 import { useState } from "react";
+
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+
+import CalculatorResult from "../components/CalculatorResult";
 
 export default function SteelWeightCalculator() {
   const [diameter, setDiameter] =
@@ -15,6 +19,13 @@ export default function SteelWeightCalculator() {
     useState<number | null>(null);
 
   const calculateSteelWeight = () => {
+    if (
+      !diameter ||
+      !length
+    ) {
+      return;
+    }
+
     const weight =
       (parseFloat(diameter) *
         parseFloat(diameter) *
@@ -40,35 +51,36 @@ export default function SteelWeightCalculator() {
         </p>
 
         <div className="mt-8 rounded-2xl bg-white p-6 shadow-md">
+
           <div className="mb-4">
-            <label className="mb-2 block text-black">
+            <label className="block text-sm font-medium text-gray-700">
               Diameter (mm)
             </label>
 
             <input
               type="number"
               value={diameter}
-              onChange={(e) =>
-                setDiameter(e.target.value)
+              onChange={(event) =>
+                setDiameter(event.target.value)
               }
-              className="w-full rounded-xl border p-3"
               placeholder="Enter diameter"
+              className="mt-2 w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-black outline-none focus:border-black focus:ring-2 focus:ring-black/10"
             />
           </div>
 
-          <div className="mb-4">
-            <label className="mb-2 block text-black">
+          <div className="mb-6">
+            <label className="block text-sm font-medium text-gray-700">
               Length (m)
             </label>
 
             <input
               type="number"
               value={length}
-              onChange={(e) =>
-                setLength(e.target.value)
+              onChange={(event) =>
+                setLength(event.target.value)
               }
-              className="w-full rounded-xl border p-3"
               placeholder="Enter length"
+              className="mt-2 w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-black outline-none focus:border-black focus:ring-2 focus:ring-black/10"
             />
           </div>
 
@@ -80,11 +92,13 @@ export default function SteelWeightCalculator() {
           </button>
 
           {result !== null && (
-            <div className="mt-6 rounded-xl bg-gray-100 p-4">
-              <h2 className="text-2xl font-bold text-black">
-                Steel Weight:{" "}
-                {result.toFixed(2)} kg
-              </h2>
+            <div className="mt-6">
+              <CalculatorResult
+                title="Steel Weight"
+                result={`${result.toFixed(
+                  2
+                )} kg`}
+              />
             </div>
           )}
         </div>
@@ -243,3 +257,4 @@ export default function SteelWeightCalculator() {
     </main>
   );
 }
+

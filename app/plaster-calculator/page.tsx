@@ -1,8 +1,13 @@
+
 "use client";
 
 import { useState } from "react";
+
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+
+import CalculatorInput from "../components/CalculatorInput";
+import CalculatorResult from "../components/CalculatorResult";
 
 export default function PlasterCalculator() {
   const [length, setLength] =
@@ -18,6 +23,16 @@ export default function PlasterCalculator() {
     useState<number | null>(null);
 
   const calculatePlaster = () => {
+    if (
+      !length ||
+      !height ||
+      !thickness
+    ) {
+      alert("Please fill all fields");
+
+      return;
+    }
+
     const volume =
       parseFloat(length) *
       parseFloat(height) *
@@ -42,53 +57,27 @@ export default function PlasterCalculator() {
         </p>
 
         <div className="mt-8 rounded-2xl bg-white p-6 shadow-md">
-          <div className="mb-4">
-            <label className="mb-2 block text-black">
-              Wall Length (ft)
-            </label>
 
-            <input
-              type="number"
-              value={length}
-              onChange={(e) =>
-                setLength(e.target.value)
-              }
-              className="w-full rounded-xl border p-3"
-              placeholder="Enter wall length"
-            />
-          </div>
+          <CalculatorInput
+            label="Wall Length (ft)"
+            value={length}
+            setValue={setLength}
+            placeholder="Enter wall length"
+          />
 
-          <div className="mb-4">
-            <label className="mb-2 block text-black">
-              Wall Height (ft)
-            </label>
+          <CalculatorInput
+            label="Wall Height (ft)"
+            value={height}
+            setValue={setHeight}
+            placeholder="Enter wall height"
+          />
 
-            <input
-              type="number"
-              value={height}
-              onChange={(e) =>
-                setHeight(e.target.value)
-              }
-              className="w-full rounded-xl border p-3"
-              placeholder="Enter wall height"
-            />
-          </div>
-
-          <div className="mb-4">
-            <label className="mb-2 block text-black">
-              Thickness (inch)
-            </label>
-
-            <input
-              type="number"
-              value={thickness}
-              onChange={(e) =>
-                setThickness(e.target.value)
-              }
-              className="w-full rounded-xl border p-3"
-              placeholder="Enter thickness"
-            />
-          </div>
+          <CalculatorInput
+            label="Thickness (inch)"
+            value={thickness}
+            setValue={setThickness}
+            placeholder="Enter thickness"
+          />
 
           <button
             onClick={calculatePlaster}
@@ -98,12 +87,12 @@ export default function PlasterCalculator() {
           </button>
 
           {result !== null && (
-            <div className="mt-6 rounded-xl bg-gray-100 p-4">
-              <h2 className="text-2xl font-bold text-black">
-                Plaster Volume:{" "}
-                {result.toFixed(2)} ft³
-              </h2>
-            </div>
+            <CalculatorResult
+              title="Plaster Volume"
+              result={`${result.toFixed(
+                2
+              )} ft³`}
+            />
           )}
         </div>
       </section>
@@ -261,3 +250,4 @@ export default function PlasterCalculator() {
     </main>
   );
 }
+

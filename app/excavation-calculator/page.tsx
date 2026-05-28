@@ -1,8 +1,12 @@
+
+
 "use client";
 
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+
+
 
 export default function ExcavationCalculator() {
   const [length, setLength] =
@@ -128,6 +132,13 @@ export default function ExcavationCalculator() {
             project planning.
           </p>
 
+          <p className="mt-4 text-gray-600">
+            Contractors and engineers use
+            excavation calculators to estimate
+            earthwork quantities before starting
+            construction projects.
+          </p>
+
           <h3 className="mt-6 text-2xl font-semibold text-black">
             Formula
           </h3>
@@ -188,3 +199,4 @@ export default function ExcavationCalculator() {
     </main>
   );
 }
+

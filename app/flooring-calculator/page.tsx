@@ -1,4 +1,6 @@
 "use client";
+import Head from "next/head";
+
 
 import { useState } from "react";
 import Navbar from "../components/Navbar";
@@ -35,6 +37,28 @@ export default function FlooringCalculator() {
 
   return (
     <main className="min-h-screen bg-gray-100">
+
+      <Head>
+        <title>
+          Flooring Calculator | Calculator Hub
+        </title>
+
+        <meta
+          name="description"
+          content="Free flooring calculator to estimate flooring area and total flooring cost instantly for rooms, homes, and construction projects."
+        />
+
+        <meta
+          name="keywords"
+          content="flooring calculator, flooring cost calculator, floor area calculator, tile flooring calculator, construction flooring calculator"
+        />
+
+        <link
+          rel="canonical"
+          href="https://yourdomain.com/flooring-calculator"
+        />
+      </Head>
+
       <Navbar />
 
       <section className="mx-auto max-w-2xl px-6 py-16">
@@ -202,3 +226,4 @@ export default function FlooringCalculator() {
     </main>
   );
 }
+

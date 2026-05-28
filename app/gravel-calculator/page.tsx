@@ -1,4 +1,6 @@
 "use client";
+import Head from "next/head";
+
 
 import { useState } from "react";
 import Navbar from "../components/Navbar";
@@ -28,6 +30,28 @@ export default function GravelCalculator() {
 
   return (
     <main className="min-h-screen bg-gray-100">
+
+      <Head>
+        <title>
+          Gravel Calculator | Calculator Hub
+        </title>
+
+        <meta
+          name="description"
+          content="Free gravel calculator to estimate gravel quantity for driveways, landscaping, foundations, and construction projects."
+        />
+
+        <meta
+          name="keywords"
+          content="gravel calculator, gravel quantity calculator, construction gravel calculator, driveway gravel calculator, gravel estimate"
+        />
+
+        <link
+          rel="canonical"
+          href="https://yourdomain.com/gravel-calculator"
+        />
+      </Head>
+
       <Navbar />
 
       {/* Calculator Section */}
@@ -262,3 +286,4 @@ export default function GravelCalculator() {
     </main>
   );
 }
+

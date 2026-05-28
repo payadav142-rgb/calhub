@@ -1,5 +1,7 @@
 "use client";
 import Link from "next/link";
+
+
 import { useState } from "react";
 import CalculatorCard from "./components/CalculatorCard";
 import Footer from "./components/Footer";
@@ -428,3 +430,4 @@ export default function Home() {
     </main>
   );
 }
+

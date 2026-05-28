@@ -1,8 +1,13 @@
+
 "use client";
 
 import { useState } from "react";
+
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+
+import CalculatorInput from "../components/CalculatorInput";
+import CalculatorResult from "../components/CalculatorResult";
 
 export default function SandCalculator() {
   const [length, setLength] =
@@ -18,6 +23,14 @@ export default function SandCalculator() {
     useState<number | null>(null);
 
   const calculateSand = () => {
+    if (
+      !length ||
+      !width ||
+      !depth
+    ) {
+      return;
+    }
+
     const volume =
       parseFloat(length) *
       parseFloat(width) *
@@ -43,50 +56,44 @@ export default function SandCalculator() {
 
         <div className="mt-8 rounded-2xl bg-white p-6 shadow-md">
           <div className="mb-4">
-            <label className="mb-2 block text-black">
+            <label className="mb-2 block text-sm font-medium text-gray-900">
               Length (ft)
             </label>
-
             <input
               type="number"
+              step="any"
               value={length}
-              onChange={(e) =>
-                setLength(e.target.value)
-              }
-              className="w-full rounded-xl border p-3"
+              onChange={(e) => setLength(e.target.value)}
               placeholder="Enter length"
+              className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-black outline-none focus:border-black focus:ring-0"
             />
           </div>
 
           <div className="mb-4">
-            <label className="mb-2 block text-black">
+            <label className="mb-2 block text-sm font-medium text-gray-900">
               Width (ft)
             </label>
-
             <input
               type="number"
+              step="any"
               value={width}
-              onChange={(e) =>
-                setWidth(e.target.value)
-              }
-              className="w-full rounded-xl border p-3"
+              onChange={(e) => setWidth(e.target.value)}
               placeholder="Enter width"
+              className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-black outline-none focus:border-black focus:ring-0"
             />
           </div>
 
-          <div className="mb-4">
-            <label className="mb-2 block text-black">
+          <div className="mb-6">
+            <label className="mb-2 block text-sm font-medium text-gray-900">
               Depth (ft)
             </label>
-
             <input
               type="number"
+              step="any"
               value={depth}
-              onChange={(e) =>
-                setDepth(e.target.value)
-              }
-              className="w-full rounded-xl border p-3"
+              onChange={(e) => setDepth(e.target.value)}
               placeholder="Enter depth"
+              className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-black outline-none focus:border-black focus:ring-0"
             />
           </div>
 
@@ -98,11 +105,11 @@ export default function SandCalculator() {
           </button>
 
           {result !== null && (
-            <div className="mt-6 rounded-xl bg-gray-100 p-4">
-              <h2 className="text-2xl font-bold text-black">
-                Sand Required:{" "}
-                {result.toFixed(2)} ft³
-              </h2>
+            <div className="mt-6">
+              <CalculatorResult
+                title="Volume"
+                result={`${result.toFixed(2)} ft³`}
+              />
             </div>
           )}
         </div>
@@ -262,3 +269,4 @@ export default function SandCalculator() {
     </main>
   );
 }
+

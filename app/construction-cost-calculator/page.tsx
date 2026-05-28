@@ -1,15 +1,21 @@
 "use client";
 
+"use client";
+
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+
+
 
 export default function ConstructionCostCalculator() {
   const [area, setArea] =
     useState("");
 
-  const [costPerSqft, setCostPerSqft] =
-    useState("");
+  const [
+    costPerSqft,
+    setCostPerSqft,
+  ] = useState("");
 
   const [result, setResult] =
     useState<number | null>(null);
@@ -26,6 +32,7 @@ export default function ConstructionCostCalculator() {
     <main className="min-h-screen bg-gray-100">
       <Navbar />
 
+      {/* Calculator Section */}
       <section className="mx-auto max-w-2xl px-6 py-16">
         <h1 className="text-4xl font-bold text-black">
           Construction Cost Calculator
@@ -62,7 +69,9 @@ export default function ConstructionCostCalculator() {
               type="number"
               value={costPerSqft}
               onChange={(e) =>
-                setCostPerSqft(e.target.value)
+                setCostPerSqft(
+                  e.target.value
+                )
               }
               className="w-full rounded-xl border p-3"
               placeholder="Enter cost per sq ft"
@@ -106,6 +115,13 @@ export default function ConstructionCostCalculator() {
             Construction costs vary depending on
             materials, labor charges, location,
             and project type.
+          </p>
+
+          <p className="mt-4 text-gray-600">
+            Accurate cost estimation helps reduce
+            overspending and improves budgeting
+            for residential and commercial
+            construction projects.
           </p>
 
           <h3 className="mt-6 text-2xl font-semibold text-black">
@@ -157,9 +173,9 @@ export default function ConstructionCostCalculator() {
               </h3>
 
               <p className="mt-2 text-gray-600">
-                Yes, this calculator is useful for
-                houses, commercial buildings, and
-                renovation projects.
+                Yes, this calculator is useful
+                for houses, commercial buildings,
+                and renovation projects.
               </p>
             </div>
           </div>
@@ -170,3 +186,4 @@ export default function ConstructionCostCalculator() {
     </main>
   );
 }
+
