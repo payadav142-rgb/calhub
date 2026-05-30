@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-
+import RelatedCalculators from "../components/RelatedCalculators";
 export default function ConcreteCalculator() {
   const [length, setLength] =
     useState("");
@@ -43,7 +43,7 @@ export default function ConcreteCalculator() {
           </p>
         </div>
 
-        <div className="mt-10 rounded-3xl bg-white p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
+        <div className="mt-10 rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
           <div className="mb-5">
             <label className="mb-2 block font-medium text-gray-700">
               Length (ft)
@@ -100,7 +100,7 @@ export default function ConcreteCalculator() {
           </button>
 
           {result !== null && (
-            <div className="mt-6 rounded-2xl border border-orange-200 bg-orange-50 p-5">
+            <div className="mt-6 rounded-2xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-5 shadow-inner">
               <h2 className="text-2xl font-bold text-gray-900">
                 Concrete Volume:{" "}
                 {result.toFixed(2)} ft³
@@ -112,7 +112,7 @@ export default function ConcreteCalculator() {
 
       {/* Formula Section */}
       <section className="mx-auto max-w-5xl px-6 pb-20">
-        <div className="rounded-3xl bg-white p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
+        <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
           <h2 className="text-3xl font-bold text-gray-900">
             Concrete Volume Formula
           </h2>
@@ -146,7 +146,7 @@ export default function ConcreteCalculator() {
 
       {/* How To Use */}
       <section className="mx-auto max-w-5xl px-6 pb-20">
-        <div className="rounded-3xl bg-white p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
+        <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
           <h2 className="text-3xl font-bold text-gray-900">
             How To Use This Concrete Calculator
           </h2>
@@ -179,7 +179,7 @@ export default function ConcreteCalculator() {
         </h2>
 
         <div className="mt-10 space-y-6">
-          <div className="rounded-3xl border border-orange-100 bg-white p-6 shadow-xl">
+          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl">
             <h3 className="text-2xl font-bold text-gray-900">
               What is concrete volume?
             </h3>
@@ -191,7 +191,7 @@ export default function ConcreteCalculator() {
             </p>
           </div>
 
-          <div className="rounded-3xl border border-orange-100 bg-white p-6 shadow-xl">
+          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl">
             <h3 className="text-2xl font-bold text-gray-900">
               Is this calculator accurate?
             </h3>
@@ -203,7 +203,7 @@ export default function ConcreteCalculator() {
             </p>
           </div>
 
-          <div className="rounded-3xl border border-orange-100 bg-white p-6 shadow-xl">
+          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl">
             <h3 className="text-2xl font-bold text-gray-900">
               Can I use this for slabs?
             </h3>
@@ -217,53 +217,7 @@ export default function ConcreteCalculator() {
         </div>
       </section>
 
-      {/* Related Calculators */}
-      <section className="mx-auto max-w-5xl px-6 pb-20">
-        <h2 className="text-4xl font-extrabold text-gray-900">
-          Related Calculators
-        </h2>
-
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          <a
-            href="/cement-calculator"
-            className="rounded-3xl border border-orange-100 bg-white p-6 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-orange-400 hover:shadow-2xl"
-          >
-            <h3 className="text-2xl font-bold text-gray-900">
-              Cement Calculator
-            </h3>
-
-            <p className="mt-3 text-gray-600">
-              Estimate cement bags easily.
-            </p>
-          </a>
-
-          <a
-            href="/sand-calculator"
-            className="rounded-3xl border border-orange-100 bg-white p-6 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-orange-400 hover:shadow-2xl"
-          >
-            <h3 className="text-2xl font-bold text-gray-900">
-              Sand Calculator
-            </h3>
-
-            <p className="mt-3 text-gray-600">
-              Calculate sand quantity instantly.
-            </p>
-          </a>
-
-          <a
-            href="/gravel-calculator"
-            className="rounded-3xl border border-orange-100 bg-white p-6 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-orange-400 hover:shadow-2xl"
-          >
-            <h3 className="text-2xl font-bold text-gray-900">
-              Gravel Calculator
-            </h3>
-
-            <p className="mt-3 text-gray-600">
-              Estimate gravel volume quickly.
-            </p>
-          </a>
-        </div>
-      </section>
+      <RelatedCalculators />
 
       <Footer />
     </main>

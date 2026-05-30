@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-
+import RelatedCalculators from "../components/RelatedCalculators";
 export default function PaverCalculator() {
   const [areaLength, setAreaLength] =
     useState("");
@@ -36,7 +36,7 @@ export default function PaverCalculator() {
   };
 
   return (
-    <main className="min-h-screen bg-gray-100">
+    <main className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50">
       <Navbar />
 
       {/* HERO */}
@@ -57,7 +57,7 @@ export default function PaverCalculator() {
 
       {/* CALCULATOR */}
       <section className="mx-auto max-w-2xl px-6 py-16">
-        <div className="rounded-3xl bg-white p-8 shadow-xl">
+        <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl">
           <h2 className="text-3xl font-bold text-black">
             Calculate Pavers
           </h2>
@@ -135,7 +135,7 @@ export default function PaverCalculator() {
             </button>
 
             {result !== null && (
-              <div className="rounded-2xl bg-gray-100 p-6 text-center">
+              <div className="rounded-2xl border border-orange-100 bg-orange-50 p-6 text-center">
                 <h3 className="text-3xl font-bold text-black">
                   Pavers Needed: {result}
                 </h3>
@@ -147,7 +147,7 @@ export default function PaverCalculator() {
 
       {/* FORMULA */}
       <section className="mx-auto max-w-5xl px-6 pb-16">
-        <div className="rounded-3xl bg-white p-10 shadow-xl">
+        <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-10 shadow-xl">
           <h2 className="text-4xl font-bold text-black">
             Paver Calculation Formula
           </h2>
@@ -158,7 +158,7 @@ export default function PaverCalculator() {
             by the area covered by one paver.
           </p>
 
-          <div className="mt-8 rounded-2xl bg-gray-100 p-8">
+          <div className="mt-8 rounded-2xl border border-orange-100 bg-orange-50 p-8">
             <p className="text-3xl font-bold text-black">
               Pavers Needed =
               Total Area ÷ Single Paver Area
@@ -210,7 +210,7 @@ export default function PaverCalculator() {
       {/* BENEFITS */}
       <section className="mx-auto max-w-5xl px-6 pb-16">
         <div className="grid gap-6 md:grid-cols-3">
-          <div className="rounded-3xl bg-white p-8 shadow-xl">
+          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl">
             <h3 className="text-2xl font-bold text-black">
               Accurate Estimates
             </h3>
@@ -222,7 +222,7 @@ export default function PaverCalculator() {
             </p>
           </div>
 
-          <div className="rounded-3xl bg-white p-8 shadow-xl">
+          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl">
             <h3 className="text-2xl font-bold text-black">
               Fast Planning
             </h3>
@@ -234,7 +234,7 @@ export default function PaverCalculator() {
             </p>
           </div>
 
-          <div className="rounded-3xl bg-white p-8 shadow-xl">
+          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl">
             <h3 className="text-2xl font-bold text-black">
               Free Online Tool
             </h3>
@@ -255,7 +255,7 @@ export default function PaverCalculator() {
         </h2>
 
         <div className="mt-10 space-y-6">
-          <div className="rounded-3xl bg-white p-8 shadow-xl">
+          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl">
             <h3 className="text-2xl font-bold text-black">
               What is a paver calculator?
             </h3>
@@ -269,7 +269,7 @@ export default function PaverCalculator() {
             </p>
           </div>
 
-          <div className="rounded-3xl bg-white p-8 shadow-xl">
+          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl">
             <h3 className="text-2xl font-bold text-black">
               Can I use this for driveways?
             </h3>
@@ -281,7 +281,7 @@ export default function PaverCalculator() {
             </p>
           </div>
 
-          <div className="rounded-3xl bg-white p-8 shadow-xl">
+          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl">
             <h3 className="text-2xl font-bold text-black">
               Is this calculator free?
             </h3>
@@ -296,53 +296,7 @@ export default function PaverCalculator() {
         </div>
       </section>
 
-      {/* RELATED */}
-      <section className="mx-auto max-w-5xl px-6 pb-20">
-        <h2 className="text-4xl font-extrabold text-black">
-          Related Calculators
-        </h2>
-
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          <a
-            href="/tile-calculator"
-            className="rounded-3xl bg-white p-6 shadow-xl transition hover:-translate-y-2"
-          >
-            <h3 className="text-2xl font-bold text-black">
-              Tile Calculator
-            </h3>
-
-            <p className="mt-3 text-gray-600">
-              Estimate tiles needed instantly.
-            </p>
-          </a>
-
-          <a
-            href="/flooring-calculator"
-            className="rounded-3xl bg-white p-6 shadow-xl transition hover:-translate-y-2"
-          >
-            <h3 className="text-2xl font-bold text-black">
-              Flooring Calculator
-            </h3>
-
-            <p className="mt-3 text-gray-600">
-              Calculate flooring area and cost.
-            </p>
-          </a>
-
-          <a
-            href="/concrete-calculator"
-            className="rounded-3xl bg-white p-6 shadow-xl transition hover:-translate-y-2"
-          >
-            <h3 className="text-2xl font-bold text-black">
-              Concrete Calculator
-            </h3>
-
-            <p className="mt-3 text-gray-600">
-              Estimate concrete volume quickly.
-            </p>
-          </a>
-        </div>
-      </section>
+      <RelatedCalculators />
 
       <Footer />
     </main>

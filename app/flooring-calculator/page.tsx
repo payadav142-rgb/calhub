@@ -63,7 +63,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="min-h-screen bg-gray-100">
+    <main className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50">
       <Navbar />
 
       <section className="mx-auto max-w-2xl px-6 py-16">
@@ -81,7 +81,7 @@ export default function Page() {
       </section>
 
       <section className="mx-auto max-w-5xl px-6 pb-20">
-        <div className="rounded-3xl bg-white p-8 shadow-xl">
+        <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl">
           <h2 className="text-3xl font-bold text-black">
             Flooring Cost Formula
           </h2>
@@ -93,7 +93,7 @@ export default function Page() {
             cost per square foot.
           </p>
 
-          <div className="mt-6 rounded-2xl bg-gray-100 p-6">
+          <div className="mt-6 rounded-2xl border border-orange-100 bg-orange-50 p-6">
             <p className="text-2xl font-bold text-black">
               Area = Length × Width
             </p>
@@ -139,7 +139,7 @@ export default function Page() {
         </h2>
 
         <div className="mt-10 space-y-6">
-          <div className="rounded-3xl bg-white p-6 shadow-lg">
+          <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-lg">
             <h3 className="text-2xl font-bold text-black">
               What is a flooring calculator?
             </h3>
@@ -152,7 +152,7 @@ export default function Page() {
             </p>
           </div>
 
-          <div className="rounded-3xl bg-white p-6 shadow-lg">
+          <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-lg">
             <h3 className="text-2xl font-bold text-black">
               Can I use it for tiles?
             </h3>
@@ -164,7 +164,7 @@ export default function Page() {
             </p>
           </div>
 
-          <div className="rounded-3xl bg-white p-6 shadow-lg">
+          <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-lg">
             <h3 className="text-2xl font-bold text-black">
               Is this calculator free?
             </h3>

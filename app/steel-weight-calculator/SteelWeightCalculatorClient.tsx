@@ -6,7 +6,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 import CalculatorResult from "../components/CalculatorResult";
-
+import RelatedCalculators from "../components/RelatedCalculators";
 export default function SteelWeightCalculator() {
   const [diameter, setDiameter] =
     useState("");
@@ -35,7 +35,7 @@ export default function SteelWeightCalculator() {
   };
 
   return (
-    <main className="min-h-screen bg-gray-100">
+    <main className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50">
       <Navbar />
 
       {/* Calculator Section */}
@@ -49,7 +49,7 @@ export default function SteelWeightCalculator() {
           for construction projects.
         </p>
 
-        <div className="mt-8 rounded-2xl bg-white p-6 shadow-md">
+        <div className="mt-8 rounded-2xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-md">
 
           <div className="mb-4">
             <label className="block text-sm font-medium text-gray-700">
@@ -63,7 +63,7 @@ export default function SteelWeightCalculator() {
                 setDiameter(event.target.value)
               }
               placeholder="Enter diameter"
-              className="mt-2 w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-black outline-none focus:border-black focus:ring-2 focus:ring-black/10"
+              className="mt-2 w-full rounded-xl border border-gray-300 bg-gradient-to-br from-orange-50 via-white to-amber-50 px-4 py-3 text-black outline-none focus:border-black focus:ring-2 focus:ring-black/10"
             />
           </div>
 
@@ -79,13 +79,13 @@ export default function SteelWeightCalculator() {
                 setLength(event.target.value)
               }
               placeholder="Enter length"
-              className="mt-2 w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-black outline-none focus:border-black focus:ring-2 focus:ring-black/10"
+              className="mt-2 w-full rounded-xl border border-gray-300 bg-gradient-to-br from-orange-50 via-white to-amber-50 px-4 py-3 text-black outline-none focus:border-black focus:ring-2 focus:ring-black/10"
             />
           </div>
 
           <button
             onClick={calculateSteelWeight}
-            className="w-full rounded-xl bg-black py-3 text-white hover:bg-gray-800"
+            className="w-full rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 py-3 font-semibold text-white transition-all duration-300 hover:scale-[1.02]"
           >
             Calculate
           </button>
@@ -105,7 +105,7 @@ export default function SteelWeightCalculator() {
 
       {/* Formula Section */}
       <section className="mx-auto max-w-5xl px-6 pb-20">
-        <div className="rounded-3xl bg-white p-8 shadow-xl">
+        <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl">
           <h2 className="text-3xl font-bold text-black">
             Steel Weight Formula
           </h2>
@@ -115,7 +115,7 @@ export default function SteelWeightCalculator() {
             diameter and length.
           </p>
 
-          <div className="mt-6 rounded-2xl bg-gray-100 p-6">
+          <div className="mt-6 rounded-2xl border border-orange-100 bg-orange-50 p-6">
             <p className="text-2xl font-bold text-black">
               Steel Weight =
               (D² × L) ÷ 162
@@ -166,7 +166,7 @@ export default function SteelWeightCalculator() {
         </h2>
 
         <div className="mt-10 space-y-6">
-          <div className="rounded-3xl bg-white p-6 shadow-lg">
+          <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-lg">
             <h3 className="text-2xl font-bold text-black">
               What is steel bar weight?
             </h3>
@@ -178,7 +178,7 @@ export default function SteelWeightCalculator() {
             </p>
           </div>
 
-          <div className="rounded-3xl bg-white p-6 shadow-lg">
+          <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-lg">
             <h3 className="text-2xl font-bold text-black">
               Why divide by 162?
             </h3>
@@ -190,7 +190,7 @@ export default function SteelWeightCalculator() {
             </p>
           </div>
 
-          <div className="rounded-3xl bg-white p-6 shadow-lg">
+          <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-lg">
             <h3 className="text-2xl font-bold text-black">
               Is this calculator free?
             </h3>
@@ -204,54 +204,7 @@ export default function SteelWeightCalculator() {
         </div>
       </section>
 
-      {/* Related Calculators */}
-      <section className="mx-auto max-w-5xl px-6 pb-20">
-        <h2 className="text-4xl font-extrabold text-black">
-          Related Calculators
-        </h2>
-
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          <a
-            href="/cement-calculator"
-            className="rounded-3xl bg-white p-6 shadow-xl transition hover:-translate-y-2"
-          >
-            <h3 className="text-2xl font-bold text-black">
-              Cement Calculator
-            </h3>
-
-            <p className="mt-3 text-gray-600">
-              Estimate cement quantity easily.
-            </p>
-          </a>
-
-          <a
-            href="/concrete-calculator"
-            className="rounded-3xl bg-white p-6 shadow-xl transition hover:-translate-y-2"
-          >
-            <h3 className="text-2xl font-bold text-black">
-              Concrete Calculator
-            </h3>
-
-            <p className="mt-3 text-gray-600">
-              Calculate concrete volume quickly.
-            </p>
-          </a>
-
-          <a
-            href="/brick-calculator"
-            className="rounded-3xl bg-white p-6 shadow-xl transition hover:-translate-y-2"
-          >
-            <h3 className="text-2xl font-bold text-black">
-              Brick Calculator
-            </h3>
-
-            <p className="mt-3 text-gray-600">
-              Estimate bricks required instantly.
-            </p>
-          </a>
-        </div>
-      </section>
-
+      <RelatedCalculators />
       <Footer />
     </main>
   );

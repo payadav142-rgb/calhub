@@ -3,24 +3,15 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import RelatedCalculators from "../components/RelatedCalculators";
 
 export default function ConstructionCostCalculator() {
-  const [area, setArea] =
-    useState("");
-
-  const [
-    costPerSqft,
-    setCostPerSqft,
-  ] = useState("");
-
-  const [result, setResult] =
-    useState<number | null>(null);
+  const [area, setArea] = useState("");
+  const [costPerSqft, setCostPerSqft] = useState("");
+  const [result, setResult] = useState<number | null>(null);
 
   const calculateCost = () => {
-    const totalCost =
-      parseFloat(area) *
-      parseFloat(costPerSqft);
-
+    const totalCost = parseFloat(area) * parseFloat(costPerSqft);
     setResult(totalCost);
   };
 
@@ -34,25 +25,21 @@ export default function ConstructionCostCalculator() {
           <h1 className="text-4xl font-bold text-gray-900 md:text-5xl">
             Construction Cost Calculator
           </h1>
-
           <p className="mt-4 text-lg text-gray-600">
-            Estimate total construction cost for
-            your building project instantly.
+            Estimate total construction cost for your building project instantly.
           </p>
         </div>
 
-        <div className="mt-10 rounded-3xl bg-white p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
+        {/* FIXED: Solid Warm Gradient Applied Here */}
+        <div className="mt-10 rounded-3xl bg-gradient-to-br from-orange-100 via-white to-amber-100 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
           <div className="mb-5">
             <label className="mb-2 block font-medium text-gray-700">
               Area (sq ft)
             </label>
-
             <input
               type="number"
               value={area}
-              onChange={(e) =>
-                setArea(e.target.value)
-              }
+              onChange={(e) => setArea(e.target.value)}
               className="w-full rounded-2xl border border-orange-200 p-3 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
               placeholder="Enter total area"
             />
@@ -62,15 +49,10 @@ export default function ConstructionCostCalculator() {
             <label className="mb-2 block font-medium text-gray-700">
               Cost Per Sq Ft
             </label>
-
             <input
               type="number"
               value={costPerSqft}
-              onChange={(e) =>
-                setCostPerSqft(
-                  e.target.value
-                )
-              }
+              onChange={(e) => setCostPerSqft(e.target.value)}
               className="w-full rounded-2xl border border-orange-200 p-3 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
               placeholder="Enter cost per sq ft"
             />
@@ -84,10 +66,9 @@ export default function ConstructionCostCalculator() {
           </button>
 
           {result !== null && (
-            <div className="mt-6 rounded-2xl border border-orange-200 bg-orange-50 p-5">
+            <div className="mt-6 rounded-2xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-5 shadow-inner">
               <h2 className="text-2xl font-bold text-gray-900">
-                Estimated Cost: ₹
-                {result.toLocaleString()}
+                Estimated Cost: ₹{result.toLocaleString()}
               </h2>
             </div>
           )}
@@ -96,103 +77,67 @@ export default function ConstructionCostCalculator() {
 
       {/* Formula Section */}
       <section className="mx-auto max-w-5xl px-6 pb-20">
-        <div className="rounded-3xl bg-white p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
+        <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
           <h2 className="text-3xl font-bold text-gray-900">
             Construction Cost Formula
           </h2>
-
           <p className="mt-4 text-lg leading-8 text-gray-600">
-            Construction cost is estimated by
-            multiplying the total construction
-            area by the cost per square foot.
-            This method is widely used during
-            project planning, budgeting, and
-            feasibility analysis.
+            Construction cost is estimated by multiplying the total construction
+            area by the cost per square foot. This method is widely used during
+            project planning, budgeting, and feasibility analysis.
           </p>
-
           <div className="mt-6 rounded-2xl border border-orange-100 bg-orange-50 p-6">
             <p className="text-2xl font-bold text-orange-600">
               Total Cost = Area × Cost Per Sq Ft
             </p>
           </div>
-
           <p className="mt-6 leading-8 text-gray-600">
-            Builders, contractors, architects,
-            engineers, and homeowners use
-            construction cost calculations to
-            estimate project budgets before
-            starting residential or commercial
-            developments.
+            Builders, contractors, architects, engineers, and homeowners use
+            construction cost calculations to estimate project budgets before
+            starting residential or commercial developments.
           </p>
-
           <p className="mt-4 leading-8 text-gray-600">
-            Accurate construction cost estimation
-            helps reduce budget overruns,
-            improve resource planning, and
-            simplify project management.
+            Accurate construction cost estimation helps reduce budget overruns,
+            improve resource planning, and simplify project management.
           </p>
         </div>
       </section>
 
       {/* How To Use */}
       <section className="mx-auto max-w-5xl px-6 pb-20">
-        <div className="rounded-3xl bg-white p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
+        <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
           <h2 className="text-3xl font-bold text-gray-900">
             How To Use This Construction Cost Calculator
           </h2>
-
           <div className="mt-6 space-y-4 text-lg text-gray-600">
-            <p>
-              1. Enter total construction area
-              in square feet.
-            </p>
-
-            <p>
-              2. Enter cost per square foot.
-            </p>
-
-            <p>
-              3. Click the calculate button.
-            </p>
-
-            <p>
-              4. Instantly get the estimated
-              construction cost.
-            </p>
+            <p>1. Enter total construction area in square feet.</p>
+            <p>2. Enter cost per square foot.</p>
+            <p>3. Click the calculate button.</p>
+            <p>4. Instantly get the estimated construction cost.</p>
           </div>
         </div>
       </section>
 
       {/* Example Calculation */}
       <section className="mx-auto max-w-5xl px-6 pb-20">
-        <div className="rounded-3xl bg-white p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
+        <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
           <h2 className="text-3xl font-bold text-gray-900">
             Example Construction Cost Calculation
           </h2>
-
           <p className="mt-4 leading-8 text-gray-600">
-            If the construction area is
-            2,000 sq ft and the construction
-            cost is ₹2,000 per sq ft:
+            If the construction area is 2,000 sq ft and the construction cost is ₹2,000 per sq ft:
           </p>
-
           <div className="mt-6 rounded-2xl border border-orange-100 bg-orange-50 p-6">
             <p className="text-2xl font-bold text-orange-600">
-              Total Cost =
-              2,000 × 2,000
+              Total Cost = 2,000 × 2,000
             </p>
-
             <p className="mt-4 text-xl font-semibold text-gray-700">
-              Estimated Cost =
-              ₹40,00,000
+              Estimated Cost = ₹40,00,000
             </p>
           </div>
-
           <p className="mt-6 leading-8 text-gray-600">
-            Actual construction costs may vary
-            depending on material quality,
-            labor charges, location, finishing
-            standards, and project complexity.
+            Actual construction costs may vary depending on material quality,
+            labor charges, location, finishing standards, and project complexity.
           </p>
         </div>
       </section>
@@ -204,94 +149,42 @@ export default function ConstructionCostCalculator() {
         </h2>
 
         <div className="mt-10 space-y-6">
-          <div className="rounded-3xl border border-orange-100 bg-white p-6 shadow-xl">
+          {/* FIXED: FAQ Card 1 */}
+          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-100 via-white to-amber-100 p-6 shadow-xl">
             <h3 className="text-2xl font-bold text-gray-900">
               What is a construction cost calculator?
             </h3>
-
             <p className="mt-3 leading-7 text-gray-600">
-              A construction cost calculator
-              helps estimate the total budget
-              required for a building project
-              based on area and construction rate.
+              A construction cost calculator helps estimate the total budget
+              required for a building project based on area and construction rate.
             </p>
           </div>
 
-          <div className="rounded-3xl border border-orange-100 bg-white p-6 shadow-xl">
+          {/* FIXED: FAQ Card 2 */}
+          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-100 via-white to-amber-100 p-6 shadow-xl">
             <h3 className="text-2xl font-bold text-gray-900">
               Can I use this for house construction?
             </h3>
-
             <p className="mt-3 leading-7 text-gray-600">
-              Yes, this calculator is useful
-              for houses, apartments,
-              commercial buildings, and
-              renovation projects.
+              Yes, this calculator is useful for houses, apartments,
+              commercial buildings, and renovation projects.
             </p>
           </div>
 
-          <div className="rounded-3xl border border-orange-100 bg-white p-6 shadow-xl">
+          {/* FIXED: FAQ Card 3 */}
+          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-100 via-white to-amber-100 p-6 shadow-xl">
             <h3 className="text-2xl font-bold text-gray-900">
               Is this calculator free?
             </h3>
-
             <p className="mt-3 leading-7 text-gray-600">
-              Yes, all construction calculators
-              available on Calculator Hub are
+              Yes, all construction calculators available on Calculator Hub are
               completely free to use.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Related Calculators */}
-      <section className="mx-auto max-w-5xl px-6 pb-20">
-        <h2 className="text-4xl font-extrabold text-gray-900">
-          Related Calculators
-        </h2>
-
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          <a
-            href="/area-calculator"
-            className="rounded-3xl border border-orange-100 bg-white p-6 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-orange-400 hover:shadow-2xl"
-          >
-            <h3 className="text-2xl font-bold text-gray-900">
-              Area Calculator
-            </h3>
-
-            <p className="mt-3 text-gray-600">
-              Calculate construction area quickly.
-            </p>
-          </a>
-
-          <a
-            href="/cement-calculator"
-            className="rounded-3xl border border-orange-100 bg-white p-6 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-orange-400 hover:shadow-2xl"
-          >
-            <h3 className="text-2xl font-bold text-gray-900">
-              Cement Calculator
-            </h3>
-
-            <p className="mt-3 text-gray-600">
-              Estimate cement quantity easily.
-            </p>
-          </a>
-
-          <a
-            href="/concrete-calculator"
-            className="rounded-3xl border border-orange-100 bg-white p-6 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-orange-400 hover:shadow-2xl"
-          >
-            <h3 className="text-2xl font-bold text-gray-900">
-              Concrete Calculator
-            </h3>
-
-            <p className="mt-3 text-gray-600">
-              Calculate concrete volume instantly.
-            </p>
-          </a>
-        </div>
-      </section>
-
+      <RelatedCalculators />
       <Footer />
     </main>
   );

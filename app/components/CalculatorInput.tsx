@@ -25,7 +25,7 @@ export default function CalculatorInput({
         onChange={(e) =>
           setValue(e.target.value)
         }
-        className="w-full rounded-xl border p-3"
+        className="w-full rounded-2xl border border-orange-200 p-3 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
         placeholder={placeholder}
       />
     </div>

@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 
 import CalculatorInput from "../components/CalculatorInput";
 import CalculatorResult from "../components/CalculatorResult";
-
+import RelatedCalculators from "../components/RelatedCalculators";
 export default function RoofingCalculator() {
   const [length, setLength] =
     useState("");
@@ -46,7 +46,7 @@ export default function RoofingCalculator() {
   };
 
   return (
-    <main className="min-h-screen bg-gray-100">
+    <main className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50">
       <Navbar />
 
       {/* Calculator Section */}
@@ -61,7 +61,7 @@ export default function RoofingCalculator() {
           project.
         </p>
 
-        <div className="mt-8 rounded-2xl bg-white p-6 shadow-md">
+        <div className="mt-8 rounded-2xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-md">
 
           <CalculatorInput
             label="Roof Length (ft)"
@@ -86,7 +86,7 @@ export default function RoofingCalculator() {
 
           <button
             onClick={calculateRoofing}
-            className="w-full rounded-xl bg-black py-3 text-white hover:bg-gray-800"
+            className="w-full rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 py-3 font-semibold text-white transition-all duration-300 hover:scale-[1.02]"
           >
             Calculate
           </button>
@@ -114,7 +114,7 @@ export default function RoofingCalculator() {
 
       {/* SEO Section */}
       <section className="mx-auto max-w-4xl px-6 pb-16">
-        <div className="rounded-2xl bg-white p-8 shadow-md">
+        <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
           <h2 className="text-3xl font-bold text-black">
             Roofing Cost Estimation
           </h2>
@@ -149,7 +149,7 @@ export default function RoofingCalculator() {
 
       {/* FAQ */}
       <section className="mx-auto max-w-4xl px-6 pb-20">
-        <div className="rounded-2xl bg-white p-8 shadow-md">
+        <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
           <h2 className="text-3xl font-bold text-black">
             Frequently Asked Questions
           </h2>
@@ -195,7 +195,7 @@ export default function RoofingCalculator() {
           </div>
         </div>
       </section>
-
+<RelatedCalculators />
       <Footer />
     </main>
   );

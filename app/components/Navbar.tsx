@@ -9,7 +9,7 @@ export default function Navbar() {
     useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-orange-100 bg-white/90 backdrop-blur-xl shadow-sm">
+    <nav className="sticky top-0 z-50 border-b border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50/90 backdrop-blur-xl shadow-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
 
         {/* Logo */}
@@ -74,7 +74,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="border-t border-orange-100 bg-white px-6 py-6 md:hidden">
+        <div className="border-t border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 px-6 py-6 md:hidden">
           <div className="flex flex-col gap-5">
 
             <Link

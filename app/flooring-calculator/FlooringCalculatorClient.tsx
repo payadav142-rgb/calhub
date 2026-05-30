@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-
+import RelatedCalculators from "../components/RelatedCalculators";
 export default function FlooringCalculatorClient() {
   const [roomLength, setRoomLength] = useState("");
   const [roomWidth, setRoomWidth] = useState("");
@@ -34,7 +34,7 @@ export default function FlooringCalculatorClient() {
   };
 
   return (
-    <div className="rounded-2xl bg-white p-6 shadow-md">
+    <div className="rounded-2xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-md">
       <h2 className="mb-4 text-2xl font-bold">
         Flooring Calculator
       </h2>
@@ -71,7 +71,7 @@ export default function FlooringCalculatorClient() {
 
       <button
         onClick={calculateFlooring}
-        className="w-full rounded-xl bg-black py-3 text-white hover:bg-gray-800"
+        className="w-full rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 py-3 font-semibold text-white transition-all duration-300 hover:scale-[1.02]"
       >
         Calculate
       </button>
@@ -92,4 +92,5 @@ export default function FlooringCalculatorClient() {
         )}
     </div>
   );
+  <RelatedCalculators />
 }

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-
+import RelatedCalculators from "../components/RelatedCalculators";
 export default function AreaCalculatorClient() {
   const [length, setLength] =
     useState("");
@@ -39,7 +39,7 @@ export default function AreaCalculatorClient() {
           </p>
         </div>
 
-        <div className="mt-10 rounded-3xl bg-white p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
+        <div className="mt-10 rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
           <div className="mb-5">
             <label className="mb-2 block font-medium text-gray-700">
               Length (ft)
@@ -80,7 +80,7 @@ export default function AreaCalculatorClient() {
           </button>
 
           {result !== null && (
-            <div className="mt-6 rounded-2xl border border-orange-200 bg-orange-50 p-5">
+            <div className="mt-6 rounded-2xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-5 shadow-inner">
               <h2 className="text-2xl font-bold text-gray-900">
                 Total Area:{" "}
                 {result.toFixed(2)} sq ft
@@ -91,7 +91,7 @@ export default function AreaCalculatorClient() {
       </section>
 
       <section className="mx-auto max-w-4xl px-6 pb-16">
-        <div className="rounded-3xl bg-white p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
+        <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
           <h2 className="text-3xl font-bold text-gray-900">
             Area Calculation Formula
           </h2>
@@ -126,7 +126,7 @@ export default function AreaCalculatorClient() {
       </section>
 
       <section className="mx-auto max-w-4xl px-6 pb-16">
-        <div className="rounded-3xl bg-white p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
+        <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
           <h2 className="text-3xl font-bold text-gray-900">
             How to Use This Area Calculator
           </h2>
@@ -156,7 +156,7 @@ export default function AreaCalculatorClient() {
       </section>
 
       <section className="mx-auto max-w-4xl px-6 pb-20">
-        <div className="rounded-3xl bg-white p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
+        <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
           <h2 className="text-3xl font-bold text-gray-900">
             Frequently Asked Questions
           </h2>
@@ -203,7 +203,7 @@ export default function AreaCalculatorClient() {
       </section>
 
       <section className="mx-auto max-w-4xl px-6 pb-20">
-        <div className="rounded-3xl bg-white p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
+        <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
           <h2 className="text-3xl font-bold text-gray-900">
             Related Calculators
           </h2>
@@ -232,7 +232,7 @@ export default function AreaCalculatorClient() {
           </div>
         </div>
       </section>
-
+<RelatedCalculators />
       <Footer />
     </main>
   );

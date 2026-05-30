@@ -38,11 +38,11 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-gray-100">
+    <main className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50">
       <Navbar />
 
       <section className="mx-auto max-w-4xl px-6 py-20">
-        <div className="rounded-3xl bg-white p-10 shadow-xl">
+        <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-10 shadow-xl">
           <h1 className="text-5xl font-extrabold text-black">
             Contact Us
           </h1>
@@ -55,7 +55,7 @@ export default function ContactPage() {
           </p>
 
           <div className="mt-10 space-y-6">
-            <div className="rounded-2xl bg-gray-100 p-6">
+            <div className="rounded-2xl border border-orange-100 bg-orange-50 p-6">
               <h2 className="text-2xl font-bold text-black">
                 Email
               </h2>
@@ -65,7 +65,7 @@ export default function ContactPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-gray-100 p-6">
+            <div className="rounded-2xl border border-orange-100 bg-orange-50 p-6">
               <h2 className="text-2xl font-bold text-black">
                 Working Hours
               </h2>
@@ -75,7 +75,7 @@ export default function ContactPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-gray-100 p-6">
+            <div className="rounded-2xl border border-orange-100 bg-orange-50 p-6">
               <h2 className="text-2xl font-bold text-black">
                 Support
               </h2>
@@ -86,7 +86,7 @@ export default function ContactPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-gray-100 p-6">
+            <div className="rounded-2xl border border-orange-100 bg-orange-50 p-6">
               <h2 className="text-2xl font-bold text-black">
                 Business Inquiries
               </h2>

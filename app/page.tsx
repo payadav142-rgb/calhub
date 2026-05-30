@@ -34,7 +34,7 @@ export default function Home() {
   );
 
   return (
-    <main className="min-h-screen bg-gray-100">
+    <main className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50">
       <Navbar />
 
       {/* Hero Section */}
@@ -78,7 +78,7 @@ export default function Home() {
             placeholder="Search calculators..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full rounded-full border border-orange-200 bg-white p-5 text-lg shadow-xl outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
+            className="w-full rounded-full border border-orange-200 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-5 text-lg shadow-xl outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
           />
         </div>
       </section>
@@ -93,7 +93,7 @@ export default function Home() {
 
           <div className="mt-8 flex flex-wrap gap-4">
             {["Brick Calculation","Cement Estimation","Steel Weight","Concrete Volume","Paint Area"].map(tag => (
-              <span key={tag} className="rounded-full bg-white/10 px-5 py-3 text-sm">{tag}</span>
+              <span key={tag} className="rounded-full bg-gradient-to-br from-orange-50 via-white to-amber-50/10 px-5 py-3 text-sm">{tag}</span>
             ))}
           </div>
         </div>
@@ -112,7 +112,7 @@ export default function Home() {
           ].map((t) => (
             <div
   key={t.name}
-  className="rounded-3xl bg-white p-8 shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+  className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
 >
               <p className="leading-7 text-gray-600">{t.text}</p>
               <h3 className="mt-6 text-xl font-bold text-black">{t.name}</h3>
@@ -144,7 +144,7 @@ export default function Home() {
             <h2 className="text-5xl font-extrabold">19+</h2>
             <p className="mt-3 text-lg text-gray-100">Construction Calculators</p>
           </div>
-          <div className="rounded-3xl bg-white border-2 border-orange-200 p-10 text-center shadow-xl">
+          <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 border-2 border-orange-200 p-10 text-center shadow-xl">
             <h2 className="text-5xl font-extrabold text-black">100%</h2>
             <p className="mt-3 text-lg text-gray-600">Free To Use</p>
           </div>
@@ -157,7 +157,7 @@ export default function Home() {
 
       {/* About Section */}
       <section className="px-6 pb-20">
-        <div className="rounded-2xl bg-white p-8 shadow-md">
+        <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
           <h2 className="text-3xl font-bold text-black">About Calculator Hub</h2>
           <p className="mt-4 text-gray-600">Calculator Hub provides free and easy-to-use construction calculators for builders, contractors, engineers, and homeowners. Calculate bricks, cement, concrete, paint, tiles, and more instantly.</p>
         </div>
@@ -165,7 +165,7 @@ export default function Home() {
 
       {/* SEO Content Section */}
       <section className="px-6 pb-20">
-        <div className="rounded-3xl bg-white p-10 shadow-xl">
+        <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-10 shadow-xl">
           <h2 className="text-4xl font-extrabold text-black">Free Online Construction Calculators</h2>
           <p className="mt-6 leading-8 text-gray-600">
             Calculator Hub provides professional construction calculators for builders, engineers, contractors, architects, and homeowners. Easily calculate bricks, cement, concrete, plaster, paint, steel weight, sand, gravel, and tile quantity instantly.
@@ -187,7 +187,7 @@ export default function Home() {
           ].map((item) => (
             <div
   key={item.q}
-  className="rounded-3xl bg-white p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+  className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
 >
               <h3 className="text-2xl font-bold text-black">{item.q}</h3>
               <p className="mt-3 leading-7 text-gray-600">{item.a}</p>

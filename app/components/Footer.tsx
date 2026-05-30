@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-orange-100 bg-white/90 backdrop-blur-xl">
+    <footer className="border-t border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50/90 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl flex-col gap-10 px-6 py-12 md:flex-row md:items-start md:justify-between">
 
         {/* Brand */}

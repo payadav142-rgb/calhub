@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-
+import RelatedCalculators from "../components/RelatedCalculators";
 export default function DrywallCalculator() {
   const [wallLength, setWallLength] =
     useState("");
@@ -29,7 +29,7 @@ export default function DrywallCalculator() {
   };
 
   return (
-    <main className="min-h-screen bg-gray-100">
+    <main className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50">
       <Navbar />
 
       {/* Calculator Section */}
@@ -43,7 +43,7 @@ export default function DrywallCalculator() {
           walls and ceiling construction projects.
         </p>
 
-        <div className="mt-8 rounded-2xl bg-white p-6 shadow-md">
+        <div className="mt-8 rounded-2xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-md">
           <div className="mb-4">
             <label className="mb-2 block text-black">
               Wall Length (ft)
@@ -55,7 +55,7 @@ export default function DrywallCalculator() {
               onChange={(e) =>
                 setWallLength(e.target.value)
               }
-              className="w-full rounded-xl border p-3"
+              className="w-full rounded-2xl border border-orange-200 p-3 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
               placeholder="Enter wall length"
             />
           </div>
@@ -71,7 +71,7 @@ export default function DrywallCalculator() {
               onChange={(e) =>
                 setWallHeight(e.target.value)
               }
-              className="w-full rounded-xl border p-3"
+              className="w-full rounded-2xl border border-orange-200 p-3 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
               placeholder="Enter wall height"
             />
           </div>
@@ -87,20 +87,20 @@ export default function DrywallCalculator() {
               onChange={(e) =>
                 setSheetArea(e.target.value)
               }
-              className="w-full rounded-xl border p-3"
+              className="w-full rounded-2xl border border-orange-200 p-3 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
               placeholder="Enter drywall sheet area"
             />
           </div>
 
           <button
             onClick={calculateDrywall}
-            className="w-full rounded-xl bg-black py-3 text-white hover:bg-gray-800"
+            className="w-full rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 py-3 font-semibold text-white transition-all duration-300 hover:scale-[1.02]"
           >
             Calculate
           </button>
 
           {result !== null && (
-            <div className="mt-6 rounded-xl bg-gray-100 p-4">
+            <div className="mt-6 rounded-2xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-5 shadow-inner">
               <h2 className="text-2xl font-bold text-black">
                 Drywall Sheets Needed: {result}
               </h2>
@@ -111,7 +111,7 @@ export default function DrywallCalculator() {
 
       {/* Formula Section */}
       <section className="mx-auto max-w-5xl px-6 pb-20">
-        <div className="rounded-3xl bg-white p-8 shadow-xl">
+        <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl">
           <h2 className="text-3xl font-bold text-black">
             Drywall Calculation Formula
           </h2>
@@ -126,7 +126,7 @@ export default function DrywallCalculator() {
             commercial construction projects.
           </p>
 
-          <div className="mt-6 rounded-2xl bg-gray-100 p-6">
+          <div className="mt-6 rounded-2xl border border-orange-100 bg-orange-50 p-6">
             <p className="text-2xl font-bold text-black">
               Drywall Sheets = Wall Area ÷ Sheet Area
             </p>
@@ -176,7 +176,7 @@ export default function DrywallCalculator() {
 
       {/* Example Calculation */}
       <section className="mx-auto max-w-5xl px-6 pb-20">
-        <div className="rounded-3xl bg-white p-8 shadow-xl">
+        <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl">
           <h2 className="text-3xl font-bold text-black">
             Example Drywall Calculation
           </h2>
@@ -187,7 +187,7 @@ export default function DrywallCalculator() {
             32 sq ft:
           </p>
 
-          <div className="mt-6 rounded-2xl bg-gray-100 p-6">
+          <div className="mt-6 rounded-2xl border border-orange-100 bg-orange-50 p-6">
             <p className="text-2xl font-bold text-black">
               Wall Area = 20 × 10 = 200 sq ft
             </p>
@@ -210,7 +210,7 @@ export default function DrywallCalculator() {
         </h2>
 
         <div className="mt-10 space-y-6">
-          <div className="rounded-3xl bg-white p-6 shadow-lg">
+          <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-lg">
             <h3 className="text-2xl font-bold text-black">
               What is a drywall calculator?
             </h3>
@@ -222,7 +222,7 @@ export default function DrywallCalculator() {
             </p>
           </div>
 
-          <div className="rounded-3xl bg-white p-6 shadow-lg">
+          <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-lg">
             <h3 className="text-2xl font-bold text-black">
               Can I use this for ceilings?
             </h3>
@@ -234,7 +234,7 @@ export default function DrywallCalculator() {
             </p>
           </div>
 
-          <div className="rounded-3xl bg-white p-6 shadow-lg">
+          <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-lg">
             <h3 className="text-2xl font-bold text-black">
               Is this calculator free?
             </h3>
@@ -249,53 +249,7 @@ export default function DrywallCalculator() {
         </div>
       </section>
 
-      {/* Related Calculators */}
-<section className="mx-auto max-w-5xl px-6 pb-20">
-  <h2 className="text-4xl font-extrabold text-black">
-    Related Calculators
-  </h2>
-
-  <div className="mt-10 grid gap-6 md:grid-cols-3">
-    <a
-      href="/area-calculator"
-      className="rounded-3xl bg-white p-6 shadow-xl transition hover:-translate-y-2"
-    >
-      <h3 className="text-2xl font-bold text-black">
-        Area Calculator
-      </h3>
-
-      <p className="mt-3 text-gray-600">
-        Calculate wall area instantly.
-      </p>
-    </a>
-
-    <a
-      href="/construction-cost-calculator"
-      className="rounded-3xl bg-white p-6 shadow-xl transition hover:-translate-y-2"
-    >
-      <h3 className="text-2xl font-bold text-black">
-        Construction Cost Calculator
-      </h3>
-
-      <p className="mt-3 text-gray-600">
-        Estimate project cost quickly.
-      </p>
-    </a>
-
-    <a
-      href="/paint-calculator"
-      className="rounded-3xl bg-white p-6 shadow-xl transition hover:-translate-y-2"
-    >
-      <h3 className="text-2xl font-bold text-black">
-        Paint Calculator
-      </h3>
-
-      <p className="mt-3 text-gray-600">
-        Estimate paint quantity easily.
-      </p>
-    </a>
-  </div>
-</section>
+      <RelatedCalculators />
 
       <Footer />
     </main>

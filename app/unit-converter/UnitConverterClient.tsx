@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-
+import RelatedCalculators from "../components/RelatedCalculators";
 export default function UnitConverter() {
   const [meters, setMeters] =
     useState("");
@@ -19,7 +19,7 @@ export default function UnitConverter() {
   };
 
   return (
-    <main className="min-h-screen bg-gray-100">
+    <main className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50">
       <Navbar />
 
       <section className="mx-auto max-w-2xl px-6 py-16">
@@ -32,7 +32,7 @@ export default function UnitConverter() {
           instantly and accurately.
         </p>
 
-        <div className="mt-8 rounded-2xl bg-white p-6 shadow-md">
+        <div className="mt-8 rounded-2xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-md">
           <div className="mb-4">
             <label className="mb-2 block text-black">
               Meters
@@ -44,20 +44,20 @@ export default function UnitConverter() {
               onChange={(e) =>
                 setMeters(e.target.value)
               }
-              className="w-full rounded-xl border p-3"
+              className="w-full rounded-2xl border border-orange-200 p-3 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
               placeholder="Enter meters"
             />
           </div>
 
           <button
             onClick={convertUnits}
-            className="w-full rounded-xl bg-black py-3 text-white hover:bg-gray-800"
+            className="w-full rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 py-3 font-semibold text-white transition-all duration-300 hover:scale-[1.02]"
           >
             Convert
           </button>
 
           {feet !== null && (
-            <div className="mt-6 rounded-xl bg-gray-100 p-4">
+            <div className="mt-6 rounded-2xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-5 shadow-inner">
               <h2 className="text-2xl font-bold text-black">
                 Feet: {feet.toFixed(2)} ft
               </h2>
@@ -65,10 +65,9 @@ export default function UnitConverter() {
           )}
         </div>
       </section>
-
       {/* SEO */}
       <section className="mx-auto max-w-4xl px-6 pb-16">
-        <div className="rounded-2xl bg-white p-8 shadow-md">
+        <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
           <h2 className="text-3xl font-bold text-black">
             Construction Unit Conversion
           </h2>
@@ -98,7 +97,7 @@ export default function UnitConverter() {
 
       {/* FAQ */}
       <section className="mx-auto max-w-4xl px-6 pb-20">
-        <div className="rounded-2xl bg-white p-8 shadow-md">
+        <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
           <h2 className="text-3xl font-bold text-black">
             Frequently Asked Questions
           </h2>
@@ -141,7 +140,7 @@ export default function UnitConverter() {
           </div>
         </div>
       </section>
-
+<RelatedCalculators />
       <Footer />
     </main>
   );

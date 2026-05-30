@@ -5,9 +5,9 @@ import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-import CalculatorInput from "../components/CalculatorInput";
-import CalculatorResult from "../components/CalculatorResult";
 
+import CalculatorResult from "../components/CalculatorResult";
+import RelatedCalculators from "../components/RelatedCalculators";
 export default function SandCalculator() {
   const [length, setLength] =
     useState("");
@@ -39,7 +39,7 @@ export default function SandCalculator() {
   };
 
   return (
-    <main className="min-h-screen bg-gray-100">
+    <main className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50">
       <Navbar />
 
       {/* Calculator Section */}
@@ -53,7 +53,7 @@ export default function SandCalculator() {
           construction project.
         </p>
 
-        <div className="mt-8 rounded-2xl bg-white p-6 shadow-md">
+        <div className="mt-8 rounded-2xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-md">
           <div className="mb-4">
             <label className="mb-2 block text-sm font-medium text-gray-900">
               Length (ft)
@@ -98,7 +98,7 @@ export default function SandCalculator() {
 
           <button
             onClick={calculateSand}
-            className="w-full rounded-xl bg-black py-3 text-white hover:bg-gray-800"
+            className="w-full rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 py-3 font-semibold text-white transition-all duration-300 hover:scale-[1.02]"
           >
             Calculate
           </button>
@@ -116,7 +116,7 @@ export default function SandCalculator() {
 
       {/* Formula Section */}
       <section className="mx-auto max-w-5xl px-6 pb-20">
-        <div className="rounded-3xl bg-white p-8 shadow-xl">
+        <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl">
           <h2 className="text-3xl font-bold text-black">
             Sand Calculation Formula
           </h2>
@@ -126,7 +126,7 @@ export default function SandCalculator() {
             construction dimensions.
           </p>
 
-          <div className="mt-6 rounded-2xl bg-gray-100 p-6">
+          <div className="mt-6 rounded-2xl border border-orange-100 bg-orange-50 p-6">
             <p className="text-2xl font-bold text-black">
               Sand Volume =
               Length × Width × Depth
@@ -177,7 +177,7 @@ export default function SandCalculator() {
         </h2>
 
         <div className="mt-10 space-y-6">
-          <div className="rounded-3xl bg-white p-6 shadow-lg">
+          <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-lg">
             <h3 className="text-2xl font-bold text-black">
               How much sand do I need?
             </h3>
@@ -190,7 +190,7 @@ export default function SandCalculator() {
             </p>
           </div>
 
-          <div className="rounded-3xl bg-white p-6 shadow-lg">
+          <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-lg">
             <h3 className="text-2xl font-bold text-black">
               Can I use this for plaster work?
             </h3>
@@ -202,7 +202,7 @@ export default function SandCalculator() {
             </p>
           </div>
 
-          <div className="rounded-3xl bg-white p-6 shadow-lg">
+          <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-lg">
             <h3 className="text-2xl font-bold text-black">
               Is this calculator free?
             </h3>
@@ -216,53 +216,7 @@ export default function SandCalculator() {
         </div>
       </section>
 
-      {/* Related Calculators */}
-      <section className="mx-auto max-w-5xl px-6 pb-20">
-        <h2 className="text-4xl font-extrabold text-black">
-          Related Calculators
-        </h2>
-
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          <a
-            href="/cement-calculator"
-            className="rounded-3xl bg-white p-6 shadow-xl transition hover:-translate-y-2"
-          >
-            <h3 className="text-2xl font-bold text-black">
-              Cement Calculator
-            </h3>
-
-            <p className="mt-3 text-gray-600">
-              Estimate cement quantity easily.
-            </p>
-          </a>
-
-          <a
-            href="/concrete-calculator"
-            className="rounded-3xl bg-white p-6 shadow-xl transition hover:-translate-y-2"
-          >
-            <h3 className="text-2xl font-bold text-black">
-              Concrete Calculator
-            </h3>
-
-            <p className="mt-3 text-gray-600">
-              Calculate concrete volume quickly.
-            </p>
-          </a>
-
-          <a
-            href="/gravel-calculator"
-            className="rounded-3xl bg-white p-6 shadow-xl transition hover:-translate-y-2"
-          >
-            <h3 className="text-2xl font-bold text-black">
-              Gravel Calculator
-            </h3>
-
-            <p className="mt-3 text-gray-600">
-              Estimate gravel quantity easily.
-            </p>
-          </a>
-        </div>
-      </section>
+      <RelatedCalculators />
 
       <Footer />
     </main>

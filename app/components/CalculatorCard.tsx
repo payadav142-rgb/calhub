@@ -12,7 +12,7 @@ export default function CalculatorCard({
   link,
 }: CalculatorCardProps) {
   return (
-    <div className="group rounded-3xl border border-orange-100 bg-white p-7 shadow-lg transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-orange-100">
+    <div className="group rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-7 shadow-lg transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-orange-100">
 
       {/* Top Gradient Line */}
       <div className="mb-6 h-2 w-20 rounded-full bg-gradient-to-r from-orange-500 to-amber-400" />

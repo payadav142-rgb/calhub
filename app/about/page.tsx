@@ -37,11 +37,11 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-gray-100">
+    <main className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50">
       <Navbar />
 
       <section className="mx-auto max-w-5xl px-6 py-20">
-        <div className="rounded-3xl bg-white p-10 shadow-xl">
+        <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-10 shadow-xl">
           <h1 className="text-5xl font-extrabold text-black">
             About Calculator Hub
           </h1>
@@ -72,7 +72,7 @@ export default function AboutPage() {
           </p>
 
           <div className="mt-10 grid gap-6 md:grid-cols-3">
-            <div className="rounded-2xl bg-black p-8 text-white">
+            <div className="rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 p-8 text-white">
               <h2 className="text-4xl font-extrabold">19+</h2>
 
               <p className="mt-3 text-gray-300">
@@ -80,7 +80,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-gray-100 p-8">
+            <div className="rounded-2xl border border-orange-100 bg-orange-50 p-8">
               <h2 className="text-4xl font-extrabold text-black">
                 100%
               </h2>
@@ -90,7 +90,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="rounded-2xl bg-black p-8 text-white">
+            <div className="rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 p-8 text-white">
               <h2 className="text-4xl font-extrabold">24/7</h2>
 
               <p className="mt-3 text-gray-300">

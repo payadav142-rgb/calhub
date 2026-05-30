@@ -37,11 +37,11 @@ export const metadata: Metadata = {
 
 export default function DisclaimerPage() {
   return (
-    <main className="min-h-screen bg-gray-100">
+    <main className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50">
       <Navbar />
 
       <section className="mx-auto max-w-5xl px-6 py-20">
-        <div className="rounded-3xl bg-white p-10 shadow-xl">
+        <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-10 shadow-xl">
           <h1 className="text-5xl font-extrabold text-black">
             Disclaimer
           </h1>
