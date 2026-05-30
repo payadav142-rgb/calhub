@@ -98,6 +98,31 @@ export const metadata: Metadata = {
   },
 };
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      name: "Calculator Hub",
+      url: "https://calculator-hub-murex.vercel.app",
+      logo:
+        "https://calculator-hub-murex.vercel.app/og-image.jpg",
+    },
+    {
+      "@type": "WebSite",
+      name: "Calculator Hub",
+      url: "https://calculator-hub-murex.vercel.app",
+      potentialAction: {
+        "@type": "SearchAction",
+        target:
+          "https://calculator-hub-murex.vercel.app/?q={search_term_string}",
+        "query-input":
+          "required name=search_term_string",
+      },
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -105,7 +130,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              structuredData
+            ),
+          }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

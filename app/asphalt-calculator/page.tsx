@@ -1,201 +1,65 @@
-"use client";
+import type { Metadata } from "next";
+import AsphaltCalculatorClient from "./AsphaltCalculatorClient";
 
-"use client";
+export const metadata: Metadata = {
+  title:
+    "Asphalt Calculator | Free Asphalt Volume Calculator",
 
-import { useState } from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+  description:
+    "Calculate asphalt volume for roads, driveways, parking lots, and paving projects. Free online asphalt calculator for accurate material estimation.",
 
+  keywords: [
+    "asphalt calculator",
+    "asphalt volume calculator",
+    "paving calculator",
+    "driveway asphalt calculator",
+    "road construction calculator",
+    "asphalt estimation",
+  ],
 
+  alternates: {
+    canonical: "/asphalt-calculator",
+  },
 
-export default function AsphaltCalculator() {
-  const [length, setLength] =
-    useState("");
+  openGraph: {
+    title:
+      "Asphalt Calculator | Calculator Hub",
 
-  const [width, setWidth] =
-    useState("");
+    description:
+      "Free online asphalt calculator for paving, roads, driveways, and parking lots.",
 
-  const [thickness, setThickness] =
-    useState("");
+    url:
+      "https://calculator-hub-murex.vercel.app/asphalt-calculator",
 
-  const [result, setResult] =
-    useState<number | null>(null);
+    siteName: "Calculator Hub",
 
-  const calculateAsphalt = () => {
-    const volume =
-      parseFloat(length) *
-      parseFloat(width) *
-      (parseFloat(thickness) / 12);
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Asphalt Calculator",
+      },
+    ],
 
-    setResult(volume);
-  };
+    locale: "en_US",
 
-  return (
-    <main className="min-h-screen bg-gray-100">
-      <Navbar />
+    type: "website",
+  },
 
-      <section className="mx-auto max-w-2xl px-6 py-16">
-        <h1 className="text-4xl font-bold text-black">
-          Asphalt Calculator
-        </h1>
+  twitter: {
+    card: "summary_large_image",
 
-        <p className="mt-4 text-gray-600">
-          Estimate asphalt volume required for
-          roads, driveways, parking lots, and
-          paving projects.
-        </p>
+    title:
+      "Asphalt Calculator | Calculator Hub",
 
-        <div className="mt-8 rounded-2xl bg-white p-6 shadow-md">
-          <div className="mb-4">
-            <label className="mb-2 block text-black">
-              Length (ft)
-            </label>
+    description:
+      "Free asphalt calculator for construction and paving projects.",
 
-            <input
-              type="number"
-              value={length}
-              onChange={(e) =>
-                setLength(e.target.value)
-              }
-              className="w-full rounded-xl border p-3"
-              placeholder="Enter length"
-            />
-          </div>
+    images: ["/og-image.jpg"],
+  },
+};
 
-          <div className="mb-4">
-            <label className="mb-2 block text-black">
-              Width (ft)
-            </label>
-
-            <input
-              type="number"
-              value={width}
-              onChange={(e) =>
-                setWidth(e.target.value)
-              }
-              className="w-full rounded-xl border p-3"
-              placeholder="Enter width"
-            />
-          </div>
-
-          <div className="mb-4">
-            <label className="mb-2 block text-black">
-              Thickness (inch)
-            </label>
-
-            <input
-              type="number"
-              value={thickness}
-              onChange={(e) =>
-                setThickness(e.target.value)
-              }
-              className="w-full rounded-xl border p-3"
-              placeholder="Enter thickness"
-            />
-          </div>
-
-          <button
-            onClick={calculateAsphalt}
-            className="w-full rounded-xl bg-black py-3 text-white hover:bg-gray-800"
-          >
-            Calculate
-          </button>
-
-          {result !== null && (
-            <div className="mt-6 rounded-xl bg-gray-100 p-4">
-              <h2 className="text-2xl font-bold text-black">
-                Asphalt Volume:{" "}
-                {result.toFixed(2)} ft³
-              </h2>
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* SEO Section */}
-      <section className="mx-auto max-w-4xl px-6 pb-16">
-        <div className="rounded-2xl bg-white p-8 shadow-md">
-          <h2 className="text-3xl font-bold text-black">
-            Asphalt Quantity Estimation
-          </h2>
-
-          <p className="mt-4 text-gray-600">
-            This asphalt calculator helps estimate
-            asphalt quantity for paving roads,
-            parking lots, pathways, and driveways.
-          </p>
-
-          <p className="mt-4 text-gray-600">
-            Proper asphalt estimation helps reduce
-            waste and improves construction
-            planning accuracy.
-          </p>
-
-          <p className="mt-4 text-gray-600">
-            Contractors and engineers commonly use
-            asphalt calculations for highway
-            construction, pavement design, and
-            resurfacing projects.
-          </p>
-
-          <h3 className="mt-6 text-2xl font-semibold text-black">
-            Formula
-          </h3>
-
-          <p className="mt-3 text-gray-600">
-            Volume = Length × Width × Thickness
-          </p>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="mx-auto max-w-4xl px-6 pb-20">
-        <div className="rounded-2xl bg-white p-8 shadow-md">
-          <h2 className="text-3xl font-bold text-black">
-            Frequently Asked Questions
-          </h2>
-
-          <div className="mt-8 space-y-6">
-            <div>
-              <h3 className="text-xl font-semibold text-black">
-                What is an asphalt calculator?
-              </h3>
-
-              <p className="mt-2 text-gray-600">
-                An asphalt calculator estimates
-                asphalt volume needed for paving
-                and road construction projects.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold text-black">
-                Can I use this for driveways?
-              </h3>
-
-              <p className="mt-2 text-gray-600">
-                Yes, this calculator works for
-                roads, driveways, parking lots,
-                and other paving projects.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold text-black">
-                Is this calculator free?
-              </h3>
-
-              <p className="mt-2 text-gray-600">
-                Yes, all calculators on Calculator
-                Hub are completely free to use.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <Footer />
-    </main>
-  );
+export default function Page() {
+  return <AsphaltCalculatorClient />;
 }
-

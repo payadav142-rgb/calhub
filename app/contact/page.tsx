@@ -1,5 +1,40 @@
+import type { Metadata } from "next";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+
+export const metadata: Metadata = {
+  title: "Contact Us | Calculator Hub",
+  description:
+    "Get in touch with Calculator Hub. Contact us for questions, feedback, partnerships, advertising opportunities, and support related to our construction calculators.",
+  keywords: [
+    "contact calculator hub",
+    "construction calculator support",
+    "contact us",
+    "calculator hub help",
+    "construction tools support",
+    "business inquiries",
+  ],
+  alternates: {
+    canonical:
+      "https://calculator-hub-murex.vercel.app/contact",
+  },
+  openGraph: {
+    title: "Contact Us | Calculator Hub",
+    description:
+      "Contact Calculator Hub for support, feedback, and business inquiries.",
+    url: "https://calculator-hub-murex.vercel.app/contact",
+    siteName: "Calculator Hub",
+    images: ["/og-image.jpg"],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us | Calculator Hub",
+    description:
+      "Contact Calculator Hub for support, feedback, and business inquiries.",
+    images: ["/og-image.jpg"],
+  },
+};
 
 export default function ContactPage() {
   return (
@@ -13,8 +48,10 @@ export default function ContactPage() {
           </h1>
 
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Have questions, suggestions, or
-            feedback? We'd love to hear from you.
+            Have questions, suggestions, feedback, or business
+            inquiries? We would love to hear from you. Our team is
+            committed to improving Calculator Hub and providing
+            useful construction calculation tools for everyone.
           </p>
 
           <div className="mt-10 space-y-6">
@@ -44,7 +81,8 @@ export default function ContactPage() {
               </h2>
 
               <p className="mt-3 text-gray-600">
-                We usually reply within 24 hours.
+                We usually respond within 24 hours and aim to
+                provide helpful assistance as quickly as possible.
               </p>
             </div>
 
@@ -54,9 +92,9 @@ export default function ContactPage() {
               </h2>
 
               <p className="mt-3 text-gray-600">
-                Contact us for partnerships,
-                advertising, and business-related
-                queries.
+                Contact us for partnerships, advertising,
+                collaborations, and other business-related
+                opportunities.
               </p>
             </div>
           </div>
@@ -67,4 +105,3 @@ export default function ContactPage() {
     </main>
   );
 }
-

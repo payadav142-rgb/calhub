@@ -1,92 +1,121 @@
 "use client";
 
+
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-
-
-export default function ConstructionCostCalculator() {
-  const [area, setArea] =
+export default function FlooringCalculator() {
+  const [roomLength, setRoomLength] =
     useState("");
 
-  const [
-    costPerSqft,
-    setCostPerSqft,
-  ] = useState("");
+  const [roomWidth, setRoomWidth] =
+    useState("");
+
+  const [flooringCost, setFlooringCost] =
+    useState("");
 
   const [result, setResult] =
     useState<number | null>(null);
 
-  const calculateCost = () => {
-    const totalCost =
-      parseFloat(area) *
-      parseFloat(costPerSqft);
+  const [area, setArea] =
+    useState<number | null>(null);
 
+  const calculateFlooring = () => {
+    const totalArea =
+      parseFloat(roomLength) *
+      parseFloat(roomWidth);
+
+    const totalCost =
+      totalArea *
+      parseFloat(flooringCost);
+
+    setArea(totalArea);
     setResult(totalCost);
   };
 
   return (
     <main className="min-h-screen bg-gray-100">
+
+      
+
       <Navbar />
 
-      {/* Calculator Section */}
       <section className="mx-auto max-w-2xl px-6 py-16">
         <h1 className="text-4xl font-bold text-black">
-          Construction Cost Calculator
+          Flooring Calculator
         </h1>
 
         <p className="mt-4 text-gray-600">
-          Estimate total construction cost for
-          your building project instantly.
+          Estimate flooring area and total cost
+          instantly for your construction or
+          renovation project.
         </p>
 
         <div className="mt-8 rounded-2xl bg-white p-6 shadow-md">
           <div className="mb-4">
             <label className="mb-2 block text-black">
-              Area (sq ft)
+              Room Length (ft)
             </label>
 
             <input
               type="number"
-              value={area}
+              value={roomLength}
               onChange={(e) =>
-                setArea(e.target.value)
+                setRoomLength(e.target.value)
               }
               className="w-full rounded-xl border p-3"
-              placeholder="Enter total area"
+              placeholder="Enter room length"
             />
           </div>
 
           <div className="mb-4">
             <label className="mb-2 block text-black">
-              Cost Per Sq Ft
+              Room Width (ft)
             </label>
 
             <input
               type="number"
-              value={costPerSqft}
+              value={roomWidth}
               onChange={(e) =>
-                setCostPerSqft(
-                  e.target.value
-                )
+                setRoomWidth(e.target.value)
               }
               className="w-full rounded-xl border p-3"
-              placeholder="Enter cost per sq ft"
+              placeholder="Enter room width"
+            />
+          </div>
+
+          <div className="mb-4">
+            <label className="mb-2 block text-black">
+              Flooring Cost Per Sq Ft (₹)
+            </label>
+
+            <input
+              type="number"
+              value={flooringCost}
+              onChange={(e) =>
+                setFlooringCost(e.target.value)
+              }
+              className="w-full rounded-xl border p-3"
+              placeholder="Enter flooring cost"
             />
           </div>
 
           <button
-            onClick={calculateCost}
+            onClick={calculateFlooring}
             className="w-full rounded-xl bg-black py-3 text-white hover:bg-gray-800"
           >
             Calculate
           </button>
 
-          {result !== null && (
+          {result !== null && area !== null && (
             <div className="mt-6 rounded-xl bg-gray-100 p-4">
               <h2 className="text-2xl font-bold text-black">
-                Estimated Cost: ₹
+                Total Area: {area.toFixed(2)} sq ft
+              </h2>
+
+              <h2 className="mt-3 text-2xl font-bold text-black">
+                Estimated Flooring Cost: ₹
                 {result.toLocaleString()}
               </h2>
             </div>
@@ -98,28 +127,19 @@ export default function ConstructionCostCalculator() {
       <section className="mx-auto max-w-4xl px-6 pb-16">
         <div className="rounded-2xl bg-white p-8 shadow-md">
           <h2 className="text-3xl font-bold text-black">
-            Construction Cost Estimation
+            Flooring Cost Estimation
           </h2>
 
           <p className="mt-4 text-gray-600">
-            This construction cost calculator
-            helps builders, contractors, and
-            homeowners estimate total building
-            expenses based on area and cost per
-            square foot.
+            This flooring calculator helps
+            homeowners, contractors, and builders
+            estimate flooring area and material
+            costs quickly.
           </p>
 
           <p className="mt-4 text-gray-600">
-            Construction costs vary depending on
-            materials, labor charges, location,
-            and project type.
-          </p>
-
-          <p className="mt-4 text-gray-600">
-            Accurate cost estimation helps reduce
-            overspending and improves budgeting
-            for residential and commercial
-            construction projects.
+            Flooring costs depend on material
+            type, labor charges, and room size.
           </p>
 
           <h3 className="mt-6 text-2xl font-semibold text-black">
@@ -127,12 +147,16 @@ export default function ConstructionCostCalculator() {
           </h3>
 
           <p className="mt-3 text-gray-600">
+            Area = Length × Width
+          </p>
+
+          <p className="mt-2 text-gray-600">
             Total Cost = Area × Cost Per Sq Ft
           </p>
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* FAQ */}
       <section className="mx-auto max-w-4xl px-6 pb-20">
         <div className="rounded-2xl bg-white p-8 shadow-md">
           <h2 className="text-3xl font-bold text-black">
@@ -142,14 +166,25 @@ export default function ConstructionCostCalculator() {
           <div className="mt-8 space-y-6">
             <div>
               <h3 className="text-xl font-semibold text-black">
-                What is a construction cost
-                calculator?
+                What is a flooring calculator?
               </h3>
 
               <p className="mt-2 text-gray-600">
-                It helps estimate total building
-                costs based on project area and
-                construction rates.
+                A flooring calculator estimates
+                flooring area and total material
+                cost for rooms and buildings.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold text-black">
+                Can I use this for tile flooring?
+              </h3>
+
+              <p className="mt-2 text-gray-600">
+                Yes, this calculator works for
+                tiles, marble, wooden flooring,
+                and other flooring materials.
               </p>
             </div>
 
@@ -161,19 +196,6 @@ export default function ConstructionCostCalculator() {
               <p className="mt-2 text-gray-600">
                 Yes, Calculator Hub provides free
                 online construction calculators.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold text-black">
-                Can I use it for house
-                construction?
-              </h3>
-
-              <p className="mt-2 text-gray-600">
-                Yes, this calculator is useful
-                for houses, commercial buildings,
-                and renovation projects.
               </p>
             </div>
           </div>

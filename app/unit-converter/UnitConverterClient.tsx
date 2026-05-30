@@ -4,122 +4,86 @@ import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-
-
-export default function ConstructionCostCalculator() {
-  const [area, setArea] =
+export default function UnitConverter() {
+  const [meters, setMeters] =
     useState("");
 
-  const [
-    costPerSqft,
-    setCostPerSqft,
-  ] = useState("");
-
-  const [result, setResult] =
+  const [feet, setFeet] =
     useState<number | null>(null);
 
-  const calculateCost = () => {
-    const totalCost =
-      parseFloat(area) *
-      parseFloat(costPerSqft);
+  const convertUnits = () => {
+    const converted =
+      parseFloat(meters) * 3.28084;
 
-    setResult(totalCost);
+    setFeet(converted);
   };
 
   return (
     <main className="min-h-screen bg-gray-100">
       <Navbar />
 
-      {/* Calculator Section */}
       <section className="mx-auto max-w-2xl px-6 py-16">
         <h1 className="text-4xl font-bold text-black">
-          Construction Cost Calculator
+          Unit Converter
         </h1>
 
         <p className="mt-4 text-gray-600">
-          Estimate total construction cost for
-          your building project instantly.
+          Convert construction measurement units
+          instantly and accurately.
         </p>
 
         <div className="mt-8 rounded-2xl bg-white p-6 shadow-md">
           <div className="mb-4">
             <label className="mb-2 block text-black">
-              Area (sq ft)
+              Meters
             </label>
 
             <input
               type="number"
-              value={area}
+              value={meters}
               onChange={(e) =>
-                setArea(e.target.value)
+                setMeters(e.target.value)
               }
               className="w-full rounded-xl border p-3"
-              placeholder="Enter total area"
-            />
-          </div>
-
-          <div className="mb-4">
-            <label className="mb-2 block text-black">
-              Cost Per Sq Ft
-            </label>
-
-            <input
-              type="number"
-              value={costPerSqft}
-              onChange={(e) =>
-                setCostPerSqft(
-                  e.target.value
-                )
-              }
-              className="w-full rounded-xl border p-3"
-              placeholder="Enter cost per sq ft"
+              placeholder="Enter meters"
             />
           </div>
 
           <button
-            onClick={calculateCost}
+            onClick={convertUnits}
             className="w-full rounded-xl bg-black py-3 text-white hover:bg-gray-800"
           >
-            Calculate
+            Convert
           </button>
 
-          {result !== null && (
+          {feet !== null && (
             <div className="mt-6 rounded-xl bg-gray-100 p-4">
               <h2 className="text-2xl font-bold text-black">
-                Estimated Cost: ₹
-                {result.toLocaleString()}
+                Feet: {feet.toFixed(2)} ft
               </h2>
             </div>
           )}
         </div>
       </section>
 
-      {/* SEO Content */}
+      {/* SEO */}
       <section className="mx-auto max-w-4xl px-6 pb-16">
         <div className="rounded-2xl bg-white p-8 shadow-md">
           <h2 className="text-3xl font-bold text-black">
-            Construction Cost Estimation
+            Construction Unit Conversion
           </h2>
 
           <p className="mt-4 text-gray-600">
-            This construction cost calculator
-            helps builders, contractors, and
-            homeowners estimate total building
-            expenses based on area and cost per
-            square foot.
+            This unit converter helps builders,
+            engineers, and contractors convert
+            measurements quickly for construction
+            and engineering projects.
           </p>
 
           <p className="mt-4 text-gray-600">
-            Construction costs vary depending on
-            materials, labor charges, location,
-            and project type.
-          </p>
-
-          <p className="mt-4 text-gray-600">
-            Accurate cost estimation helps reduce
-            overspending and improves budgeting
-            for residential and commercial
-            construction projects.
+            Accurate unit conversion improves
+            project planning and reduces
+            measurement errors.
           </p>
 
           <h3 className="mt-6 text-2xl font-semibold text-black">
@@ -127,12 +91,12 @@ export default function ConstructionCostCalculator() {
           </h3>
 
           <p className="mt-3 text-gray-600">
-            Total Cost = Area × Cost Per Sq Ft
+            Feet = Meters × 3.28084
           </p>
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* FAQ */}
       <section className="mx-auto max-w-4xl px-6 pb-20">
         <div className="rounded-2xl bg-white p-8 shadow-md">
           <h2 className="text-3xl font-bold text-black">
@@ -142,38 +106,36 @@ export default function ConstructionCostCalculator() {
           <div className="mt-8 space-y-6">
             <div>
               <h3 className="text-xl font-semibold text-black">
-                What is a construction cost
-                calculator?
+                What is a unit converter?
               </h3>
 
               <p className="mt-2 text-gray-600">
-                It helps estimate total building
-                costs based on project area and
-                construction rates.
+                A unit converter helps convert
+                measurements between different
+                units accurately.
               </p>
             </div>
 
             <div>
               <h3 className="text-xl font-semibold text-black">
-                Is this calculator free?
+                Can I use this for construction?
+              </h3>
+
+              <p className="mt-2 text-gray-600">
+                Yes, this converter is useful for
+                construction measurements and site
+                calculations.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold text-black">
+                Is this converter free?
               </h3>
 
               <p className="mt-2 text-gray-600">
                 Yes, Calculator Hub provides free
-                online construction calculators.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold text-black">
-                Can I use it for house
-                construction?
-              </h3>
-
-              <p className="mt-2 text-gray-600">
-                Yes, this calculator is useful
-                for houses, commercial buildings,
-                and renovation projects.
+                online conversion tools.
               </p>
             </div>
           </div>
