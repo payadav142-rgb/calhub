@@ -12,20 +12,24 @@ export default function CalculatorCard({
   link,
 }: CalculatorCardProps) {
   return (
-    <div className="rounded-3xl border border-gray-100 bg-white p-7 shadow-lg transition duration-300 hover:-translate-y-3 hover:shadow-2xl">
-      <h2 className="text-3xl font-bold text-black">
+    <div className="group rounded-3xl border border-orange-100 bg-white p-7 shadow-lg transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:shadow-orange-100">
+
+      {/* Top Gradient Line */}
+      <div className="mb-6 h-2 w-20 rounded-full bg-gradient-to-r from-orange-500 to-amber-400" />
+
+      <h2 className="text-2xl font-extrabold text-black transition group-hover:text-orange-500">
         {title}
       </h2>
 
-      <p className="mt-3 leading-7 text-gray-600">
+      <p className="mt-4 leading-7 text-gray-600">
         {description}
       </p>
 
       <Link
         href={link}
-        className="mt-6 inline-block rounded-2xl bg-black px-6 py-3 text-white transition duration-300 hover:scale-105 hover:bg-gray-800"
+        className="mt-6 inline-flex items-center rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 px-6 py-3 font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg"
       >
-        Open Calculator
+        Open Calculator →
       </Link>
     </div>
   );

@@ -1,19 +1,26 @@
 import type { Metadata } from "next";
-import TileCalculatorClient from "./TileCalculatorClient";
+import TileCalculator from "./TileCalculatorClient";
 
 export const metadata: Metadata = {
   title: "Tile Calculator | Calculator Hub",
+
   description:
-    "Calculate tiles needed for flooring, bathrooms, kitchens, and wall installations instantly.",
+    "Free tile calculator to estimate the number of floor and wall tiles required for homes, bathrooms, kitchens, and construction projects.",
+
   keywords: [
     "tile calculator",
     "floor tile calculator",
     "wall tile calculator",
-    "tile estimator",
+    "tile quantity calculator",
     "construction calculator",
   ],
+
+  alternates: {
+    canonical:
+      "https://buildingcalculator.in/tile-calculator",
+  },
 };
 
 export default function Page() {
-  return <TileCalculatorClient />;
+  return <TileCalculator />;
 }

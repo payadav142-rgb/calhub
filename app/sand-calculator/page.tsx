@@ -2,18 +2,66 @@ import type { Metadata } from "next";
 import SandCalculatorClient from "./SandCalculatorClient";
 
 export const metadata: Metadata = {
-  title: "Sand Calculator | Calculator Hub",
+  title:
+    "Sand Calculator | Sand Volume & Quantity Estimator",
+
   description:
-    "Free sand calculator to estimate sand volume required for construction, plastering, flooring, and concrete projects.",
+    "Free online sand calculator to estimate sand volume and quantity required for construction, plastering, masonry, flooring, concrete, and landscaping projects.",
+
   keywords: [
     "sand calculator",
     "sand volume calculator",
-    "construction sand calculator",
     "sand quantity calculator",
-    "building calculator",
+    "construction sand calculator",
+    "sand estimator",
+    "building sand calculator",
+    "masonry sand calculator",
+    "concrete sand calculator",
+    "flooring sand calculator",
+    "landscaping sand calculator",
   ],
+
   alternates: {
-    canonical: "/sand-calculator",
+    canonical:
+      "https://buildingcalculator.in/sand-calculator",
+  },
+
+  openGraph: {
+    title:
+      "Sand Calculator | Sand Volume & Quantity Estimator",
+
+    description:
+      "Calculate sand volume and quantity instantly for construction, plastering, flooring, concrete, and landscaping projects.",
+
+    url:
+      "https://buildingcalculator.in/sand-calculator",
+
+    siteName: "Building Calculator",
+
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Sand Calculator",
+      },
+    ],
+
+    locale: "en_US",
+
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+
+    title:
+      "Sand Calculator | Sand Volume & Quantity Estimator",
+
+    description:
+      "Estimate sand requirements instantly for construction and landscaping projects.",
+
+    images: ["/og-image.jpg"],
   },
 };
 

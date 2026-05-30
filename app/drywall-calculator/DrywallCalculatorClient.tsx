@@ -250,52 +250,52 @@ export default function DrywallCalculator() {
       </section>
 
       {/* Related Calculators */}
-      <section className="mx-auto max-w-5xl px-6 pb-20">
-        <h2 className="text-4xl font-extrabold text-black">
-          Related Calculators
-        </h2>
+<section className="mx-auto max-w-5xl px-6 pb-20">
+  <h2 className="text-4xl font-extrabold text-black">
+    Related Calculators
+  </h2>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          <a
-            href="/paint-calculator"
-            className="rounded-3xl bg-white p-6 shadow-xl transition hover:-translate-y-2"
-          >
-            <h3 className="text-2xl font-bold text-black">
-              Paint Calculator
-            </h3>
+  <div className="mt-10 grid gap-6 md:grid-cols-3">
+    <a
+      href="/area-calculator"
+      className="rounded-3xl bg-white p-6 shadow-xl transition hover:-translate-y-2"
+    >
+      <h3 className="text-2xl font-bold text-black">
+        Area Calculator
+      </h3>
 
-            <p className="mt-3 text-gray-600">
-              Estimate paint quantity easily.
-            </p>
-          </a>
+      <p className="mt-3 text-gray-600">
+        Calculate wall area instantly.
+      </p>
+    </a>
 
-          <a
-            href="/area-calculator"
-            className="rounded-3xl bg-white p-6 shadow-xl transition hover:-translate-y-2"
-          >
-            <h3 className="text-2xl font-bold text-black">
-              Area Calculator
-            </h3>
+    <a
+      href="/construction-cost-calculator"
+      className="rounded-3xl bg-white p-6 shadow-xl transition hover:-translate-y-2"
+    >
+      <h3 className="text-2xl font-bold text-black">
+        Construction Cost Calculator
+      </h3>
 
-            <p className="mt-3 text-gray-600">
-              Calculate wall area instantly.
-            </p>
-          </a>
+      <p className="mt-3 text-gray-600">
+        Estimate project cost quickly.
+      </p>
+    </a>
 
-          <a
-            href="/construction-cost-calculator"
-            className="rounded-3xl bg-white p-6 shadow-xl transition hover:-translate-y-2"
-          >
-            <h3 className="text-2xl font-bold text-black">
-              Construction Cost Calculator
-            </h3>
+    <a
+      href="/paint-calculator"
+      className="rounded-3xl bg-white p-6 shadow-xl transition hover:-translate-y-2"
+    >
+      <h3 className="text-2xl font-bold text-black">
+        Paint Calculator
+      </h3>
 
-            <p className="mt-3 text-gray-600">
-              Estimate project cost quickly.
-            </p>
-          </a>
-        </div>
-      </section>
+      <p className="mt-3 text-gray-600">
+        Estimate paint quantity easily.
+      </p>
+    </a>
+  </div>
+</section>
 
       <Footer />
     </main>

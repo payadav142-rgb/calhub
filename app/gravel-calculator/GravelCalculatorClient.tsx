@@ -1,10 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 
-export default function GravelCalculator() {
+export default function GravelCalculatorClient() {
   const [length, setLength] =
     useState("");
 
@@ -18,6 +16,13 @@ export default function GravelCalculator() {
     useState<number | null>(null);
 
   const calculateGravel = () => {
+    if (
+      !length ||
+      !width ||
+      !depth
+    )
+      return;
+
     const volume =
       parseFloat(length) *
       parseFloat(width) *
@@ -27,232 +32,54 @@ export default function GravelCalculator() {
   };
 
   return (
-    <main className="min-h-screen bg-gray-100">
-      <Navbar />
+    <div className="rounded-2xl bg-white p-6 shadow-md">
+      <h2 className="mb-4 text-2xl font-bold">
+        Gravel Calculator
+      </h2>
 
-      {/* Calculator Section */}
-      <section className="mx-auto max-w-2xl px-6 py-16">
-        <h1 className="text-4xl font-bold text-black">
-          Gravel Calculator
-        </h1>
+      <input
+        type="number"
+        value={length}
+        onChange={(e) =>
+          setLength(e.target.value)
+        }
+        placeholder="Length (ft)"
+        className="mb-4 w-full rounded-xl border p-3"
+      />
 
-        <p className="mt-4 text-gray-600">
-          Calculate gravel quantity required for
-          your construction project.
+      <input
+        type="number"
+        value={width}
+        onChange={(e) =>
+          setWidth(e.target.value)
+        }
+        placeholder="Width (ft)"
+        className="mb-4 w-full rounded-xl border p-3"
+      />
+
+      <input
+        type="number"
+        value={depth}
+        onChange={(e) =>
+          setDepth(e.target.value)
+        }
+        placeholder="Depth (ft)"
+        className="mb-4 w-full rounded-xl border p-3"
+      />
+
+      <button
+        onClick={calculateGravel}
+        className="w-full rounded-xl bg-black py-3 text-white hover:bg-gray-800"
+      >
+        Calculate
+      </button>
+
+      {result !== null && (
+        <p className="mt-4 font-bold text-black">
+          Gravel Required:{" "}
+          {result.toFixed(2)} ft³
         </p>
-
-        <div className="mt-8 rounded-2xl bg-white p-6 shadow-md">
-          <div className="mb-4">
-            <label className="mb-2 block text-black">
-              Length (ft)
-            </label>
-
-            <input
-              type="number"
-              value={length}
-              onChange={(e) =>
-                setLength(e.target.value)
-              }
-              className="w-full rounded-xl border p-3"
-              placeholder="Enter length"
-            />
-          </div>
-
-          <div className="mb-4">
-            <label className="mb-2 block text-black">
-              Width (ft)
-            </label>
-
-            <input
-              type="number"
-              value={width}
-              onChange={(e) =>
-                setWidth(e.target.value)
-              }
-              className="w-full rounded-xl border p-3"
-              placeholder="Enter width"
-            />
-          </div>
-
-          <div className="mb-4">
-            <label className="mb-2 block text-black">
-              Depth (ft)
-            </label>
-
-            <input
-              type="number"
-              value={depth}
-              onChange={(e) =>
-                setDepth(e.target.value)
-              }
-              className="w-full rounded-xl border p-3"
-              placeholder="Enter depth"
-            />
-          </div>
-
-          <button
-            onClick={calculateGravel}
-            className="w-full rounded-xl bg-black py-3 text-white hover:bg-gray-800"
-          >
-            Calculate
-          </button>
-
-          {result !== null && (
-            <div className="mt-6 rounded-xl bg-gray-100 p-4">
-              <h2 className="text-2xl font-bold text-black">
-                Gravel Required:{" "}
-                {result.toFixed(2)} ft³
-              </h2>
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* Formula Section */}
-      <section className="mx-auto max-w-5xl px-6 pb-20">
-        <div className="rounded-3xl bg-white p-8 shadow-xl">
-          <h2 className="text-3xl font-bold text-black">
-            Gravel Calculation Formula
-          </h2>
-
-          <p className="mt-4 text-lg leading-8 text-gray-600">
-            Gravel volume is calculated by
-            multiplying project dimensions.
-          </p>
-
-          <div className="mt-6 rounded-2xl bg-gray-100 p-6">
-            <p className="text-2xl font-bold text-black">
-              Gravel Volume =
-              Length × Width × Depth
-            </p>
-          </div>
-
-          <p className="mt-6 leading-8 text-gray-600">
-            This gravel calculator helps estimate
-            gravel quantity for driveways,
-            foundations, landscaping, and
-            construction work.
-          </p>
-        </div>
-      </section>
-
-      {/* How To Use */}
-      <section className="mx-auto max-w-5xl px-6 pb-20">
-        <div className="rounded-3xl bg-black p-8 text-white shadow-xl">
-          <h2 className="text-3xl font-bold">
-            How To Use This Gravel Calculator
-          </h2>
-
-          <div className="mt-6 space-y-4 text-lg text-gray-300">
-            <p>1. Enter project length.</p>
-
-            <p>2. Enter project width.</p>
-
-            <p>3. Enter gravel depth.</p>
-
-            <p>
-              4. Click calculate to estimate
-              gravel quantity instantly.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="mx-auto max-w-5xl px-6 pb-20">
-        <h2 className="text-4xl font-extrabold text-black">
-          Frequently Asked Questions
-        </h2>
-
-        <div className="mt-10 space-y-6">
-          <div className="rounded-3xl bg-white p-6 shadow-lg">
-            <h3 className="text-2xl font-bold text-black">
-              How much gravel do I need?
-            </h3>
-
-            <p className="mt-3 leading-7 text-gray-600">
-              Gravel quantity depends on area
-              dimensions and gravel depth. This
-              calculator provides quick
-              estimation.
-            </p>
-          </div>
-
-          <div className="rounded-3xl bg-white p-6 shadow-lg">
-            <h3 className="text-2xl font-bold text-black">
-              Can I use this for driveways?
-            </h3>
-
-            <p className="mt-3 leading-7 text-gray-600">
-              Yes, this calculator works for
-              driveways, pathways, landscaping,
-              and construction projects.
-            </p>
-          </div>
-
-          <div className="rounded-3xl bg-white p-6 shadow-lg">
-            <h3 className="text-2xl font-bold text-black">
-              Is this gravel calculator free?
-            </h3>
-
-            <p className="mt-3 leading-7 text-gray-600">
-              Yes, Calculator Hub provides free
-              online calculators for builders,
-              contractors, and engineers.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Related Calculators */}
-      <section className="mx-auto max-w-5xl px-6 pb-20">
-        <h2 className="text-4xl font-extrabold text-black">
-          Related Calculators
-        </h2>
-
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          <a
-            href="/sand-calculator"
-            className="rounded-3xl bg-white p-6 shadow-xl transition hover:-translate-y-2"
-          >
-            <h3 className="text-2xl font-bold text-black">
-              Sand Calculator
-            </h3>
-
-            <p className="mt-3 text-gray-600">
-              Estimate sand quantity easily.
-            </p>
-          </a>
-
-          <a
-            href="/concrete-calculator"
-            className="rounded-3xl bg-white p-6 shadow-xl transition hover:-translate-y-2"
-          >
-            <h3 className="text-2xl font-bold text-black">
-              Concrete Calculator
-            </h3>
-
-            <p className="mt-3 text-gray-600">
-              Calculate concrete volume quickly.
-            </p>
-          </a>
-
-          <a
-            href="/cement-calculator"
-            className="rounded-3xl bg-white p-6 shadow-xl transition hover:-translate-y-2"
-          >
-            <h3 className="text-2xl font-bold text-black">
-              Cement Calculator
-            </h3>
-
-            <p className="mt-3 text-gray-600">
-              Estimate cement quantity instantly.
-            </p>
-          </a>
-        </div>
-      </section>
-
-      <Footer />
-    </main>
+      )}
+    </div>
   );
 }

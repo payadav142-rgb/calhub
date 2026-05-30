@@ -9,10 +9,12 @@ export default function Navbar() {
     useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-gray-200 bg-white/80 shadow-sm backdrop-blur-lg">
+    <nav className="sticky top-0 z-50 border-b border-orange-100 bg-white/90 backdrop-blur-xl shadow-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+
+        {/* Logo */}
         <Link href="/">
-          <h1 className="cursor-pointer text-2xl font-extrabold tracking-tight text-black transition hover:opacity-80 md:text-3xl">
+          <h1 className="cursor-pointer bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-2xl font-extrabold tracking-tight text-transparent md:text-3xl">
             Calculator Hub
           </h1>
         </Link>
@@ -21,30 +23,37 @@ export default function Navbar() {
         <div className="hidden items-center gap-8 md:flex">
           <Link
             href="/"
-            className="font-medium text-gray-700 transition hover:text-black"
+            className="font-medium text-gray-700 transition hover:text-orange-500"
           >
             Home
           </Link>
 
           <Link
             href="/about"
-            className="font-medium text-gray-700 transition hover:text-black"
+            className="font-medium text-gray-700 transition hover:text-orange-500"
           >
             About
           </Link>
 
           <Link
             href="/contact"
-            className="font-medium text-gray-700 transition hover:text-black"
+            className="font-medium text-gray-700 transition hover:text-orange-500"
           >
             Contact
           </Link>
 
           <Link
             href="/privacy-policy"
-            className="font-medium text-gray-700 transition hover:text-black"
+            className="font-medium text-gray-700 transition hover:text-orange-500"
           >
             Privacy
+          </Link>
+
+          <Link
+            href="/about"
+            className="rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 px-5 py-2 font-semibold text-white transition hover:scale-105"
+          >
+            Get Started
           </Link>
         </div>
 
@@ -53,26 +62,27 @@ export default function Navbar() {
           onClick={() =>
             setMenuOpen(!menuOpen)
           }
-          className="md:hidden"
+          className="rounded-xl p-2 transition hover:bg-orange-50 md:hidden"
         >
           {menuOpen ? (
-            <X size={30} />
+            <X size={28} />
           ) : (
-            <Menu size={30} />
+            <Menu size={28} />
           )}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="border-t border-gray-200 bg-white px-6 py-6 md:hidden">
-          <div className="flex flex-col gap-6">
+        <div className="border-t border-orange-100 bg-white px-6 py-6 md:hidden">
+          <div className="flex flex-col gap-5">
+
             <Link
               href="/"
               onClick={() =>
                 setMenuOpen(false)
               }
-              className="text-lg font-medium text-gray-700 transition hover:text-black"
+              className="text-lg font-medium text-gray-700 hover:text-orange-500"
             >
               Home
             </Link>
@@ -82,7 +92,7 @@ export default function Navbar() {
               onClick={() =>
                 setMenuOpen(false)
               }
-              className="text-lg font-medium text-gray-700 transition hover:text-black"
+              className="text-lg font-medium text-gray-700 hover:text-orange-500"
             >
               About
             </Link>
@@ -92,7 +102,7 @@ export default function Navbar() {
               onClick={() =>
                 setMenuOpen(false)
               }
-              className="text-lg font-medium text-gray-700 transition hover:text-black"
+              className="text-lg font-medium text-gray-700 hover:text-orange-500"
             >
               Contact
             </Link>
@@ -102,7 +112,7 @@ export default function Navbar() {
               onClick={() =>
                 setMenuOpen(false)
               }
-              className="text-lg font-medium text-gray-700 transition hover:text-black"
+              className="text-lg font-medium text-gray-700 hover:text-orange-500"
             >
               Privacy Policy
             </Link>
@@ -112,10 +122,21 @@ export default function Navbar() {
               onClick={() =>
                 setMenuOpen(false)
               }
-              className="text-lg font-medium text-gray-700 transition hover:text-black"
+              className="text-lg font-medium text-gray-700 hover:text-orange-500"
             >
               Terms & Conditions
             </Link>
+
+            <Link
+              href="/about"
+              onClick={() =>
+                setMenuOpen(false)
+              }
+              className="mt-2 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 px-5 py-3 text-center font-semibold text-white"
+            >
+              Get Started
+            </Link>
+
           </div>
         </div>
       )}

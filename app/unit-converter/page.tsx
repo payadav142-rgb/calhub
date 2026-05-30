@@ -1,19 +1,26 @@
 import type { Metadata } from "next";
-import UnitConverterClient from "./UnitConverterClient";
+import UnitConverter from "./UnitConverterClient";
 
 export const metadata: Metadata = {
   title: "Unit Converter | Calculator Hub",
+
   description:
-    "Convert meters to feet instantly with our free construction unit converter.",
+    "Free unit converter for construction and engineering projects. Convert meters to feet and other measurement units quickly and accurately.",
+
   keywords: [
     "unit converter",
-    "meters to feet",
-    "construction converter",
+    "meters to feet converter",
+    "construction unit converter",
     "measurement converter",
     "engineering converter",
   ],
+
+  alternates: {
+    canonical:
+      "https://buildingcalculator.in/unit-converter",
+  },
 };
 
 export default function Page() {
-  return <UnitConverterClient />;
+  return <UnitConverter />;
 }

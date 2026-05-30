@@ -1,22 +1,26 @@
 import type { Metadata } from "next";
-import StairCalculatorClient from "./StairCalculatorClient";
+import StairCalculator from "./StairCalculatorClient";
 
 export const metadata: Metadata = {
   title: "Stair Calculator | Calculator Hub",
+
   description:
-    "Free stair calculator to estimate the number of steps required for staircases and building construction projects.",
+    "Free stair calculator to estimate the number of stairs required for residential and commercial construction projects.",
+
   keywords: [
     "stair calculator",
-    "staircase calculator",
+    "stairs calculator",
     "step calculator",
+    "staircase calculator",
     "construction calculator",
-    "building staircase calculator",
   ],
+
   alternates: {
-    canonical: "/stair-calculator",
+    canonical:
+      "https://buildingcalculator.in/stair-calculator",
   },
 };
 
 export default function Page() {
-  return <StairCalculatorClient />;
+  return <StairCalculator />;
 }

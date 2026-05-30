@@ -23,23 +23,25 @@ export default function AreaCalculatorClient() {
   };
 
   return (
-    <main className="min-h-screen bg-gray-100">
+    <main className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50">
       <Navbar />
 
       <section className="mx-auto max-w-2xl px-6 py-16">
-        <h1 className="text-4xl font-bold text-black">
-          Area Calculator
-        </h1>
+        <div className="text-center">
+          <h1 className="text-4xl font-bold text-gray-900 md:text-5xl">
+            Area Calculator
+          </h1>
 
-        <p className="mt-4 text-gray-600">
-          Calculate area instantly for rooms,
-          land, flooring, and construction
-          projects.
-        </p>
+          <p className="mt-4 text-lg text-gray-600">
+            Calculate area instantly for rooms,
+            land, flooring, and construction
+            projects.
+          </p>
+        </div>
 
-        <div className="mt-8 rounded-2xl bg-white p-6 shadow-md">
-          <div className="mb-4">
-            <label className="mb-2 block text-black">
+        <div className="mt-10 rounded-3xl bg-white p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
+          <div className="mb-5">
+            <label className="mb-2 block font-medium text-gray-700">
               Length (ft)
             </label>
 
@@ -49,13 +51,13 @@ export default function AreaCalculatorClient() {
               onChange={(e) =>
                 setLength(e.target.value)
               }
-              className="w-full rounded-xl border p-3"
+              className="w-full rounded-2xl border border-orange-200 p-3 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
               placeholder="Enter length"
             />
           </div>
 
-          <div className="mb-4">
-            <label className="mb-2 block text-black">
+          <div className="mb-6">
+            <label className="mb-2 block font-medium text-gray-700">
               Width (ft)
             </label>
 
@@ -65,21 +67,21 @@ export default function AreaCalculatorClient() {
               onChange={(e) =>
                 setWidth(e.target.value)
               }
-              className="w-full rounded-xl border p-3"
+              className="w-full rounded-2xl border border-orange-200 p-3 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
               placeholder="Enter width"
             />
           </div>
 
           <button
             onClick={calculateArea}
-            className="w-full rounded-xl bg-black py-3 text-white hover:bg-gray-800"
+            className="w-full rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 py-3 font-semibold text-white transition-all duration-300 hover:scale-[1.02]"
           >
-            Calculate
+            Calculate Area
           </button>
 
           {result !== null && (
-            <div className="mt-6 rounded-xl bg-gray-100 p-4">
-              <h2 className="text-2xl font-bold text-black">
+            <div className="mt-6 rounded-2xl border border-orange-200 bg-orange-50 p-5">
+              <h2 className="text-2xl font-bold text-gray-900">
                 Total Area:{" "}
                 {result.toFixed(2)} sq ft
               </h2>
@@ -89,8 +91,8 @@ export default function AreaCalculatorClient() {
       </section>
 
       <section className="mx-auto max-w-4xl px-6 pb-16">
-        <div className="rounded-2xl bg-white p-8 shadow-md">
-          <h2 className="text-3xl font-bold text-black">
+        <div className="rounded-3xl bg-white p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
+          <h2 className="text-3xl font-bold text-gray-900">
             Area Calculation Formula
           </h2>
 
@@ -111,19 +113,21 @@ export default function AreaCalculatorClient() {
             materials.
           </p>
 
-          <h3 className="mt-6 text-2xl font-semibold text-black">
-            Formula
-          </h3>
+          <div className="mt-6 rounded-2xl border border-orange-100 bg-orange-50 p-5">
+            <h3 className="text-2xl font-semibold text-gray-900">
+              Formula
+            </h3>
 
-          <p className="mt-3 text-gray-600">
-            Area = Length × Width
-          </p>
+            <p className="mt-3 text-lg font-medium text-orange-600">
+              Area = Length × Width
+            </p>
+          </div>
         </div>
       </section>
 
       <section className="mx-auto max-w-4xl px-6 pb-16">
-        <div className="rounded-2xl bg-white p-8 shadow-md">
-          <h2 className="text-3xl font-bold text-black">
+        <div className="rounded-3xl bg-white p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
+          <h2 className="text-3xl font-bold text-gray-900">
             How to Use This Area Calculator
           </h2>
 
@@ -134,30 +138,32 @@ export default function AreaCalculatorClient() {
             the total area in square feet.
           </p>
 
-          <h3 className="mt-6 text-2xl font-semibold text-black">
-            Example Calculation
-          </h3>
+          <div className="mt-6 rounded-2xl border border-orange-100 bg-orange-50 p-5">
+            <h3 className="text-2xl font-semibold text-gray-900">
+              Example Calculation
+            </h3>
 
-          <p className="mt-3 text-gray-600">
-            If the length is 20 ft and the width
-            is 15 ft:
-          </p>
+            <p className="mt-3 text-gray-600">
+              If the length is 20 ft and the width
+              is 15 ft:
+            </p>
 
-          <p className="mt-3 text-gray-600">
-            Area = 20 × 15 = 300 sq ft
-          </p>
+            <p className="mt-3 font-medium text-orange-600">
+              Area = 20 × 15 = 300 sq ft
+            </p>
+          </div>
         </div>
       </section>
 
       <section className="mx-auto max-w-4xl px-6 pb-20">
-        <div className="rounded-2xl bg-white p-8 shadow-md">
-          <h2 className="text-3xl font-bold text-black">
+        <div className="rounded-3xl bg-white p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
+          <h2 className="text-3xl font-bold text-gray-900">
             Frequently Asked Questions
           </h2>
 
           <div className="mt-8 space-y-6">
-            <div>
-              <h3 className="text-xl font-semibold text-black">
+            <div className="rounded-2xl border border-orange-100 p-5">
+              <h3 className="text-xl font-semibold text-gray-900">
                 What is an area calculator?
               </h3>
 
@@ -169,8 +175,8 @@ export default function AreaCalculatorClient() {
               </p>
             </div>
 
-            <div>
-              <h3 className="text-xl font-semibold text-black">
+            <div className="rounded-2xl border border-orange-100 p-5">
+              <h3 className="text-xl font-semibold text-gray-900">
                 Is this calculator free?
               </h3>
 
@@ -181,8 +187,8 @@ export default function AreaCalculatorClient() {
               </p>
             </div>
 
-            <div>
-              <h3 className="text-xl font-semibold text-black">
+            <div className="rounded-2xl border border-orange-100 p-5">
+              <h3 className="text-xl font-semibold text-gray-900">
                 Can I calculate room area?
               </h3>
 
@@ -197,29 +203,29 @@ export default function AreaCalculatorClient() {
       </section>
 
       <section className="mx-auto max-w-4xl px-6 pb-20">
-        <div className="rounded-2xl bg-white p-8 shadow-md">
-          <h2 className="text-3xl font-bold text-black">
+        <div className="rounded-3xl bg-white p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
+          <h2 className="text-3xl font-bold text-gray-900">
             Related Calculators
           </h2>
 
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             <a
               href="/brick-calculator"
-              className="rounded-xl bg-gray-100 p-4 text-black hover:bg-gray-200"
+              className="rounded-2xl border border-orange-100 bg-orange-50 p-4 font-medium text-gray-800 transition-all duration-300 hover:-translate-y-1 hover:border-orange-400 hover:shadow-xl"
             >
               Brick Calculator
             </a>
 
             <a
               href="/cement-calculator"
-              className="rounded-xl bg-gray-100 p-4 text-black hover:bg-gray-200"
+              className="rounded-2xl border border-orange-100 bg-orange-50 p-4 font-medium text-gray-800 transition-all duration-300 hover:-translate-y-1 hover:border-orange-400 hover:shadow-xl"
             >
               Cement Calculator
             </a>
 
             <a
               href="/concrete-calculator"
-              className="rounded-xl bg-gray-100 p-4 text-black hover:bg-gray-200"
+              className="rounded-2xl border border-orange-100 bg-orange-50 p-4 font-medium text-gray-800 transition-all duration-300 hover:-translate-y-1 hover:border-orange-400 hover:shadow-xl"
             >
               Concrete Calculator
             </a>
