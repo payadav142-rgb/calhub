@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 
 import CalculatorResult from "../components/CalculatorResult";
 import RelatedCalculators from "../components/RelatedCalculators";
+
 export default function TileCalculator() {
   const [floorLength, setFloorLength] =
     useState("");
@@ -53,19 +54,21 @@ export default function TileCalculator() {
 
       {/* Calculator Section */}
       <section className="mx-auto max-w-2xl px-6 py-16">
-        <h1 className="text-4xl font-bold text-black">
-          Tile Calculator
-        </h1>
+        <div className="text-center">
+          <h1 className="text-4xl font-bold text-gray-900 md:text-5xl">
+            Tile Calculator
+          </h1>
 
-        <p className="mt-4 text-gray-600">
-          Calculate tiles needed for flooring
-          and wall installation projects.
-        </p>
+          <p className="mt-4 text-lg text-gray-600">
+            Calculate tiles needed for flooring
+            and wall installation projects.
+          </p>
+        </div>
 
-        <div className="mt-8 rounded-2xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-md">
+        <div className="mt-10 rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
 
-          <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700">
+          <div className="mb-5">
+            <label className="mb-2 block font-medium text-gray-700">
               Floor Length (ft)
             </label>
 
@@ -76,12 +79,12 @@ export default function TileCalculator() {
                 setFloorLength(e.target.value)
               }
               placeholder="Enter floor length"
-              className="mt-2 w-full rounded-xl border border-gray-300 bg-gradient-to-br from-orange-50 via-white to-amber-50 px-4 py-3 text-black outline-none focus:border-black focus:ring-2 focus:ring-black/10"
+              className="w-full rounded-2xl border border-orange-200 p-4 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
             />
           </div>
 
-          <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700">
+          <div className="mb-5">
+            <label className="mb-2 block font-medium text-gray-700">
               Floor Width (ft)
             </label>
 
@@ -92,12 +95,12 @@ export default function TileCalculator() {
                 setFloorWidth(e.target.value)
               }
               placeholder="Enter floor width"
-              className="mt-2 w-full rounded-xl border border-gray-300 bg-gradient-to-br from-orange-50 via-white to-amber-50 px-4 py-3 text-black outline-none focus:border-black focus:ring-2 focus:ring-black/10"
+              className="w-full rounded-2xl border border-orange-200 p-4 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
             />
           </div>
 
-          <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700">
+          <div className="mb-5">
+            <label className="mb-2 block font-medium text-gray-700">
               Tile Length (ft)
             </label>
 
@@ -108,12 +111,12 @@ export default function TileCalculator() {
                 setTileLength(e.target.value)
               }
               placeholder="Enter tile length"
-              className="mt-2 w-full rounded-xl border border-gray-300 bg-gradient-to-br from-orange-50 via-white to-amber-50 px-4 py-3 text-black outline-none focus:border-black focus:ring-2 focus:ring-black/10"
+              className="w-full rounded-2xl border border-orange-200 p-4 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
             />
           </div>
 
           <div className="mb-6">
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="mb-2 block font-medium text-gray-700">
               Tile Width (ft)
             </label>
 
@@ -124,7 +127,7 @@ export default function TileCalculator() {
                 setTileWidth(e.target.value)
               }
               placeholder="Enter tile width"
-              className="mt-2 w-full rounded-xl border border-gray-300 bg-gradient-to-br from-orange-50 via-white to-amber-50 px-4 py-3 text-black outline-none focus:border-black focus:ring-2 focus:ring-black/10"
+              className="w-full rounded-2xl border border-orange-200 p-4 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
             />
           </div>
 
@@ -132,13 +135,19 @@ export default function TileCalculator() {
             onClick={calculateTiles}
             className="w-full rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 py-3 font-semibold text-white transition-all duration-300 hover:scale-[1.02]"
           >
-            Calculate
+            Calculate Tiles
           </button>
 
           {result !== null && (
-            <div className="mt-6">
-              <h3 className="mb-2 text-lg font-medium text-gray-700">Tiles Needed</h3>
-              <CalculatorResult title={"Tiles Needed"} result={String(result)} />
+            <div className="mt-6 rounded-2xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-5 shadow-inner">
+              <h3 className="mb-3 text-xl font-semibold text-gray-700">
+                Tiles Needed
+              </h3>
+
+              <CalculatorResult
+                title={"Tiles Needed"}
+                result={String(result)}
+              />
             </div>
           )}
         </div>
@@ -146,8 +155,8 @@ export default function TileCalculator() {
 
       {/* Formula Section */}
       <section className="mx-auto max-w-5xl px-6 pb-20">
-        <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl">
-          <h2 className="text-3xl font-bold text-black">
+        <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
+          <h2 className="text-3xl font-bold text-gray-900">
             Tile Calculation Formula
           </h2>
 
@@ -157,7 +166,7 @@ export default function TileCalculator() {
           </p>
 
           <div className="mt-6 rounded-2xl border border-orange-100 bg-orange-50 p-6">
-            <p className="text-2xl font-bold text-black">
+            <p className="text-2xl font-bold text-orange-600">
               Tiles Needed =
               Floor Area ÷ Tile Area
             </p>
@@ -174,12 +183,12 @@ export default function TileCalculator() {
 
       {/* How To Use */}
       <section className="mx-auto max-w-5xl px-6 pb-20">
-        <div className="rounded-3xl bg-black p-8 text-white shadow-xl">
-          <h2 className="text-3xl font-bold">
+        <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
+          <h2 className="text-3xl font-bold text-gray-900">
             How To Use This Tile Calculator
           </h2>
 
-          <div className="mt-6 space-y-4 text-lg text-gray-300">
+          <div className="mt-6 space-y-4 text-lg text-gray-600">
             <p>
               1. Enter floor length.
             </p>
@@ -202,13 +211,13 @@ export default function TileCalculator() {
 
       {/* FAQ Section */}
       <section className="mx-auto max-w-5xl px-6 pb-20">
-        <h2 className="text-4xl font-extrabold text-black">
+        <h2 className="text-4xl font-extrabold text-gray-900">
           Frequently Asked Questions
         </h2>
 
         <div className="mt-10 space-y-6">
-          <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-lg">
-            <h3 className="text-2xl font-bold text-black">
+          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl transition-all duration-300 hover:shadow-2xl">
+            <h3 className="text-2xl font-bold text-gray-900">
               How many tiles do I need?
             </h3>
 
@@ -220,8 +229,8 @@ export default function TileCalculator() {
             </p>
           </div>
 
-          <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-lg">
-            <h3 className="text-2xl font-bold text-black">
+          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl transition-all duration-300 hover:shadow-2xl">
+            <h3 className="text-2xl font-bold text-gray-900">
               Should I buy extra tiles?
             </h3>
 
@@ -232,8 +241,8 @@ export default function TileCalculator() {
             </p>
           </div>
 
-          <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-lg">
-            <h3 className="text-2xl font-bold text-black">
+          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl transition-all duration-300 hover:shadow-2xl">
+            <h3 className="text-2xl font-bold text-gray-900">
               Is this tile calculator free?
             </h3>
 
@@ -252,4 +261,3 @@ export default function TileCalculator() {
     </main>
   );
 }
-

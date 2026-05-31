@@ -1,10 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import RelatedCalculators from "../components/RelatedCalculators";
-export default function DrywallCalculator() {
+
+export default function DrywallCalculatorClient() {
   const [wallLength, setWallLength] =
     useState("");
 
@@ -18,6 +16,14 @@ export default function DrywallCalculator() {
     useState<number | null>(null);
 
   const calculateDrywall = () => {
+    if (
+      !wallLength ||
+      !wallHeight ||
+      !sheetArea
+    ) {
+      return;
+    }
+
     const wallArea =
       parseFloat(wallLength) *
       parseFloat(wallHeight);
@@ -29,229 +35,70 @@ export default function DrywallCalculator() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50">
-      <Navbar />
+    <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl">
 
-      {/* Calculator Section */}
-      <section className="mx-auto max-w-2xl px-6 py-16">
-        <h1 className="text-4xl font-bold text-black">
-          Drywall Calculator
-        </h1>
+      <div className="mb-4">
+        <label className="mb-2 block text-sm font-medium text-gray-700">
+          Wall Length (ft)
+        </label>
 
-        <p className="mt-4 text-gray-600">
-          Calculate drywall sheets required for
-          walls and ceiling construction projects.
-        </p>
+        <input
+          type="number"
+          value={wallLength}
+          onChange={(e) =>
+            setWallLength(e.target.value)
+          }
+          placeholder="Enter wall length"
+          className="w-full rounded-xl border border-orange-200 bg-white px-4 py-3 text-black outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-200"
+        />
+      </div>
 
-        <div className="mt-8 rounded-2xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-md">
-          <div className="mb-4">
-            <label className="mb-2 block text-black">
-              Wall Length (ft)
-            </label>
+      <div className="mb-4">
+        <label className="mb-2 block text-sm font-medium text-gray-700">
+          Wall Height (ft)
+        </label>
 
-            <input
-              type="number"
-              value={wallLength}
-              onChange={(e) =>
-                setWallLength(e.target.value)
-              }
-              className="w-full rounded-2xl border border-orange-200 p-3 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
-              placeholder="Enter wall length"
-            />
-          </div>
+        <input
+          type="number"
+          value={wallHeight}
+          onChange={(e) =>
+            setWallHeight(e.target.value)
+          }
+          placeholder="Enter wall height"
+          className="w-full rounded-xl border border-orange-200 bg-white px-4 py-3 text-black outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-200"
+        />
+      </div>
 
-          <div className="mb-4">
-            <label className="mb-2 block text-black">
-              Wall Height (ft)
-            </label>
+      <div className="mb-6">
+        <label className="mb-2 block text-sm font-medium text-gray-700">
+          Drywall Sheet Area (sq ft)
+        </label>
 
-            <input
-              type="number"
-              value={wallHeight}
-              onChange={(e) =>
-                setWallHeight(e.target.value)
-              }
-              className="w-full rounded-2xl border border-orange-200 p-3 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
-              placeholder="Enter wall height"
-            />
-          </div>
+        <input
+          type="number"
+          value={sheetArea}
+          onChange={(e) =>
+            setSheetArea(e.target.value)
+          }
+          placeholder="Enter drywall sheet area"
+          className="w-full rounded-xl border border-orange-200 bg-white px-4 py-3 text-black outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-200"
+        />
+      </div>
 
-          <div className="mb-4">
-            <label className="mb-2 block text-black">
-              Drywall Sheet Area (sq ft)
-            </label>
+      <button
+        onClick={calculateDrywall}
+        className="w-full rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 py-3 font-semibold text-white transition-all duration-300 hover:scale-[1.02]"
+      >
+        Calculate
+      </button>
 
-            <input
-              type="number"
-              value={sheetArea}
-              onChange={(e) =>
-                setSheetArea(e.target.value)
-              }
-              className="w-full rounded-2xl border border-orange-200 p-3 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
-              placeholder="Enter drywall sheet area"
-            />
-          </div>
-
-          <button
-            onClick={calculateDrywall}
-            className="w-full rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 py-3 font-semibold text-white transition-all duration-300 hover:scale-[1.02]"
-          >
-            Calculate
-          </button>
-
-          {result !== null && (
-            <div className="mt-6 rounded-2xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-5 shadow-inner">
-              <h2 className="text-2xl font-bold text-black">
-                Drywall Sheets Needed: {result}
-              </h2>
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* Formula Section */}
-      <section className="mx-auto max-w-5xl px-6 pb-20">
-        <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl">
-          <h2 className="text-3xl font-bold text-black">
-            Drywall Calculation Formula
+      {result !== null && (
+        <div className="mt-6 rounded-2xl bg-orange-50 p-5 shadow-inner">
+          <h2 className="text-2xl font-bold text-black">
+            Drywall Sheets Needed: {result}
           </h2>
-
-          <p className="mt-4 text-lg leading-8 text-gray-600">
-            Drywall sheet estimation is calculated
-            by dividing total wall area by the
-            coverage area of a single drywall
-            sheet. Accurate drywall calculations
-            help reduce waste and improve material
-            planning for residential and
-            commercial construction projects.
-          </p>
-
-          <div className="mt-6 rounded-2xl border border-orange-100 bg-orange-50 p-6">
-            <p className="text-2xl font-bold text-black">
-              Drywall Sheets = Wall Area ÷ Sheet Area
-            </p>
-          </div>
-
-          <p className="mt-6 leading-8 text-gray-600">
-            Contractors, builders, and homeowners
-            commonly use drywall calculators when
-            planning interior wall finishing,
-            ceiling installations, office
-            renovations, and home improvement
-            projects.
-          </p>
-
-          <p className="mt-4 leading-8 text-gray-600">
-            Proper drywall estimation helps save
-            money, reduce material shortages, and
-            improve overall project efficiency.
-          </p>
         </div>
-      </section>
-
-      {/* How To Use */}
-      <section className="mx-auto max-w-5xl px-6 pb-20">
-        <div className="rounded-3xl bg-black p-8 text-white shadow-xl">
-          <h2 className="text-3xl font-bold">
-            How To Use This Drywall Calculator
-          </h2>
-
-          <div className="mt-6 space-y-4 text-lg text-gray-300">
-            <p>1. Enter wall length in feet.</p>
-
-            <p>2. Enter wall height in feet.</p>
-
-            <p>
-              3. Enter drywall sheet coverage
-              area.
-            </p>
-
-            <p>
-              4. Click calculate to estimate
-              drywall sheets instantly.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Example Calculation */}
-      <section className="mx-auto max-w-5xl px-6 pb-20">
-        <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl">
-          <h2 className="text-3xl font-bold text-black">
-            Example Drywall Calculation
-          </h2>
-
-          <p className="mt-4 leading-8 text-gray-600">
-            If wall length is 20 ft, wall height
-            is 10 ft, and one drywall sheet covers
-            32 sq ft:
-          </p>
-
-          <div className="mt-6 rounded-2xl border border-orange-100 bg-orange-50 p-6">
-            <p className="text-2xl font-bold text-black">
-              Wall Area = 20 × 10 = 200 sq ft
-            </p>
-
-            <p className="mt-4 text-xl font-semibold text-gray-700">
-              Drywall Sheets = 200 ÷ 32 = 6.25
-            </p>
-
-            <p className="mt-4 text-xl font-semibold text-gray-700">
-              Required Sheets = 7
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="mx-auto max-w-5xl px-6 pb-20">
-        <h2 className="text-4xl font-extrabold text-black">
-          Frequently Asked Questions
-        </h2>
-
-        <div className="mt-10 space-y-6">
-          <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-lg">
-            <h3 className="text-2xl font-bold text-black">
-              What is a drywall calculator?
-            </h3>
-
-            <p className="mt-3 leading-7 text-gray-600">
-              A drywall calculator estimates the
-              number of drywall sheets needed for
-              walls and ceilings.
-            </p>
-          </div>
-
-          <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-lg">
-            <h3 className="text-2xl font-bold text-black">
-              Can I use this for ceilings?
-            </h3>
-
-            <p className="mt-3 leading-7 text-gray-600">
-              Yes, this calculator can be used for
-              ceilings, partition walls, and other
-              drywall installation projects.
-            </p>
-          </div>
-
-          <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-lg">
-            <h3 className="text-2xl font-bold text-black">
-              Is this calculator free?
-            </h3>
-
-            <p className="mt-3 leading-7 text-gray-600">
-              Yes, Calculator Hub provides free
-              construction calculators for
-              contractors, builders, and
-              homeowners.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <RelatedCalculators />
-
-      <Footer />
-    </main>
+      )}
+    </div>
   );
 }

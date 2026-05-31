@@ -1,187 +1,65 @@
-"use client";
+import type { Metadata } from "next";
+import ConstructionCostCalculatorClient from "./ConstructionCostCalculatorClient";
 
-import { useState } from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+export const metadata: Metadata = {
+  title:
+    "Construction Cost Calculator - Free Building Cost Estimator",
 
+  description:
+    "Calculate total construction cost based on area and cost per square foot. Free online construction cost calculator for builders, contractors, and homeowners.",
 
+  keywords: [
+    "construction cost calculator",
+    "building cost calculator",
+    "house construction calculator",
+    "construction estimator",
+    "cost per square foot calculator",
+    "building budget calculator",
+  ],
 
-export default function ConstructionCostCalculator() {
-  const [area, setArea] =
-    useState("");
+  alternates: {
+    canonical: "/construction-cost-calculator",
+  },
 
-  const [
-    costPerSqft,
-    setCostPerSqft,
-  ] = useState("");
+  openGraph: {
+    title:
+      "Construction Cost Calculator - Free Building Cost Estimator",
 
-  const [result, setResult] =
-    useState<number | null>(null);
+    description:
+      "Estimate total building construction costs instantly using area and cost per square foot.",
 
-  const calculateCost = () => {
-    const totalCost =
-      parseFloat(area) *
-      parseFloat(costPerSqft);
+    url:
+      "https://calculator-hub-murex.vercel.app/construction-cost-calculator",
 
-    setResult(totalCost);
-  };
+    siteName: "Calculator Hub",
 
-  return (
-    <main className="min-h-screen bg-gray-100">
-      <Navbar />
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Construction Cost Calculator",
+      },
+    ],
 
-      {/* Calculator Section */}
-      <section className="mx-auto max-w-2xl px-6 py-16">
-        <h1 className="text-4xl font-bold text-black">
-          Construction Cost Calculator
-        </h1>
+    locale: "en_US",
 
-        <p className="mt-4 text-gray-600">
-          Estimate total construction cost for
-          your building project instantly.
-        </p>
+    type: "website",
+  },
 
-        <div className="mt-8 rounded-2xl bg-white p-6 shadow-md">
-          <div className="mb-4">
-            <label className="mb-2 block text-black">
-              Area (sq ft)
-            </label>
+  twitter: {
+    card: "summary_large_image",
 
-            <input
-              type="number"
-              value={area}
-              onChange={(e) =>
-                setArea(e.target.value)
-              }
-              className="w-full rounded-xl border p-3"
-              placeholder="Enter total area"
-            />
-          </div>
+    title:
+      "Construction Cost Calculator - Free Building Cost Estimator",
 
-          <div className="mb-4">
-            <label className="mb-2 block text-black">
-              Cost Per Sq Ft
-            </label>
+    description:
+      "Estimate total building construction costs instantly.",
 
-            <input
-              type="number"
-              value={costPerSqft}
-              onChange={(e) =>
-                setCostPerSqft(
-                  e.target.value
-                )
-              }
-              className="w-full rounded-xl border p-3"
-              placeholder="Enter cost per sq ft"
-            />
-          </div>
+    images: ["/og-image.jpg"],
+  },
+};
 
-          <button
-            onClick={calculateCost}
-            className="w-full rounded-xl bg-black py-3 text-white hover:bg-gray-800"
-          >
-            Calculate
-          </button>
-
-          {result !== null && (
-            <div className="mt-6 rounded-xl bg-gray-100 p-4">
-              <h2 className="text-2xl font-bold text-black">
-                Estimated Cost: ₹
-                {result.toLocaleString()}
-              </h2>
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* SEO Content */}
-      <section className="mx-auto max-w-4xl px-6 pb-16">
-        <div className="rounded-2xl bg-white p-8 shadow-md">
-          <h2 className="text-3xl font-bold text-black">
-            Construction Cost Estimation
-          </h2>
-
-          <p className="mt-4 text-gray-600">
-            This construction cost calculator
-            helps builders, contractors, and
-            homeowners estimate total building
-            expenses based on area and cost per
-            square foot.
-          </p>
-
-          <p className="mt-4 text-gray-600">
-            Construction costs vary depending on
-            materials, labor charges, location,
-            and project type.
-          </p>
-
-          <p className="mt-4 text-gray-600">
-            Accurate cost estimation helps reduce
-            overspending and improves budgeting
-            for residential and commercial
-            construction projects.
-          </p>
-
-          <h3 className="mt-6 text-2xl font-semibold text-black">
-            Formula
-          </h3>
-
-          <p className="mt-3 text-gray-600">
-            Total Cost = Area × Cost Per Sq Ft
-          </p>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="mx-auto max-w-4xl px-6 pb-20">
-        <div className="rounded-2xl bg-white p-8 shadow-md">
-          <h2 className="text-3xl font-bold text-black">
-            Frequently Asked Questions
-          </h2>
-
-          <div className="mt-8 space-y-6">
-            <div>
-              <h3 className="text-xl font-semibold text-black">
-                What is a construction cost
-                calculator?
-              </h3>
-
-              <p className="mt-2 text-gray-600">
-                It helps estimate total building
-                costs based on project area and
-                construction rates.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold text-black">
-                Is this calculator free?
-              </h3>
-
-              <p className="mt-2 text-gray-600">
-                Yes, Calculator Hub provides free
-                online construction calculators.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold text-black">
-                Can I use it for house
-                construction?
-              </h3>
-
-              <p className="mt-2 text-gray-600">
-                Yes, this calculator is useful
-                for houses, commercial buildings,
-                and renovation projects.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <Footer />
-    </main>
-  );
+export default function Page() {
+  return <ConstructionCostCalculatorClient />;
 }
-

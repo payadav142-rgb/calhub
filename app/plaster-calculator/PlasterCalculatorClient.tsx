@@ -8,6 +8,7 @@ import Footer from "../components/Footer";
 import CalculatorInput from "../components/CalculatorInput";
 import CalculatorResult from "../components/CalculatorResult";
 import RelatedCalculators from "../components/RelatedCalculators";
+
 export default function PlasterCalculator() {
   const [length, setLength] =
     useState("");
@@ -46,16 +47,18 @@ export default function PlasterCalculator() {
 
       {/* Calculator Section */}
       <section className="mx-auto max-w-2xl px-6 py-16">
-        <h1 className="text-4xl font-bold text-black">
-          Plaster Calculator
-        </h1>
+        <div className="text-center">
+          <h1 className="text-4xl font-bold text-gray-900 md:text-5xl">
+            Plaster Calculator
+          </h1>
 
-        <p className="mt-4 text-gray-600">
-          Calculate plaster volume required for
-          walls and construction projects.
-        </p>
+          <p className="mt-4 text-lg text-gray-600">
+            Calculate plaster volume required for
+            walls and construction projects.
+          </p>
+        </div>
 
-        <div className="mt-8 rounded-2xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-md">
+        <div className="mt-10 rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
 
           <CalculatorInput
             label="Wall Length (ft)"
@@ -82,24 +85,26 @@ export default function PlasterCalculator() {
             onClick={calculatePlaster}
             className="w-full rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 py-3 font-semibold text-white transition-all duration-300 hover:scale-[1.02]"
           >
-            Calculate
+            Calculate Plaster
           </button>
 
           {result !== null && (
-            <CalculatorResult
-              title="Plaster Volume"
-              result={`${result.toFixed(
-                2
-              )} ft³`}
-            />
+            <div className="mt-6 rounded-2xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-5 shadow-inner">
+              <CalculatorResult
+                title="Plaster Volume"
+                result={`${result.toFixed(
+                  2
+                )} ft³`}
+              />
+            </div>
           )}
         </div>
       </section>
 
       {/* Formula Section */}
       <section className="mx-auto max-w-5xl px-6 pb-20">
-        <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl">
-          <h2 className="text-3xl font-bold text-black">
+        <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
+          <h2 className="text-3xl font-bold text-gray-900">
             Plaster Calculation Formula
           </h2>
 
@@ -110,7 +115,7 @@ export default function PlasterCalculator() {
           </p>
 
           <div className="mt-6 rounded-2xl border border-orange-100 bg-orange-50 p-6">
-            <p className="text-2xl font-bold text-black">
+            <p className="text-2xl font-bold text-orange-600">
               Plaster Volume =
               Length × Height × Thickness
             </p>
@@ -126,12 +131,12 @@ export default function PlasterCalculator() {
 
       {/* How To Use */}
       <section className="mx-auto max-w-5xl px-6 pb-20">
-        <div className="rounded-3xl bg-black p-8 text-white shadow-xl">
-          <h2 className="text-3xl font-bold">
+        <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
+          <h2 className="text-3xl font-bold text-gray-900">
             How To Use This Plaster Calculator
           </h2>
 
-          <div className="mt-6 space-y-4 text-lg text-gray-300">
+          <div className="mt-6 space-y-4 text-lg text-gray-600">
             <p>
               1. Enter wall length.
             </p>
@@ -154,13 +159,13 @@ export default function PlasterCalculator() {
 
       {/* FAQ Section */}
       <section className="mx-auto max-w-5xl px-6 pb-20">
-        <h2 className="text-4xl font-extrabold text-black">
+        <h2 className="text-4xl font-extrabold text-gray-900">
           Frequently Asked Questions
         </h2>
 
         <div className="mt-10 space-y-6">
-          <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-lg">
-            <h3 className="text-2xl font-bold text-black">
+          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl">
+            <h3 className="text-2xl font-bold text-gray-900">
               What is plaster volume?
             </h3>
 
@@ -171,8 +176,8 @@ export default function PlasterCalculator() {
             </p>
           </div>
 
-          <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-lg">
-            <h3 className="text-2xl font-bold text-black">
+          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl">
+            <h3 className="text-2xl font-bold text-gray-900">
               Can I use this for ceiling plaster?
             </h3>
 
@@ -183,8 +188,8 @@ export default function PlasterCalculator() {
             </p>
           </div>
 
-          <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-lg">
-            <h3 className="text-2xl font-bold text-black">
+          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl">
+            <h3 className="text-2xl font-bold text-gray-900">
               Is this calculator free?
             </h3>
 
@@ -203,4 +208,3 @@ export default function PlasterCalculator() {
     </main>
   );
 }
-

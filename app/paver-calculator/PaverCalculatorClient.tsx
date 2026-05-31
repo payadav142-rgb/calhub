@@ -4,6 +4,7 @@ import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import RelatedCalculators from "../components/RelatedCalculators";
+
 export default function PaverCalculator() {
   const [areaLength, setAreaLength] =
     useState("");
@@ -39,32 +40,25 @@ export default function PaverCalculator() {
     <main className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50">
       <Navbar />
 
-      {/* HERO */}
-      <section className="bg-black py-20 text-white">
-        <div className="mx-auto max-w-5xl px-6 text-center">
-          <h1 className="text-5xl font-extrabold md:text-6xl">
+      {/* Calculator Section */}
+      <section className="mx-auto max-w-2xl px-6 py-16">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold text-gray-900 md:text-5xl">
             Paver Calculator
           </h1>
 
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-gray-300">
+          <p className="mt-4 text-lg text-gray-600">
             Calculate the exact number of pavers
             required for patios, driveways,
             pathways, sidewalks, outdoor flooring,
             and landscaping projects instantly.
           </p>
         </div>
-      </section>
 
-      {/* CALCULATOR */}
-      <section className="mx-auto max-w-2xl px-6 py-16">
-        <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl">
-          <h2 className="text-3xl font-bold text-black">
-            Calculate Pavers
-          </h2>
-
+        <div className="mt-10 rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
           <div className="mt-8 space-y-5">
             <div>
-              <label className="mb-2 block font-semibold text-black">
+              <label className="mb-2 block font-medium text-gray-700">
                 Area Length (ft)
               </label>
 
@@ -75,12 +69,12 @@ export default function PaverCalculator() {
                   setAreaLength(e.target.value)
                 }
                 placeholder="Enter area length"
-                className="w-full rounded-2xl border p-4 outline-none focus:border-black"
+                className="w-full rounded-2xl border border-orange-200 p-4 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
               />
             </div>
 
             <div>
-              <label className="mb-2 block font-semibold text-black">
+              <label className="mb-2 block font-medium text-gray-700">
                 Area Width (ft)
               </label>
 
@@ -91,12 +85,12 @@ export default function PaverCalculator() {
                   setAreaWidth(e.target.value)
                 }
                 placeholder="Enter area width"
-                className="w-full rounded-2xl border p-4 outline-none focus:border-black"
+                className="w-full rounded-2xl border border-orange-200 p-4 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
               />
             </div>
 
             <div>
-              <label className="mb-2 block font-semibold text-black">
+              <label className="mb-2 block font-medium text-gray-700">
                 Paver Length (ft)
               </label>
 
@@ -107,12 +101,12 @@ export default function PaverCalculator() {
                   setPaverLength(e.target.value)
                 }
                 placeholder="Enter paver length"
-                className="w-full rounded-2xl border p-4 outline-none focus:border-black"
+                className="w-full rounded-2xl border border-orange-200 p-4 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
               />
             </div>
 
             <div>
-              <label className="mb-2 block font-semibold text-black">
+              <label className="mb-2 block font-medium text-gray-700">
                 Paver Width (ft)
               </label>
 
@@ -123,20 +117,20 @@ export default function PaverCalculator() {
                   setPaverWidth(e.target.value)
                 }
                 placeholder="Enter paver width"
-                className="w-full rounded-2xl border p-4 outline-none focus:border-black"
+                className="w-full rounded-2xl border border-orange-200 p-4 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
               />
             </div>
 
             <button
               onClick={calculatePavers}
-              className="w-full rounded-2xl bg-black py-4 text-lg font-semibold text-white transition hover:bg-gray-800"
+              className="w-full rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 py-4 text-lg font-semibold text-white transition-all duration-300 hover:scale-[1.02]"
             >
               Calculate Pavers
             </button>
 
             {result !== null && (
-              <div className="rounded-2xl border border-orange-100 bg-orange-50 p-6 text-center">
-                <h3 className="text-3xl font-bold text-black">
+              <div className="rounded-2xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-inner text-center">
+                <h3 className="text-3xl font-bold text-gray-900">
                   Pavers Needed: {result}
                 </h3>
               </div>
@@ -147,8 +141,8 @@ export default function PaverCalculator() {
 
       {/* FORMULA */}
       <section className="mx-auto max-w-5xl px-6 pb-16">
-        <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-10 shadow-xl">
-          <h2 className="text-4xl font-bold text-black">
+        <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-10 shadow-xl transition-all duration-300 hover:shadow-2xl">
+          <h2 className="text-4xl font-bold text-gray-900">
             Paver Calculation Formula
           </h2>
 
@@ -159,7 +153,7 @@ export default function PaverCalculator() {
           </p>
 
           <div className="mt-8 rounded-2xl border border-orange-100 bg-orange-50 p-8">
-            <p className="text-3xl font-bold text-black">
+            <p className="text-3xl font-bold text-orange-600">
               Pavers Needed =
               Total Area ÷ Single Paver Area
             </p>
@@ -177,12 +171,12 @@ export default function PaverCalculator() {
 
       {/* HOW TO USE */}
       <section className="mx-auto max-w-5xl px-6 pb-16">
-        <div className="rounded-3xl bg-black p-10 text-white shadow-xl">
-          <h2 className="text-4xl font-bold">
+        <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-10 shadow-xl transition-all duration-300 hover:shadow-2xl">
+          <h2 className="text-4xl font-bold text-gray-900">
             How To Use This Paver Calculator
           </h2>
 
-          <div className="mt-8 space-y-5 text-lg text-gray-300">
+          <div className="mt-8 space-y-5 text-lg text-gray-600">
             <p>
               1. Enter the total area length.
             </p>
@@ -210,8 +204,8 @@ export default function PaverCalculator() {
       {/* BENEFITS */}
       <section className="mx-auto max-w-5xl px-6 pb-16">
         <div className="grid gap-6 md:grid-cols-3">
-          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl">
-            <h3 className="text-2xl font-bold text-black">
+          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl transition-all duration-300 hover:shadow-2xl">
+            <h3 className="text-2xl font-bold text-gray-900">
               Accurate Estimates
             </h3>
 
@@ -222,8 +216,8 @@ export default function PaverCalculator() {
             </p>
           </div>
 
-          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl">
-            <h3 className="text-2xl font-bold text-black">
+          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl transition-all duration-300 hover:shadow-2xl">
+            <h3 className="text-2xl font-bold text-gray-900">
               Fast Planning
             </h3>
 
@@ -234,8 +228,8 @@ export default function PaverCalculator() {
             </p>
           </div>
 
-          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl">
-            <h3 className="text-2xl font-bold text-black">
+          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl transition-all duration-300 hover:shadow-2xl">
+            <h3 className="text-2xl font-bold text-gray-900">
               Free Online Tool
             </h3>
 
@@ -250,13 +244,13 @@ export default function PaverCalculator() {
 
       {/* FAQ */}
       <section className="mx-auto max-w-5xl px-6 pb-20">
-        <h2 className="text-4xl font-extrabold text-black">
+        <h2 className="text-4xl font-extrabold text-gray-900">
           Frequently Asked Questions
         </h2>
 
         <div className="mt-10 space-y-6">
-          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl">
-            <h3 className="text-2xl font-bold text-black">
+          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl transition-all duration-300 hover:shadow-2xl">
+            <h3 className="text-2xl font-bold text-gray-900">
               What is a paver calculator?
             </h3>
 
@@ -269,8 +263,8 @@ export default function PaverCalculator() {
             </p>
           </div>
 
-          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl">
-            <h3 className="text-2xl font-bold text-black">
+          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl transition-all duration-300 hover:shadow-2xl">
+            <h3 className="text-2xl font-bold text-gray-900">
               Can I use this for driveways?
             </h3>
 
@@ -281,8 +275,8 @@ export default function PaverCalculator() {
             </p>
           </div>
 
-          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl">
-            <h3 className="text-2xl font-bold text-black">
+          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl transition-all duration-300 hover:shadow-2xl">
+            <h3 className="text-2xl font-bold text-gray-900">
               Is this calculator free?
             </h3>
 
@@ -302,4 +296,3 @@ export default function PaverCalculator() {
     </main>
   );
 }
-

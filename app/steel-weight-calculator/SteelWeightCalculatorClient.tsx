@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 
 import CalculatorResult from "../components/CalculatorResult";
 import RelatedCalculators from "../components/RelatedCalculators";
+
 export default function SteelWeightCalculator() {
   const [diameter, setDiameter] =
     useState("");
@@ -40,19 +41,22 @@ export default function SteelWeightCalculator() {
 
       {/* Calculator Section */}
       <section className="mx-auto max-w-2xl px-6 py-16">
-        <h1 className="text-4xl font-bold text-black">
-          Steel Weight Calculator
-        </h1>
 
-        <p className="mt-4 text-gray-600">
-          Calculate steel bar weight instantly
-          for construction projects.
-        </p>
+        <div className="text-center">
+          <h1 className="text-4xl font-bold text-gray-900 md:text-5xl">
+            Steel Weight Calculator
+          </h1>
 
-        <div className="mt-8 rounded-2xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-md">
+          <p className="mt-4 text-lg text-gray-600">
+            Calculate steel bar weight instantly
+            for construction projects.
+          </p>
+        </div>
 
-          <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700">
+        <div className="mt-10 rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
+
+          <div className="mb-5">
+            <label className="mb-2 block font-medium text-gray-700">
               Diameter (mm)
             </label>
 
@@ -63,12 +67,12 @@ export default function SteelWeightCalculator() {
                 setDiameter(event.target.value)
               }
               placeholder="Enter diameter"
-              className="mt-2 w-full rounded-xl border border-gray-300 bg-gradient-to-br from-orange-50 via-white to-amber-50 px-4 py-3 text-black outline-none focus:border-black focus:ring-2 focus:ring-black/10"
+              className="w-full rounded-2xl border border-orange-200 p-4 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
             />
           </div>
 
           <div className="mb-6">
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="mb-2 block font-medium text-gray-700">
               Length (m)
             </label>
 
@@ -79,7 +83,7 @@ export default function SteelWeightCalculator() {
                 setLength(event.target.value)
               }
               placeholder="Enter length"
-              className="mt-2 w-full rounded-xl border border-gray-300 bg-gradient-to-br from-orange-50 via-white to-amber-50 px-4 py-3 text-black outline-none focus:border-black focus:ring-2 focus:ring-black/10"
+              className="w-full rounded-2xl border border-orange-200 p-4 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
             />
           </div>
 
@@ -87,11 +91,11 @@ export default function SteelWeightCalculator() {
             onClick={calculateSteelWeight}
             className="w-full rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 py-3 font-semibold text-white transition-all duration-300 hover:scale-[1.02]"
           >
-            Calculate
+            Calculate Steel Weight
           </button>
 
           {result !== null && (
-            <div className="mt-6">
+            <div className="mt-6 rounded-2xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-5 shadow-inner">
               <CalculatorResult
                 title="Steel Weight"
                 result={`${result.toFixed(
@@ -105,8 +109,9 @@ export default function SteelWeightCalculator() {
 
       {/* Formula Section */}
       <section className="mx-auto max-w-5xl px-6 pb-20">
-        <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl">
-          <h2 className="text-3xl font-bold text-black">
+        <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
+
+          <h2 className="text-3xl font-bold text-gray-900">
             Steel Weight Formula
           </h2>
 
@@ -116,7 +121,7 @@ export default function SteelWeightCalculator() {
           </p>
 
           <div className="mt-6 rounded-2xl border border-orange-100 bg-orange-50 p-6">
-            <p className="text-2xl font-bold text-black">
+            <p className="text-2xl font-bold text-orange-600">
               Steel Weight =
               (D² × L) ÷ 162
             </p>
@@ -132,13 +137,14 @@ export default function SteelWeightCalculator() {
 
       {/* How To Use */}
       <section className="mx-auto max-w-5xl px-6 pb-20">
-        <div className="rounded-3xl bg-black p-8 text-white shadow-xl">
-          <h2 className="text-3xl font-bold">
+        <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
+
+          <h2 className="text-3xl font-bold text-gray-900">
             How To Use This Steel Weight
             Calculator
           </h2>
 
-          <div className="mt-6 space-y-4 text-lg text-gray-300">
+          <div className="mt-6 space-y-4 text-lg text-gray-600">
             <p>
               1. Enter steel bar diameter.
             </p>
@@ -161,13 +167,16 @@ export default function SteelWeightCalculator() {
 
       {/* FAQ Section */}
       <section className="mx-auto max-w-5xl px-6 pb-20">
-        <h2 className="text-4xl font-extrabold text-black">
+
+        <h2 className="text-4xl font-extrabold text-gray-900">
           Frequently Asked Questions
         </h2>
 
         <div className="mt-10 space-y-6">
-          <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-lg">
-            <h3 className="text-2xl font-bold text-black">
+
+          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl transition-all duration-300 hover:shadow-2xl">
+
+            <h3 className="text-2xl font-bold text-gray-900">
               What is steel bar weight?
             </h3>
 
@@ -178,8 +187,9 @@ export default function SteelWeightCalculator() {
             </p>
           </div>
 
-          <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-lg">
-            <h3 className="text-2xl font-bold text-black">
+          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl transition-all duration-300 hover:shadow-2xl">
+
+            <h3 className="text-2xl font-bold text-gray-900">
               Why divide by 162?
             </h3>
 
@@ -190,8 +200,9 @@ export default function SteelWeightCalculator() {
             </p>
           </div>
 
-          <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-lg">
-            <h3 className="text-2xl font-bold text-black">
+          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl transition-all duration-300 hover:shadow-2xl">
+
+            <h3 className="text-2xl font-bold text-gray-900">
               Is this calculator free?
             </h3>
 
@@ -201,12 +212,13 @@ export default function SteelWeightCalculator() {
               builders and engineers.
             </p>
           </div>
+
         </div>
       </section>
 
       <RelatedCalculators />
+
       <Footer />
     </main>
   );
 }
-
