@@ -9,13 +9,24 @@ export default function Footer() {
         {/* Brand */}
         <div className="max-w-md">
           <h2 className="text-3xl font-extrabold bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">
-            Calculator Hub
+            CalHub
           </h2>
 
           <p className="mt-4 leading-7 text-gray-600">
             Free online construction calculators
             for builders, contractors, engineers,
             and homeowners.
+          </p>
+
+          {/* EMAIL ADDED */}
+          <p className="mt-4 text-gray-600">
+            Contact:{" "}
+            <a
+              href="mailto:support@calhub.in"
+              className="text-orange-500 hover:underline"
+            >
+              support@calhub.in
+            </a>
           </p>
         </div>
 
@@ -62,16 +73,22 @@ export default function Footer() {
               Features
             </h3>
 
-            <p className="text-gray-600 hover:text-orange-500 cursor-pointer transition">Brick Calculator</p>
-            <p className="text-gray-600 hover:text-orange-500 cursor-pointer transition">Cement Calculator</p>
-            <p className="text-gray-600 hover:text-orange-500 cursor-pointer transition">Steel Weight Calculator</p>
+            <p className="text-gray-600 hover:text-orange-500 cursor-pointer transition">
+              Brick Calculator
+            </p>
+            <p className="text-gray-600 hover:text-orange-500 cursor-pointer transition">
+              Cement Calculator
+            </p>
+            <p className="text-gray-600 hover:text-orange-500 cursor-pointer transition">
+              Steel Weight Calculator
+            </p>
           </div>
         </div>
       </div>
 
       {/* Bottom */}
       <div className="border-t border-orange-100 py-5 text-center text-sm text-gray-500">
-        © 2026 Calculator Hub. All rights reserved.
+        © 2026 CalHub. All rights reserved.
       </div>
     </footer>
   );
