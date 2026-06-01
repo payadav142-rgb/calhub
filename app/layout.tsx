@@ -3,37 +3,27 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Calculator Hub - Free Construction Calculators",
+  title: "CalHub - Free Construction Calculators",
   description:
-    "Free online construction calculators for bricks, cement, concrete, steel weight, paint, tiles, plaster, excavation, roofing, flooring, asphalt, drywall, stairs, and more.",
+    "Free online construction calculators for bricks, cement, concrete, steel weight, paint, tiles, plaster, excavation, roofing, flooring and more.",
   keywords: [
     "construction calculator",
     "brick calculator",
     "cement calculator",
     "concrete calculator",
-    "paint calculator",
-    "tile calculator",
     "steel weight calculator",
-    "roofing calculator",
-    "excavation calculator",
-    "drywall calculator",
-    "construction tools",
-    "online calculators",
+    "calhub",
   ],
-  authors: [{ name: "Calculator Hub" }],
-  creator: "Calculator Hub",
-  publisher: "Calculator Hub",
+  authors: [{ name: "CalHub" }],
+  creator: "CalHub",
+  publisher: "CalHub",
   metadataBase: new URL("https://calhub.in"),
   alternates: {
     canonical: "/",
   },
-  verification: {
-    google: "c2E0Y9rYTzrEi_aYV43C725aFKUMCcaoyREP1or5amo",
-  },
   openGraph: {
-    title: "Calculator Hub - Free Construction Calculators",
-    description:
-      "Professional online construction calculators for builders, engineers, contractors, and homeowners.",
+    title: "CalHub - Free Construction Calculators",
+    description: "Professional construction calculators online.",
     url: "https://calhub.in",
     siteName: "CalHub",
     images: [
@@ -44,49 +34,25 @@ export const metadata: Metadata = {
         alt: "CalHub",
       },
     ],
-    locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Calculator Hub - Free Construction Calculators",
-    description:
-      "Professional online calculators for construction projects.",
+    title: "CalHub",
+    description: "Free construction calculators",
     images: ["/og-image.jpg"],
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
 };
 
 const structuredData = {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      name: "CalHub",
-      url: "https://calhub.in",
-      logo: "https://calhub.in/og-image.jpg",
-    },
-    {
-      "@type": "WebSite",
-      name: "CalHub",
-      url: "https://calhub.in",
-      potentialAction: {
-        "@type": "SearchAction",
-        target: "https://calhub.in/?q={search_term_string}",
-        "query-input": "required name=search_term_string",
-      },
-    },
-  ],
+  "@type": "WebSite",
+  name: "CalHub",
+  url: "https://calhub.in",
 };
 
 export default function RootLayout({
@@ -97,7 +63,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {/* ✅ GOOGLE ADSENSE SCRIPT */}
+
+        {/* ✅ ADSENSE SCRIPT (FIXED) */}
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9673900751625361"
@@ -105,7 +72,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
 
-        {/* SEO STRUCTURED DATA */}
+        {/* STRUCTURED DATA */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
