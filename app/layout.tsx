@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title:
-    "Calculator Hub - Free Construction Calculators",
-
+  title: "Calculator Hub - Free Construction Calculators",
   description:
     "Free online construction calculators for bricks, cement, concrete, steel weight, paint, tiles, plaster, excavation, roofing, flooring, asphalt, drywall, stairs, and more.",
-
   keywords: [
     "construction calculator",
     "brick calculator",
@@ -22,72 +20,43 @@ export const metadata: Metadata = {
     "construction tools",
     "online calculators",
   ],
-
-  authors: [
-    {
-      name: "Calculator Hub",
-    },
-  ],
-
+  authors: [{ name: "Calculator Hub" }],
   creator: "Calculator Hub",
-
   publisher: "Calculator Hub",
-
-  metadataBase: new URL(
-    "https://calculator-hub-murex.vercel.app"
-  ),
-
+  metadataBase: new URL("https://calhub.in"),
   alternates: {
     canonical: "/",
   },
-
   verification: {
-    google:
-      "c2E0Y9rYTzrEi_aYV43C725aFKUMCcaoyREP1or5amo",
+    google: "c2E0Y9rYTzrEi_aYV43C725aFKUMCcaoyREP1or5amo",
   },
-
   openGraph: {
-    title:
-      "Calculator Hub - Free Construction Calculators",
-
+    title: "Calculator Hub - Free Construction Calculators",
     description:
       "Professional online construction calculators for builders, engineers, contractors, and homeowners.",
-
-    url:
-      "https://calculator-hub-murex.vercel.app",
-
-    siteName: "Calculator Hub",
-
+    url: "https://calhub.in",
+    siteName: "CalHub",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Calculator Hub",
+        alt: "CalHub",
       },
     ],
-
     locale: "en_US",
-
     type: "website",
   },
-
   twitter: {
     card: "summary_large_image",
-
-    title:
-      "Calculator Hub - Free Construction Calculators",
-
+    title: "Calculator Hub - Free Construction Calculators",
     description:
       "Professional online calculators for construction projects.",
-
     images: ["/og-image.jpg"],
   },
-
   robots: {
     index: true,
     follow: true,
-
     googleBot: {
       index: true,
       follow: true,
@@ -103,21 +72,18 @@ const structuredData = {
   "@graph": [
     {
       "@type": "Organization",
-      name: "Calculator Hub",
-      url: "https://calculator-hub-murex.vercel.app",
-      logo:
-        "https://calculator-hub-murex.vercel.app/og-image.jpg",
+      name: "CalHub",
+      url: "https://calhub.in",
+      logo: "https://calhub.in/og-image.jpg",
     },
     {
       "@type": "WebSite",
-      name: "Calculator Hub",
-      url: "https://calculator-hub-murex.vercel.app",
+      name: "CalHub",
+      url: "https://calhub.in",
       potentialAction: {
         "@type": "SearchAction",
-        target:
-          "https://calculator-hub-murex.vercel.app/?q={search_term_string}",
-        "query-input":
-          "required name=search_term_string",
+        target: "https://calhub.in/?q={search_term_string}",
+        "query-input": "required name=search_term_string",
       },
     },
   ],
@@ -125,20 +91,28 @@ const structuredData = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body>
+        {/* ✅ GOOGLE ADSENSE SCRIPT */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9673900751625361"
+          strategy="afterInteractive"
+          crossOrigin="anonymous"
+        />
+
+        {/* SEO STRUCTURED DATA */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(
-              structuredData
-            ),
+            __html: JSON.stringify(structuredData),
           }}
         />
+
         {children}
       </body>
     </html>
