@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
     },
 
     sitemap:
-      "https://calculator-hub-murex.vercel.app/sitemap.xml",
+      "https://calhub.in/sitemap.xml",
   };
 }
