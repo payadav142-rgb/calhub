@@ -1,118 +1,127 @@
 import { MetadataRoute } from "next";
 
-export default function sitemap():
-  MetadataRoute.Sitemap {
+const baseUrl = "https://calhub.in";
+
+export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://calculator-hub-murex.vercel.app",
+      url: `${baseUrl}`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
     },
 
     {
-      url: "https://calculator-hub-murex.vercel.app/brick-calculator",
+      url: `${baseUrl}/brick-calculator`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
     },
 
     {
-      url: "https://calculator-hub-murex.vercel.app/cement-calculator",
+      url: `${baseUrl}/cement-calculator`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
     },
 
     {
-      url: "https://calculator-hub-murex.vercel.app/concrete-calculator",
+      url: `${baseUrl}/concrete-calculator`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
     },
 
     {
-      url: "https://calculator-hub-murex.vercel.app/paint-calculator",
+      url: `${baseUrl}/paint-calculator`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
     },
 
     {
-      url: "https://calculator-hub-murex.vercel.app/tile-calculator",
+      url: `${baseUrl}/tile-calculator`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
     },
 
     {
-      url: "https://calculator-hub-murex.vercel.app/plaster-calculator",
+      url: `${baseUrl}/plaster-calculator`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
     },
 
     {
-      url: "https://calculator-hub-murex.vercel.app/sand-calculator",
+      url: `${baseUrl}/sand-calculator`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
     },
 
     {
-      url: "https://calculator-hub-murex.vercel.app/gravel-calculator",
+      url: `${baseUrl}/gravel-calculator`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
     },
 
     {
-      url: "https://calculator-hub-murex.vercel.app/steel-weight-calculator",
+      url: `${baseUrl}/steel-weight-calculator`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
     },
-    {
-  url: "https://calculator-hub-murex.vercel.app/construction-cost-calculator",
-  lastModified: new Date(),
-},
-{
-  url: "https://calculator-hub-murex.vercel.app/area-calculator",
-  lastModified: new Date(),
-},
-{
-  url: "https://calculator-hub-murex.vercel.app/flooring-calculator",
-  lastModified: new Date(),
-},
-{
-  url: "https://calculator-hub-murex.vercel.app/roofing-calculator",
-  lastModified: new Date(),
-},
-{
-  url: "https://calculator-hub-murex.vercel.app/excavation-calculator",
-  lastModified: new Date(),
-},
-{
-  url: "https://calculator-hub-murex.vercel.app/paver-calculator",
-  lastModified: new Date(),
-},
-{
-  url: "https://calculator-hub-murex.vercel.app/asphalt-calculator",
-  lastModified: new Date(),
-},
-{
-  url: "https://calculator-hub-murex.vercel.app/drywall-calculator",
-  lastModified: new Date(),
-},
-{
-  url: "https://calculator-hub-murex.vercel.app/stair-calculator",
-  lastModified: new Date(),
-},
-{
-  url: "https://calculator-hub-murex.vercel.app/unit-converter",
-  lastModified: new Date(),
-},
 
+    {
+      url: `${baseUrl}/construction-cost-calculator`,
+      lastModified: new Date(),
+    },
+
+    {
+      url: `${baseUrl}/area-calculator`,
+      lastModified: new Date(),
+    },
+
+    {
+      url: `${baseUrl}/flooring-calculator`,
+      lastModified: new Date(),
+    },
+
+    {
+      url: `${baseUrl}/roofing-calculator`,
+      lastModified: new Date(),
+    },
+
+    {
+      url: `${baseUrl}/excavation-calculator`,
+      lastModified: new Date(),
+    },
+
+    {
+      url: `${baseUrl}/paver-calculator`,
+      lastModified: new Date(),
+    },
+
+    {
+      url: `${baseUrl}/asphalt-calculator`,
+      lastModified: new Date(),
+    },
+
+    {
+      url: `${baseUrl}/drywall-calculator`,
+      lastModified: new Date(),
+    },
+
+    {
+      url: `${baseUrl}/stair-calculator`,
+      lastModified: new Date(),
+    },
+
+    {
+      url: `${baseUrl}/unit-converter`,
+      lastModified: new Date(),
+    },
   ];
-  
 }
