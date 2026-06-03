@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="relative z-50 border-t border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50/90 backdrop-blur-xl">
+    <footer className="relative z-[9999] pointer-events-auto border-t border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50/90 backdrop-blur-xl">
 
       <div className="mx-auto flex max-w-7xl flex-col gap-10 px-6 py-12 md:flex-row md:items-start md:justify-between">
 
@@ -42,21 +42,21 @@ export default function Footer() {
 
             <Link
               href="/"
-              className="block text-gray-600 transition hover:text-orange-500"
+              className="block w-fit text-gray-600 transition hover:text-orange-500"
             >
               Home
             </Link>
 
             <Link
               href="/about"
-              className="block text-gray-600 transition hover:text-orange-500"
+              className="block w-fit text-gray-600 transition hover:text-orange-500"
             >
               About
             </Link>
 
             <Link
               href="/contact"
-              className="block text-gray-600 transition hover:text-orange-500"
+              className="block w-fit text-gray-600 transition hover:text-orange-500"
             >
               Contact
             </Link>
@@ -70,21 +70,21 @@ export default function Footer() {
 
             <Link
               href="/privacy-policy"
-              className="block text-gray-600 transition hover:text-orange-500"
+              className="block w-fit text-gray-600 transition hover:text-orange-500"
             >
               Privacy Policy
             </Link>
 
             <Link
               href="/terms-and-conditions"
-              className="block text-gray-600 transition hover:text-orange-500"
+              className="block w-fit text-gray-600 transition hover:text-orange-500"
             >
               Terms & Conditions
             </Link>
 
             <Link
               href="/disclaimer"
-              className="block text-gray-600 transition hover:text-orange-500"
+              className="block w-fit text-gray-600 transition hover:text-orange-500"
             >
               Disclaimer
             </Link>
@@ -98,35 +98,35 @@ export default function Footer() {
 
             <Link
               href="/brick-calculator"
-              className="block text-gray-600 transition hover:text-orange-500"
+              className="block w-fit cursor-pointer text-gray-600 transition hover:text-orange-500"
             >
               Brick Calculator
             </Link>
 
             <Link
               href="/cement-calculator"
-              className="block text-gray-600 transition hover:text-orange-500"
+              className="block w-fit cursor-pointer text-gray-600 transition hover:text-orange-500"
             >
               Cement Calculator
             </Link>
 
             <Link
               href="/steel-weight-calculator"
-              className="block text-gray-600 transition hover:text-orange-500"
+              className="block w-fit cursor-pointer text-gray-600 transition hover:text-orange-500"
             >
               Steel Weight Calculator
             </Link>
 
             <Link
               href="/concrete-calculator"
-              className="block text-gray-600 transition hover:text-orange-500"
+              className="block w-fit cursor-pointer text-gray-600 transition hover:text-orange-500"
             >
               Concrete Calculator
             </Link>
 
             <Link
               href="/paint-calculator"
-              className="block text-gray-600 transition hover:text-orange-500"
+              className="block w-fit cursor-pointer text-gray-600 transition hover:text-orange-500"
             >
               Paint Calculator
             </Link>
