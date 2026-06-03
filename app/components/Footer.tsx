@@ -8,7 +8,7 @@ export default function Footer() {
 
         {/* Brand */}
         <div className="max-w-md">
-          <h2 className="text-3xl font-extrabold bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">
+          <h2 className="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-3xl font-extrabold text-transparent">
             CalHub
           </h2>
 
@@ -18,7 +18,6 @@ export default function Footer() {
             and homeowners.
           </p>
 
-          {/* EMAIL ADDED */}
           <p className="mt-4 text-gray-600">
             Contact:{" "}
             <a
@@ -32,56 +31,103 @@ export default function Footer() {
 
         {/* Links */}
         <div className="grid grid-cols-2 gap-8 md:grid-cols-3">
+
+          {/* Navigation */}
           <div className="flex flex-col gap-3">
             <h3 className="text-lg font-bold text-black">
               Navigation
             </h3>
 
-            <Link href="/" className="text-gray-600 transition hover:text-orange-500">
+            <Link
+              href="/"
+              className="text-gray-600 transition hover:text-orange-500"
+            >
               Home
             </Link>
 
-            <Link href="/about" className="text-gray-600 transition hover:text-orange-500">
+            <Link
+              href="/about"
+              className="text-gray-600 transition hover:text-orange-500"
+            >
               About
             </Link>
 
-            <Link href="/contact" className="text-gray-600 transition hover:text-orange-500">
+            <Link
+              href="/contact"
+              className="text-gray-600 transition hover:text-orange-500"
+            >
               Contact
             </Link>
           </div>
 
+          {/* Legal */}
           <div className="flex flex-col gap-3">
             <h3 className="text-lg font-bold text-black">
               Legal
             </h3>
 
-            <Link href="/privacy-policy" className="text-gray-600 transition hover:text-orange-500">
+            <Link
+              href="/privacy-policy"
+              className="text-gray-600 transition hover:text-orange-500"
+            >
               Privacy Policy
             </Link>
 
-            <Link href="/terms-and-conditions" className="text-gray-600 transition hover:text-orange-500">
+            <Link
+              href="/terms-and-conditions"
+              className="text-gray-600 transition hover:text-orange-500"
+            >
               Terms & Conditions
             </Link>
 
-            <Link href="/disclaimer" className="text-gray-600 transition hover:text-orange-500">
+            <Link
+              href="/disclaimer"
+              className="text-gray-600 transition hover:text-orange-500"
+            >
               Disclaimer
             </Link>
           </div>
 
+          {/* Features */}
           <div className="flex flex-col gap-3">
             <h3 className="text-lg font-bold text-black">
               Features
             </h3>
 
-            <p className="text-gray-600 hover:text-orange-500 cursor-pointer transition">
+            <Link
+              href="/brick-calculator"
+              className="text-gray-600 transition hover:text-orange-500"
+            >
               Brick Calculator
-            </p>
-            <p className="text-gray-600 hover:text-orange-500 cursor-pointer transition">
+            </Link>
+
+            <Link
+              href="/cement-calculator"
+              className="text-gray-600 transition hover:text-orange-500"
+            >
               Cement Calculator
-            </p>
-            <p className="text-gray-600 hover:text-orange-500 cursor-pointer transition">
+            </Link>
+
+            <Link
+              href="/steel-weight-calculator"
+              className="text-gray-600 transition hover:text-orange-500"
+            >
               Steel Weight Calculator
-            </p>
+            </Link>
+
+            <Link
+              href="/concrete-calculator"
+              className="text-gray-600 transition hover:text-orange-500"
+            >
+              Concrete Calculator
+            </Link>
+
+            <Link
+              href="/paint-calculator"
+              className="text-gray-600 transition hover:text-orange-500"
+            >
+              Paint Calculator
+            </Link>
           </div>
         </div>
       </div>
