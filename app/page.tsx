@@ -242,21 +242,37 @@ export default function Home() {
             homeowners.
           </p>
 
-          {/* FIXED TAGS */}
+          {/* CLICKABLE TAGS */}
           <div className="mt-8 flex flex-wrap gap-4">
             {[
-              "Brick Calculation",
-              "Cement Estimation",
-              "Steel Weight",
-              "Concrete Volume",
-              "Paint Area",
+              {
+                name: "Brick Calculation",
+                link: "/brick-calculator",
+              },
+              {
+                name: "Cement Estimation",
+                link: "/cement-calculator",
+              },
+              {
+                name: "Steel Weight",
+                link: "/steel-weight-calculator",
+              },
+              {
+                name: "Concrete Volume",
+                link: "/concrete-calculator",
+              },
+              {
+                name: "Paint Area",
+                link: "/paint-calculator",
+              },
             ].map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-orange-600 shadow-md transition-all duration-300 hover:scale-105"
+              <Link
+                key={tag.name}
+                href={tag.link}
+                className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-orange-600 shadow-md transition-all duration-300 hover:scale-105 hover:bg-orange-50"
               >
-                {tag}
-              </span>
+                {tag.name}
+              </Link>
             ))}
           </div>
         </div>
