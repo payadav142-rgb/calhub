@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
   alternates: {
     canonical:
-      "https://buildingcalculator.in/steel-weight-calculator",
+      "https://calhub.in/steel-weight-calculator",
   },
 };
 

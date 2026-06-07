@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
   alternates: {
     canonical:
-      "https://buildingcalculator.in/tile-calculator",
+      "https://calhub.in/tile-calculator",
   },
 };
 

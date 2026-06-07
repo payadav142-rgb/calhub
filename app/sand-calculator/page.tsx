@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
   alternates: {
     canonical:
-      "https://buildingcalculator.in/sand-calculator",
+      "https://calhub.in/sand-calculator",
   },
 
   openGraph: {
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
       "Calculate sand volume and quantity instantly for construction, plastering, flooring, concrete, and landscaping projects.",
 
     url:
-      "https://buildingcalculator.in/sand-calculator",
+      "https://calhub.in/sand-calculator",
 
     siteName: "Building Calculator",
 

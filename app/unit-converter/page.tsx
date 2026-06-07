@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
   alternates: {
     canonical:
-      "https://buildingcalculator.in/unit-converter",
+      "https://calhub.in/unit-converter",
   },
 };
 

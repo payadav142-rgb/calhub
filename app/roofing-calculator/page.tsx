@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
   alternates: {
     canonical:
-      "https://buildingcalculator.in/roofing-calculator",
+      "https://calhub.in/roofing-calculator",
   },
 
   openGraph: {
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
       "Calculate roof area and estimate roofing costs instantly with our free online roofing calculator.",
 
     url:
-      "https://buildingcalculator.in/roofing-calculator",
+      "https://calhub.in/roofing-calculator",
 
     siteName: "Building Calculator",
 
