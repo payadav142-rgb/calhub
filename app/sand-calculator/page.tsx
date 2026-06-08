@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     url:
       "https://calhub.in/sand-calculator",
 
-    siteName: "Building Calculator",
+    siteName: "Calculator Hub",
 
     images: [
       {

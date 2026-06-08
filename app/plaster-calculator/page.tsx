@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     url:
       "https://calhub.in/plaster-calculator",
 
-    siteName: "Building Calculator",
+    siteName: "Calculator Hub",
 
     images: [
       {
