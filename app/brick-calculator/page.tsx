@@ -27,7 +27,7 @@ export const metadata: Metadata = {
       "Free online brick calculator for construction projects.",
 
     url:
-      "https://calculator-hub-murex.vercel.app/brick-calculator",
+      "https://calhub.in/brick-calculator",
 
     siteName: "Calculator Hub",
 

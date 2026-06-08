@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       "Estimate total building construction costs instantly using area and cost per square foot.",
 
     url:
-      "https://calculator-hub-murex.vercel.app/construction-cost-calculator",
+      "https://calhub.in/construction-cost-calculator",
 
     siteName: "Calculator Hub",
 

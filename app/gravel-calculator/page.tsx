@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical:
-      "https://buildingcalculator.in/gravel-calculator",
+      "https://calhub.in/gravel-calculator",
   },
 };
 

@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       "Free online area calculator for rooms, flooring, land measurement, and construction projects.",
 
     url:
-      "https://calculator-hub-murex.vercel.app/area-calculator",
+      "https://calhub.in/area-calculator",
 
     siteName: "Calculator Hub",
 

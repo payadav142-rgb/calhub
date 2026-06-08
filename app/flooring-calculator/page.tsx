@@ -31,7 +31,7 @@ export const metadata: Metadata = {
       "Estimate flooring area and flooring cost instantly.",
 
     url:
-      "https://calculator-hub-murex.vercel.app/flooring-calculator",
+      "https://calhub.in/flooring-calculator",
 
     siteName: "Calculator Hub",
 

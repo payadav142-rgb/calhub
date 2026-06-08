@@ -16,13 +16,13 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical:
-      "https://calculator-hub-murex.vercel.app/privacy-policy",
+      "https://calhub.in/privacy-policy",
   },
   openGraph: {
     title: "Privacy Policy | Calculator Hub",
     description:
       "Learn how Calculator Hub collects, uses, and protects information.",
-    url: "https://calculator-hub-murex.vercel.app/privacy-policy",
+    url: "https://calhub.in/privacy-policy",
     siteName: "Calculator Hub",
     images: ["/og-image.jpg"],
     type: "website",

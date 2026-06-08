@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       "Estimate concrete volume for slabs, footings, foundations, and construction projects.",
 
     url:
-      "https://calculator-hub-murex.vercel.app/concrete-calculator",
+      "https://calhub.in/concrete-calculator",
 
     siteName: "Calculator Hub",
 

@@ -26,7 +26,7 @@ export const metadata: Metadata = {
       "Estimate cement bags required for construction projects quickly and accurately.",
 
     url:
-      "https://calculator-hub-murex.vercel.app/cement-calculator",
+      "https://calhub.in/cement-calculator",
 
     siteName: "Calculator Hub",
 

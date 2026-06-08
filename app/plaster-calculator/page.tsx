@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
   alternates: {
     canonical:
-      "https://buildingcalculator.in/plaster-calculator",
+      "https://calhub.in/plaster-calculator",
   },
 
   openGraph: {
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
       "Calculate plaster volume required for walls, ceilings, and construction projects with our free online plaster calculator.",
 
     url:
-      "https://buildingcalculator.in/plaster-calculator",
+      "https://calhub.in/plaster-calculator",
 
     siteName: "Building Calculator",
 

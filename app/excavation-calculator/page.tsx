@@ -27,7 +27,7 @@ export const metadata: Metadata = {
       "Estimate excavation volume instantly for construction and earthwork projects.",
 
     url:
-      "https://calculator-hub-murex.vercel.app/excavation-calculator",
+      "https://calhub.in/excavation-calculator",
 
     siteName: "Calculator Hub",
 

@@ -15,13 +15,13 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical:
-      "https://calculator-hub-murex.vercel.app/disclaimer",
+      "https://calhub.in/disclaimer",
   },
   openGraph: {
     title: "Disclaimer | Calculator Hub",
     description:
       "Important information regarding the use of Calculator Hub and its construction calculators.",
-    url: "https://calculator-hub-murex.vercel.app/disclaimer",
+    url: "https://calhub.in/disclaimer",
     siteName: "Calculator Hub",
     images: ["/og-image.jpg"],
     type: "website",

@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       "Free online asphalt calculator for paving, roads, driveways, and parking lots.",
 
     url:
-      "https://calculator-hub-murex.vercel.app/asphalt-calculator",
+      "https://calhub.in/asphalt-calculator",
 
     siteName: "Calculator Hub",
 

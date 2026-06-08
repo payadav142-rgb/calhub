@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     "construction estimation tools",
   ],
   alternates: {
-    canonical: "https://calculator-hub-murex.vercel.app/about",
+    canonical: "https://calhub.in/about",
   },
   openGraph: {
     title: "About Us | Calculator Hub",
     description:
       "Professional builder tools and construction calculators for accurate material estimation.",
-    url: "https://calculator-hub-murex.vercel.app/about",
+    url: "https://calhub.in/about",
     siteName: "Calculator Hub",
     images: ["/og-image.jpg"],
     type: "website",
