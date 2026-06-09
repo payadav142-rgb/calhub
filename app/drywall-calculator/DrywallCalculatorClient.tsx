@@ -40,6 +40,14 @@ export default function DrywallCalculatorClient() {
     const sheet =
       parseFloat(sheetArea);
 
+    if (
+      isNaN(length) ||
+      isNaN(height) ||
+      isNaN(sheet)
+    ) {
+      return;
+    }
+
     const wallArea =
       length * height;
 
@@ -66,8 +74,9 @@ export default function DrywallCalculatorClient() {
     if (
       result === null ||
       totalArea === null
-    )
+    ) {
       return;
+    }
 
     const doc = new jsPDF();
 
@@ -125,131 +134,158 @@ export default function DrywallCalculatorClient() {
   };
 
   return (
-    <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl">
-      {/* WALL LENGTH */}
-      <div className="mb-4">
-        <label className="mb-2 block text-sm font-medium text-gray-700">
-          Wall Length
-        </label>
+    <main className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50">
+      <section className="mx-auto max-w-2xl px-6 py-16">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold text-gray-900 md:text-5xl">
+            Drywall Calculator
+          </h1>
 
-        <input
-          type="number"
-          min="0"
-          value={wallLength}
-          onChange={(e) =>
-            setWallLength(
-              e.target.value
-            )
-          }
-          placeholder="Enter wall length"
-          className="w-full rounded-xl border border-orange-200 bg-white px-4 py-3 text-black outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-200"
-        />
-      </div>
+          <p className="mt-4 text-lg text-gray-600">
+            Estimate drywall sheets
+            needed for walls and
+            ceilings instantly.
+          </p>
+        </div>
 
-      {/* WALL HEIGHT */}
-      <div className="mb-4">
-        <label className="mb-2 block text-sm font-medium text-gray-700">
-          Wall Height
-        </label>
+        <div className="mt-10 rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl">
+          {/* WALL LENGTH */}
+          <div className="mb-4">
+            <label className="mb-2 block text-sm font-medium text-gray-700">
+              Wall Length
+            </label>
 
-        <input
-          type="number"
-          min="0"
-          value={wallHeight}
-          onChange={(e) =>
-            setWallHeight(
-              e.target.value
-            )
-          }
-          placeholder="Enter wall height"
-          className="w-full rounded-xl border border-orange-200 bg-white px-4 py-3 text-black outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-200"
-        />
-      </div>
+            <input
+              type="number"
+              min="0"
+              value={wallLength}
+              onChange={(e) =>
+                setWallLength(
+                  e.target.value
+                )
+              }
+              placeholder="Enter wall length"
+              className="w-full rounded-xl border border-orange-200 bg-white px-4 py-3 text-black outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-200"
+            />
+          </div>
 
-      {/* UNIT */}
-      <div className="mb-4">
-        <label className="mb-2 block text-sm font-medium text-gray-700">
-          Measurement Unit
-        </label>
+          {/* WALL HEIGHT */}
+          <div className="mb-4">
+            <label className="mb-2 block text-sm font-medium text-gray-700">
+              Wall Height
+            </label>
 
-        <select
-          value={unit}
-          onChange={(e) =>
-            setUnit(e.target.value)
-          }
-          className="w-full rounded-xl border border-orange-200 bg-white px-4 py-3 text-black outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-200"
-        >
-          <option value="ft">
-            Feet (ft)
-          </option>
+            <input
+              type="number"
+              min="0"
+              value={wallHeight}
+              onChange={(e) =>
+                setWallHeight(
+                  e.target.value
+                )
+              }
+              placeholder="Enter wall height"
+              className="w-full rounded-xl border border-orange-200 bg-white px-4 py-3 text-black outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-200"
+            />
+          </div>
 
-          <option value="m">
-            Meter (m)
-          </option>
-        </select>
-      </div>
+          {/* UNIT */}
+          <div className="mb-4">
+            <label className="mb-2 block text-sm font-medium text-gray-700">
+              Measurement Unit
+            </label>
 
-      {/* SHEET AREA */}
-      <div className="mb-6">
-        <label className="mb-2 block text-sm font-medium text-gray-700">
-          Drywall Sheet Area (sq{" "}
-          {unit})
-        </label>
+            <select
+              value={unit}
+              onChange={(e) =>
+                setUnit(
+                  e.target.value
+                )
+              }
+              className="w-full rounded-xl border border-orange-200 bg-white px-4 py-3 text-black outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-200"
+            >
+              <option value="ft">
+                Feet (ft)
+              </option>
 
-        <input
-          type="number"
-          min="0"
-          value={sheetArea}
-          onChange={(e) =>
-            setSheetArea(
-              e.target.value
-            )
-          }
-          placeholder="Enter drywall sheet area"
-          className="w-full rounded-xl border border-orange-200 bg-white px-4 py-3 text-black outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-200"
-        />
-      </div>
+              <option value="m">
+                Meter (m)
+              </option>
+            </select>
+          </div>
 
-      {/* BUTTONS */}
-      <div className="flex gap-4">
-        <button
-          onClick={calculateDrywall}
-          className="w-full rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 py-3 font-semibold text-white transition-all duration-300 hover:scale-[1.02]"
-        >
-          Calculate
-        </button>
+          {/* SHEET AREA */}
+          <div className="mb-6">
+            <label className="mb-2 block text-sm font-medium text-gray-700">
+              Drywall Sheet Area
+            </label>
 
-        <button
-          onClick={resetCalculator}
-          className="w-full rounded-2xl border border-orange-300 bg-white py-3 font-semibold text-gray-700"
-        >
-          Reset
-        </button>
-      </div>
+            <input
+              type="number"
+              min="0"
+              value={sheetArea}
+              onChange={(e) =>
+                setSheetArea(
+                  e.target.value
+                )
+              }
+              placeholder={`Enter drywall sheet area in sq ${unit}`}
+              className="w-full rounded-xl border border-orange-200 bg-white px-4 py-3 text-black outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-200"
+            />
+          </div>
 
-      {/* RESULT */}
-      {result !== null &&
-        totalArea !== null && (
-          <div className="mt-6 rounded-2xl bg-orange-50 p-5 shadow-inner">
-            <h2 className="text-2xl font-bold text-black">
-              Drywall Sheets
-              Needed: {result}
-            </h2>
-
-            <p className="mt-3 text-gray-700">
-              Total Wall Area:{" "}
-              {totalArea.toFixed(2)} sq{" "}
-              {unit}
-            </p>
+          {/* BUTTONS */}
+          <div className="flex gap-4">
+            <button
+              onClick={
+                calculateDrywall
+              }
+              className="w-full rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 py-3 font-semibold text-white transition-all duration-300 hover:scale-[1.02]"
+            >
+              Calculate
+            </button>
 
             <button
-              onClick={downloadPDF}
-              className="mt-5 w-full rounded-2xl bg-gray-900 py-3 font-semibold text-white"
+              onClick={
+                resetCalculator
+              }
+              className="w-full rounded-2xl border border-orange-300 bg-white py-3 font-semibold text-gray-700 transition-all duration-300 hover:bg-gray-100"
             >
-              Download PDF Report
+              Reset
             </button>
           </div>
-        )}
-    </div>
+
+          {/* RESULT */}
+          {result !== null &&
+            totalArea !==
+              null && (
+              <div className="mt-6 rounded-2xl bg-orange-50 p-5 shadow-inner">
+                <h2 className="text-2xl font-bold text-black">
+                  Drywall Sheets
+                  Needed: {result}
+                </h2>
+
+                <p className="mt-3 text-gray-700">
+                  Total Wall Area:{" "}
+                  {totalArea.toFixed(
+                    2
+                  )}{" "}
+                  sq {unit}
+                </p>
+
+                <button
+                  onClick={
+                    downloadPDF
+                  }
+                  className="mt-5 w-full rounded-2xl bg-gray-900 py-3 font-semibold text-white transition-all duration-300 hover:bg-black"
+                >
+                  Download PDF
+                  Report
+                </button>
+              </div>
+            )}
+        </div>
+      </section>
+    </main>
   );
 }
