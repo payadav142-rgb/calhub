@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -8,7 +8,11 @@ import Footer from "../components/Footer";
 import CalculatorInput from "../components/CalculatorInput";
 import CalculatorResult from "../components/CalculatorResult";
 import RelatedCalculators from "../components/RelatedCalculators";
-export default function RoofingCalculator() {
+
+export default function RoofingCalculatorClient() {
+  const pdfRef =
+    useRef<HTMLDivElement>(null);
+
   const [length, setLength] =
     useState("");
 
@@ -17,6 +21,9 @@ export default function RoofingCalculator() {
 
   const [costPerSqft, setCostPerSqft] =
     useState("");
+
+  const [unit, setUnit] =
+    useState("ft");
 
   const [area, setArea] =
     useState<number | null>(null);
@@ -30,6 +37,8 @@ export default function RoofingCalculator() {
       !width ||
       !costPerSqft
     ) {
+      alert("Please fill all fields");
+
       return;
     }
 
@@ -42,7 +51,50 @@ export default function RoofingCalculator() {
       parseFloat(costPerSqft);
 
     setArea(roofArea);
+
     setResult(totalCost);
+  };
+
+  const resetCalculator = () => {
+    setLength("");
+    setWidth("");
+    setCostPerSqft("");
+    setArea(null);
+    setResult(null);
+    setUnit("ft");
+  };
+
+  const downloadPDF = async () => {
+    if (!pdfRef.current) return;
+
+    const html2pdf =
+      (
+        await import("html2pdf.js")
+      ).default;
+
+    html2pdf()
+      .from(pdfRef.current)
+      .set({
+        margin: 0.5,
+        filename:
+          "roofing-calculation.pdf",
+
+        image: {
+          type: "jpeg",
+          quality: 1,
+        },
+
+        html2canvas: {
+          scale: 2,
+        },
+
+        jsPDF: {
+          unit: "in",
+          format: "a4",
+          orientation: "portrait",
+        },
+      })
+      .save();
   };
 
   return (
@@ -56,29 +108,53 @@ export default function RoofingCalculator() {
         </h1>
 
         <p className="mt-4 text-gray-600">
-          Estimate roofing area and roofing
-          cost instantly for your construction
-          project.
+          Estimate roofing area and
+          roofing cost instantly for
+          your construction project.
         </p>
 
-        <div className="mt-8 rounded-2xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-md">
+        <div
+          ref={pdfRef}
+          className="mt-8 rounded-2xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-md"
+        >
+          <div className="mb-5">
+            <label className="mb-2 block font-medium text-gray-700">
+              Measurement Unit
+            </label>
+
+            <select
+              value={unit}
+              onChange={(e) =>
+                setUnit(e.target.value)
+              }
+              className="w-full rounded-2xl border border-orange-200 p-3 outline-none focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
+            >
+              <option value="ft">
+                Feet (ft)
+              </option>
+
+              <option value="m">
+                Meter (m)
+              </option>
+            </select>
+          </div>
 
           <CalculatorInput
-            label="Roof Length (ft)"
+            label={`Roof Length (${unit})`}
             value={length}
             setValue={setLength}
             placeholder="Enter roof length"
           />
 
           <CalculatorInput
-            label="Roof Width (ft)"
+            label={`Roof Width (${unit})`}
             value={width}
             setValue={setWidth}
             placeholder="Enter roof width"
           />
 
           <CalculatorInput
-            label="Roofing Cost Per Sq Ft (₹)"
+            label={`Roofing Cost Per Sq ${unit} (₹)`}
             value={costPerSqft}
             setValue={setCostPerSqft}
             placeholder="Enter roofing cost"
@@ -88,18 +164,24 @@ export default function RoofingCalculator() {
             onClick={calculateRoofing}
             className="w-full rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 py-3 font-semibold text-white transition-all duration-300 hover:scale-[1.02]"
           >
-            Calculate
+            Calculate Roofing
+          </button>
+
+          <button
+            onClick={resetCalculator}
+            className="mt-4 w-full rounded-2xl border border-orange-300 bg-white py-3 font-semibold text-orange-600 transition-all duration-300 hover:bg-orange-50"
+          >
+            Reset
           </button>
 
           {result !== null &&
             area !== null && (
               <div className="mt-6 space-y-4">
-
                 <CalculatorResult
                   title="Roof Area"
                   result={`${area.toFixed(
                     2
-                  )} sq ft`}
+                  )} sq ${unit}`}
                 />
 
                 <CalculatorResult
@@ -107,6 +189,12 @@ export default function RoofingCalculator() {
                   result={`₹${result.toLocaleString()}`}
                 />
 
+                <button
+                  onClick={downloadPDF}
+                  className="w-full rounded-2xl bg-black py-3 font-semibold text-white transition-all duration-300 hover:opacity-90"
+                >
+                  Download PDF
+                </button>
               </div>
             )}
         </div>
@@ -120,16 +208,17 @@ export default function RoofingCalculator() {
           </h2>
 
           <p className="mt-4 text-gray-600">
-            This roofing calculator helps
-            estimate total roof area and
-            roofing expenses for residential
-            and commercial buildings.
+            This roofing calculator
+            helps estimate total roof
+            area and roofing expenses
+            for residential and
+            commercial buildings.
           </p>
 
           <p className="mt-4 text-gray-600">
-            Roofing costs depend on materials,
-            labor, roof type, and project
-            size.
+            Roofing costs depend on
+            materials, labor, roof
+            type, and project size.
           </p>
 
           <h3 className="mt-6 text-2xl font-semibold text-black">
@@ -141,8 +230,8 @@ export default function RoofingCalculator() {
           </p>
 
           <p className="mt-2 text-gray-600">
-            Roofing Cost = Area × Cost Per Sq
-            Ft
+            Roofing Cost = Area × Cost
+            Per Sq Ft
           </p>
         </div>
       </section>
@@ -151,20 +240,22 @@ export default function RoofingCalculator() {
       <section className="mx-auto max-w-4xl px-6 pb-20">
         <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
           <h2 className="text-3xl font-bold text-black">
-            Frequently Asked Questions
+            Frequently Asked
+            Questions
           </h2>
 
           <div className="mt-8 space-y-6">
             <div>
               <h3 className="text-xl font-semibold text-black">
-                What is a roofing calculator?
+                What is a roofing
+                calculator?
               </h3>
 
               <p className="mt-2 text-gray-600">
-                A roofing calculator estimates
-                roof area and total roofing
-                costs for construction
-                projects.
+                A roofing calculator
+                estimates roof area and
+                total roofing costs for
+                construction projects.
               </p>
             </div>
 
@@ -175,29 +266,32 @@ export default function RoofingCalculator() {
               </h3>
 
               <p className="mt-2 text-gray-600">
-                Yes, this calculator helps
-                estimate roofing material
-                requirements and costs.
+                Yes, this calculator
+                helps estimate roofing
+                material requirements
+                and costs.
               </p>
             </div>
 
             <div>
               <h3 className="text-xl font-semibold text-black">
-                Is this calculator free?
+                Is this calculator
+                free?
               </h3>
 
               <p className="mt-2 text-gray-600">
                 Yes, all calculators on
-                Calculator Hub are completely
-                free to use.
+                Calculator Hub are
+                completely free to use.
               </p>
             </div>
           </div>
         </div>
       </section>
-<RelatedCalculators />
+
+      <RelatedCalculators />
+
       <Footer />
     </main>
   );
 }
-
