@@ -2,61 +2,46 @@ import type { Metadata } from "next";
 import ExcavationCalculatorClient from "./ExcavationCalculatorClient";
 
 export const metadata: Metadata = {
-  title: "Excavation Calculator | Calculator Hub",
+  title:
+    "Excavation Calculator - Calculate Excavation Volume Easily | CalHub",
 
   description:
-    "Calculate excavation volume for foundations, trenches, basements, and earthwork projects with our free excavation calculator.",
+    "Free excavation calculator to estimate excavation volume for foundations, trenches, basements, and earthwork projects. Supports feet, meters, and centimeters.",
 
   keywords: [
     "excavation calculator",
+    "excavation volume calculator",
     "earthwork calculator",
+    "foundation excavation calculator",
     "trench excavation calculator",
-    "foundation excavation",
     "construction calculator",
-    "soil volume calculator",
+    "soil excavation calculator",
+    "calhub excavation calculator",
   ],
 
   alternates: {
-    canonical: "/excavation-calculator",
+    canonical:
+      "https://calhub.in/excavation-calculator",
   },
 
   openGraph: {
-    title: "Excavation Calculator | Calculator Hub",
+    title:
+      "Excavation Calculator | CalHub",
 
     description:
-      "Estimate excavation volume instantly for construction and earthwork projects.",
+      "Calculate excavation volume instantly for construction and earthwork projects.",
 
     url:
       "https://calhub.in/excavation-calculator",
 
-    siteName: "Calculator Hub",
-
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Excavation Calculator",
-      },
-    ],
-
-    locale: "en_US",
+    siteName: "CalHub",
 
     type: "website",
-  },
-
-  twitter: {
-    card: "summary_large_image",
-
-    title: "Excavation Calculator | Calculator Hub",
-
-    description:
-      "Calculate excavation volume for foundations, trenches, and earthwork projects.",
-
-    images: ["/og-image.jpg"],
   },
 };
 
 export default function Page() {
-  return <ExcavationCalculatorClient />;
+  return (
+    <ExcavationCalculatorClient />
+  );
 }
