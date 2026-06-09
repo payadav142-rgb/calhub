@@ -22,6 +22,15 @@ export default function PaverCalculator() {
     useState<number | null>(null);
 
   const calculatePavers = () => {
+    if (
+      !areaLength ||
+      !areaWidth ||
+      !paverLength ||
+      !paverWidth
+    ) {
+      return;
+    }
+
     const totalArea =
       parseFloat(areaLength) *
       parseFloat(areaWidth);
