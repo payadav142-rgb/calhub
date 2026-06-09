@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import StairCalculator from "./StairCalculator";
+import StairCalculatorClient from "./StairCalculatorClient";
 
 export const metadata: Metadata = {
   title:
@@ -47,5 +47,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <StairCalculator />;
+  return <StairCalculatorClient />;
 }
