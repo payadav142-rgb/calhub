@@ -1,48 +1,38 @@
-import type { Metadata } from "next";
-import ConcreteCalculatorClient from "./ConcreteCalculatorClient";
+import { Metadata } from "next";
+import ConcreteCalculator from "./ConcreteCalculatorClient";
 
 export const metadata: Metadata = {
   title:
-    "Concrete Calculator - Free Concrete Volume Calculator",
+    "Concrete Calculator for Slabs & Foundations | CalHub",
 
   description:
-    "Calculate concrete volume required for slabs, foundations, footings, columns, and construction projects with our free online concrete calculator.",
+    "Free concrete calculator to estimate concrete volume for slabs, footings, foundations, and construction projects.",
 
   keywords: [
     "concrete calculator",
     "concrete volume calculator",
-    "slab calculator",
-    "foundation calculator",
-    "construction calculator",
-    "concrete estimation",
+    "slab concrete calculator",
+    "foundation concrete calculator",
+    "construction concrete calculator",
+    "cement concrete calculator",
   ],
 
   alternates: {
-    canonical: "/concrete-calculator",
+    canonical:
+      "https://calhub.in/concrete-calculator",
   },
 
   openGraph: {
     title:
-      "Concrete Calculator - Free Concrete Volume Calculator",
+      "Concrete Calculator | CalHub",
 
     description:
-      "Estimate concrete volume for slabs, footings, foundations, and construction projects.",
+      "Estimate concrete volume for slabs, foundations, and construction projects instantly.",
 
     url:
       "https://calhub.in/concrete-calculator",
 
-    siteName: "Calculator Hub",
-
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Concrete Calculator",
-      },
-    ],
-
-    locale: "en_US",
+    siteName: "CalHub",
 
     type: "website",
   },
@@ -51,15 +41,13 @@ export const metadata: Metadata = {
     card: "summary_large_image",
 
     title:
-      "Concrete Calculator - Free Concrete Volume Calculator",
+      "Concrete Calculator | CalHub",
 
     description:
-      "Calculate concrete volume instantly for construction projects.",
-
-    images: ["/og-image.jpg"],
+      "Free concrete calculator for slabs, footings, and foundations.",
   },
 };
 
 export default function Page() {
-  return <ConcreteCalculatorClient />;
+  return <ConcreteCalculator />;
 }
