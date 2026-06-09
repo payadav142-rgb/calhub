@@ -1,46 +1,38 @@
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import BrickCalculatorClient from "./BrickCalculatorClient";
 
 export const metadata: Metadata = {
   title:
-    "Brick Calculator | Free Brick Quantity Calculator",
+    "Brick Calculator for Wall Construction | CalHub",
 
   description:
-    "Calculate the number of bricks required for walls, houses, rooms, and construction projects. Free online brick calculator.",
+    "Free brick calculator for estimating bricks required for wall construction, masonry, and building projects. Calculate brick quantity instantly.",
 
   keywords: [
     "brick calculator",
-    "brick quantity calculator",
     "wall brick calculator",
+    "brick quantity calculator",
+    "masonry calculator",
     "construction brick calculator",
-    "brick estimation",
+    "bricks required calculator",
   ],
 
   alternates: {
-    canonical: "/brick-calculator",
+    canonical:
+      "https://calhub.in/brick-calculator",
   },
 
   openGraph: {
-    title: "Brick Calculator | Calculator Hub",
+    title:
+      "Brick Calculator | CalHub",
 
     description:
-      "Free online brick calculator for construction projects.",
+      "Estimate the number of bricks required for construction projects instantly.",
 
     url:
       "https://calhub.in/brick-calculator",
 
-    siteName: "Calculator Hub",
-
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Brick Calculator",
-      },
-    ],
-
-    locale: "en_US",
+    siteName: "CalHub",
 
     type: "website",
   },
@@ -49,15 +41,15 @@ export const metadata: Metadata = {
     card: "summary_large_image",
 
     title:
-      "Brick Calculator | Calculator Hub",
+      "Brick Calculator | CalHub",
 
     description:
-      "Estimate brick quantity instantly.",
-
-    images: ["/og-image.jpg"],
+      "Free brick calculator for wall construction and masonry projects.",
   },
 };
 
 export default function Page() {
-  return <BrickCalculatorClient />;
+  return (
+    <BrickCalculatorClient />
+  );
 }
