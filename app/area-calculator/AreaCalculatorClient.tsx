@@ -13,15 +13,51 @@ export default function AreaCalculatorClient() {
   const [width, setWidth] =
     useState("");
 
+  const [lengthUnit, setLengthUnit] =
+    useState("ft");
+
+  const [widthUnit, setWidthUnit] =
+    useState("ft");
+
   const [result, setResult] =
     useState<number | null>(null);
+
+  const convertToFeet = (
+    value: number,
+    unit: string
+  ) => {
+    switch (unit) {
+      case "m":
+        return value * 3.28084;
+
+      case "cm":
+        return value * 0.0328084;
+
+      case "inch":
+        return value * 0.0833333;
+
+      default:
+        return value;
+    }
+  };
 
   const calculateArea = () => {
     if (!length || !width) return;
 
+    const lengthInFeet =
+      convertToFeet(
+        parseFloat(length),
+        lengthUnit
+      );
+
+    const widthInFeet =
+      convertToFeet(
+        parseFloat(width),
+        widthUnit
+      );
+
     const area =
-      parseFloat(length) *
-      parseFloat(width);
+      lengthInFeet * widthInFeet;
 
     setResult(area);
   };
@@ -29,6 +65,8 @@ export default function AreaCalculatorClient() {
   const resetCalculator = () => {
     setLength("");
     setWidth("");
+    setLengthUnit("ft");
+    setWidthUnit("ft");
     setResult(null);
   };
 
@@ -38,6 +76,7 @@ export default function AreaCalculatorClient() {
     const doc = new jsPDF();
 
     doc.setFontSize(20);
+
     doc.text(
       "Area Calculation Report",
       20,
@@ -47,13 +86,13 @@ export default function AreaCalculatorClient() {
     doc.setFontSize(12);
 
     doc.text(
-      `Length: ${length} ft`,
+      `Length: ${length} ${lengthUnit}`,
       20,
       40
     );
 
     doc.text(
-      `Width: ${width} ft`,
+      `Width: ${width} ${widthUnit}`,
       20,
       50
     );
@@ -99,9 +138,10 @@ export default function AreaCalculatorClient() {
 
         {/* CALCULATOR */}
         <div className="mt-10 rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
+          {/* LENGTH */}
           <div className="mb-5">
             <label className="mb-2 block font-medium text-gray-700">
-              Length (ft)
+              Length
             </label>
 
             <input
@@ -118,11 +158,38 @@ export default function AreaCalculatorClient() {
               className="w-full rounded-2xl border border-orange-200 p-3 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
               placeholder="e.g. 20"
             />
+
+            <select
+              value={lengthUnit}
+              onChange={(e) =>
+                setLengthUnit(
+                  e.target.value
+                )
+              }
+              className="mt-3 w-full rounded-2xl border border-orange-200 p-3 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
+            >
+              <option value="ft">
+                Feet (ft)
+              </option>
+
+              <option value="m">
+                Meter (m)
+              </option>
+
+              <option value="cm">
+                Centimeter (cm)
+              </option>
+
+              <option value="inch">
+                Inch
+              </option>
+            </select>
           </div>
 
+          {/* WIDTH */}
           <div className="mb-6">
             <label className="mb-2 block font-medium text-gray-700">
-              Width (ft)
+              Width
             </label>
 
             <input
@@ -139,6 +206,32 @@ export default function AreaCalculatorClient() {
               className="w-full rounded-2xl border border-orange-200 p-3 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
               placeholder="e.g. 15"
             />
+
+            <select
+              value={widthUnit}
+              onChange={(e) =>
+                setWidthUnit(
+                  e.target.value
+                )
+              }
+              className="mt-3 w-full rounded-2xl border border-orange-200 p-3 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
+            >
+              <option value="ft">
+                Feet (ft)
+              </option>
+
+              <option value="m">
+                Meter (m)
+              </option>
+
+              <option value="cm">
+                Centimeter (cm)
+              </option>
+
+              <option value="inch">
+                Inch
+              </option>
+            </select>
           </div>
 
           {/* BUTTONS */}
@@ -236,9 +329,9 @@ export default function AreaCalculatorClient() {
 
           <p className="mt-4 text-gray-600">
             Enter the length and width
-            values in feet and click the
-            calculate button. The
-            calculator will instantly
+            values, select the unit, and
+            click the calculate button.
+            The calculator will instantly
             display the total area in
             square feet.
           </p>
@@ -290,7 +383,7 @@ export default function AreaCalculatorClient() {
         </div>
       </section>
 
-      {/* UNIT CONVERSIONS */}
+      {/* CONVERSION GUIDE */}
       <section className="mx-auto max-w-4xl px-6 pb-16">
         <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
           <h2 className="text-3xl font-bold text-gray-900">
