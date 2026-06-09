@@ -1,48 +1,38 @@
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import AsphaltCalculatorClient from "./AsphaltCalculatorClient";
 
 export const metadata: Metadata = {
   title:
-    "Asphalt Calculator | Free Asphalt Volume Calculator",
+    "Asphalt Calculator for Roads & Driveways | CalHub",
 
   description:
-    "Calculate asphalt volume for roads, driveways, parking lots, and paving projects. Free online asphalt calculator for accurate material estimation.",
+    "Free asphalt calculator for estimating asphalt quantity for roads, parking lots, paving, and driveways. Calculate asphalt volume instantly.",
 
   keywords: [
     "asphalt calculator",
-    "asphalt volume calculator",
     "paving calculator",
+    "road asphalt calculator",
     "driveway asphalt calculator",
-    "road construction calculator",
-    "asphalt estimation",
+    "asphalt volume calculator",
+    "parking lot asphalt calculator",
   ],
 
   alternates: {
-    canonical: "/asphalt-calculator",
+    canonical:
+      "https://calhub.in/asphalt-calculator",
   },
 
   openGraph: {
     title:
-      "Asphalt Calculator | Calculator Hub",
+      "Asphalt Calculator | CalHub",
 
     description:
-      "Free online asphalt calculator for paving, roads, driveways, and parking lots.",
+      "Estimate asphalt quantity for paving and construction projects instantly.",
 
     url:
       "https://calhub.in/asphalt-calculator",
 
-    siteName: "Calculator Hub",
-
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Asphalt Calculator",
-      },
-    ],
-
-    locale: "en_US",
+    siteName: "CalHub",
 
     type: "website",
   },
@@ -51,15 +41,15 @@ export const metadata: Metadata = {
     card: "summary_large_image",
 
     title:
-      "Asphalt Calculator | Calculator Hub",
+      "Asphalt Calculator | CalHub",
 
     description:
-      "Free asphalt calculator for construction and paving projects.",
-
-    images: ["/og-image.jpg"],
+      "Free asphalt calculator for roads, parking lots, paving, and driveways.",
   },
 };
 
 export default function Page() {
-  return <AsphaltCalculatorClient />;
+  return (
+    <AsphaltCalculatorClient />
+  );
 }
