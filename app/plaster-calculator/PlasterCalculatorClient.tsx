@@ -46,6 +46,14 @@ export default function PlasterCalculatorClient() {
     setResult(volume);
   };
 
+  const resetCalculator = () => {
+    setLength("");
+    setHeight("");
+    setThickness("");
+    setResult(null);
+    setUnit("ft");
+  };
+
   const downloadPDF = async () => {
     if (result === null) return;
 
@@ -144,12 +152,21 @@ export default function PlasterCalculatorClient() {
         />
       </div>
 
-      <button
-        onClick={calculatePlaster}
-        className="w-full rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 py-3 font-semibold text-white transition-all duration-300 hover:scale-[1.02]"
-      >
-        Calculate Plaster
-      </button>
+      <div className="flex gap-4">
+        <button
+          onClick={calculatePlaster}
+          className="w-full rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 py-3 font-semibold text-white transition-all duration-300 hover:scale-[1.02]"
+        >
+          Calculate Plaster
+        </button>
+
+        <button
+          onClick={resetCalculator}
+          className="w-full rounded-2xl bg-gray-200 py-3 font-semibold text-gray-800 transition hover:bg-gray-300"
+        >
+          Reset
+        </button>
+      </div>
 
       {result !== null && (
         <div className="mt-6 rounded-2xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-5 shadow-inner">
