@@ -2,14 +2,7 @@
 
 import { useState } from "react";
 
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-
-import CalculatorInput from "../components/CalculatorInput";
-import CalculatorResult from "../components/CalculatorResult";
-import RelatedCalculators from "../components/RelatedCalculators";
-
-export default function PlasterCalculator() {
+export default function PlasterCalculatorClient() {
   const [length, setLength] =
     useState("");
 
@@ -18,6 +11,9 @@ export default function PlasterCalculator() {
 
   const [thickness, setThickness] =
     useState("");
+
+  const [unit, setUnit] =
+    useState("ft");
 
   const [result, setResult] =
     useState<number | null>(null);
@@ -28,183 +24,150 @@ export default function PlasterCalculator() {
       !height ||
       !thickness
     ) {
-      alert("Please fill all fields");
-
       return;
     }
 
+    let wallLength =
+      parseFloat(length);
+
+    let wallHeight =
+      parseFloat(height);
+
+    if (unit === "m") {
+      wallLength *= 3.28084;
+      wallHeight *= 3.28084;
+    }
+
     const volume =
-      parseFloat(length) *
-      parseFloat(height) *
+      wallLength *
+      wallHeight *
       (parseFloat(thickness) / 12);
 
     setResult(volume);
   };
 
+  const downloadPDF = async () => {
+    if (result === null) return;
+
+    const html2pdf =
+      (await import("html2pdf.js"))
+        .default;
+
+    const element =
+      document.createElement("div");
+
+    element.innerHTML = `
+      <h1>Plaster Calculator Result</h1>
+      <p><strong>Length:</strong> ${length} ${unit}</p>
+      <p><strong>Height:</strong> ${height} ${unit}</p>
+      <p><strong>Thickness:</strong> ${thickness} inch</p>
+      <h2>Plaster Volume: ${result.toFixed(
+        2
+      )} ft³</h2>
+    `;
+
+    html2pdf().from(element).save(
+      "plaster-calculation.pdf"
+    );
+  };
+
   return (
-    <main className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50">
-      <Navbar />
+    <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
 
-      {/* Calculator Section */}
-      <section className="mx-auto max-w-2xl px-6 py-16">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-gray-900 md:text-5xl">
-            Plaster Calculator
-          </h1>
+      <div className="mb-5">
+        <label className="mb-2 block font-medium text-gray-700">
+          Unit
+        </label>
 
-          <p className="mt-4 text-lg text-gray-600">
-            Calculate plaster volume required for
-            walls and construction projects.
-          </p>
-        </div>
+        <select
+          value={unit}
+          onChange={(e) =>
+            setUnit(e.target.value)
+          }
+          className="w-full rounded-2xl border border-orange-200 p-3 outline-none focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
+        >
+          <option value="ft">
+            Feet (ft)
+          </option>
 
-        <div className="mt-10 rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
+          <option value="m">
+            Meters (m)
+          </option>
+        </select>
+      </div>
 
-          <CalculatorInput
-            label="Wall Length (ft)"
-            value={length}
-            setValue={setLength}
-            placeholder="Enter wall length"
-          />
+      <div className="mb-5">
+        <label className="mb-2 block font-medium text-gray-700">
+          Wall Length ({unit})
+        </label>
 
-          <CalculatorInput
-            label="Wall Height (ft)"
-            value={height}
-            setValue={setHeight}
-            placeholder="Enter wall height"
-          />
+        <input
+          type="number"
+          value={length}
+          onChange={(e) =>
+            setLength(e.target.value)
+          }
+          placeholder="Enter wall length"
+          className="w-full rounded-2xl border border-orange-200 p-3 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
+        />
+      </div>
 
-          <CalculatorInput
-            label="Thickness (inch)"
-            value={thickness}
-            setValue={setThickness}
-            placeholder="Enter thickness"
-          />
+      <div className="mb-5">
+        <label className="mb-2 block font-medium text-gray-700">
+          Wall Height ({unit})
+        </label>
+
+        <input
+          type="number"
+          value={height}
+          onChange={(e) =>
+            setHeight(e.target.value)
+          }
+          placeholder="Enter wall height"
+          className="w-full rounded-2xl border border-orange-200 p-3 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
+        />
+      </div>
+
+      <div className="mb-6">
+        <label className="mb-2 block font-medium text-gray-700">
+          Thickness (inch)
+        </label>
+
+        <input
+          type="number"
+          value={thickness}
+          onChange={(e) =>
+            setThickness(e.target.value)
+          }
+          placeholder="Enter thickness"
+          className="w-full rounded-2xl border border-orange-200 p-3 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
+        />
+      </div>
+
+      <button
+        onClick={calculatePlaster}
+        className="w-full rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 py-3 font-semibold text-white transition-all duration-300 hover:scale-[1.02]"
+      >
+        Calculate Plaster
+      </button>
+
+      {result !== null && (
+        <div className="mt-6 rounded-2xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-5 shadow-inner">
+
+          <h2 className="text-2xl font-bold text-gray-900">
+            Plaster Volume:
+            {" "}
+            {result.toFixed(2)} ft³
+          </h2>
 
           <button
-            onClick={calculatePlaster}
-            className="w-full rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 py-3 font-semibold text-white transition-all duration-300 hover:scale-[1.02]"
+            onClick={downloadPDF}
+            className="mt-5 w-full rounded-2xl bg-gray-900 py-3 font-semibold text-white transition hover:bg-black"
           >
-            Calculate Plaster
+            Download PDF
           </button>
-
-          {result !== null && (
-            <div className="mt-6 rounded-2xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-5 shadow-inner">
-              <CalculatorResult
-                title="Plaster Volume"
-                result={`${result.toFixed(
-                  2
-                )} ft³`}
-              />
-            </div>
-          )}
         </div>
-      </section>
-
-      {/* Formula Section */}
-      <section className="mx-auto max-w-5xl px-6 pb-20">
-        <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
-          <h2 className="text-3xl font-bold text-gray-900">
-            Plaster Calculation Formula
-          </h2>
-
-          <p className="mt-4 text-lg leading-8 text-gray-600">
-            Plaster quantity is calculated using
-            wall dimensions and plaster
-            thickness.
-          </p>
-
-          <div className="mt-6 rounded-2xl border border-orange-100 bg-orange-50 p-6">
-            <p className="text-2xl font-bold text-orange-600">
-              Plaster Volume =
-              Length × Height × Thickness
-            </p>
-          </div>
-
-          <p className="mt-6 leading-8 text-gray-600">
-            This calculator helps estimate
-            plaster material required for walls,
-            ceilings, and construction projects.
-          </p>
-        </div>
-      </section>
-
-      {/* How To Use */}
-      <section className="mx-auto max-w-5xl px-6 pb-20">
-        <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
-          <h2 className="text-3xl font-bold text-gray-900">
-            How To Use This Plaster Calculator
-          </h2>
-
-          <div className="mt-6 space-y-4 text-lg text-gray-600">
-            <p>
-              1. Enter wall length.
-            </p>
-
-            <p>
-              2. Enter wall height.
-            </p>
-
-            <p>
-              3. Enter plaster thickness.
-            </p>
-
-            <p>
-              4. Click calculate to estimate
-              plaster volume instantly.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="mx-auto max-w-5xl px-6 pb-20">
-        <h2 className="text-4xl font-extrabold text-gray-900">
-          Frequently Asked Questions
-        </h2>
-
-        <div className="mt-10 space-y-6">
-          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl">
-            <h3 className="text-2xl font-bold text-gray-900">
-              What is plaster volume?
-            </h3>
-
-            <p className="mt-3 leading-7 text-gray-600">
-              Plaster volume is the total
-              quantity of plaster material needed
-              for covering walls or ceilings.
-            </p>
-          </div>
-
-          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl">
-            <h3 className="text-2xl font-bold text-gray-900">
-              Can I use this for ceiling plaster?
-            </h3>
-
-            <p className="mt-3 leading-7 text-gray-600">
-              Yes, this calculator works for wall
-              plastering and ceiling plaster
-              estimation.
-            </p>
-          </div>
-
-          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl">
-            <h3 className="text-2xl font-bold text-gray-900">
-              Is this calculator free?
-            </h3>
-
-            <p className="mt-3 leading-7 text-gray-600">
-              Yes, Calculator Hub offers free
-              online construction calculators for
-              builders and engineers.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <RelatedCalculators />
-
-      <Footer />
-    </main>
+      )}
+    </div>
   );
 }
