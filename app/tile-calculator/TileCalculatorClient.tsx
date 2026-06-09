@@ -5,10 +5,9 @@ import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-import CalculatorResult from "../components/CalculatorResult";
 import RelatedCalculators from "../components/RelatedCalculators";
 
-export default function TileCalculator() {
+export default function TileCalculatorClient() {
   const [floorLength, setFloorLength] =
     useState("");
 
@@ -21,7 +20,13 @@ export default function TileCalculator() {
   const [tileWidth, setTileWidth] =
     useState("");
 
+  const [unit, setUnit] =
+    useState("ft");
+
   const [result, setResult] =
+    useState<number | null>(null);
+
+  const [extraTiles, setExtraTiles] =
     useState<number | null>(null);
 
   const calculateTiles = () => {
@@ -46,6 +51,19 @@ export default function TileCalculator() {
       floorArea / tileArea;
 
     setResult(Math.ceil(tilesNeeded));
+
+    setExtraTiles(
+      Math.ceil(tilesNeeded * 1.1)
+    );
+  };
+
+  const resetCalculator = () => {
+    setFloorLength("");
+    setFloorWidth("");
+    setTileLength("");
+    setTileWidth("");
+    setResult(null);
+    setExtraTiles(null);
   };
 
   return (
@@ -54,6 +72,7 @@ export default function TileCalculator() {
 
       {/* Calculator Section */}
       <section className="mx-auto max-w-2xl px-6 py-16">
+
         <div className="text-center">
           <h1 className="text-4xl font-bold text-gray-900 md:text-5xl">
             Tile Calculator
@@ -67,13 +86,37 @@ export default function TileCalculator() {
 
         <div className="mt-10 rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
 
+          {/* Unit */}
           <div className="mb-5">
             <label className="mb-2 block font-medium text-gray-700">
-              Floor Length (ft)
+              Select Unit
+            </label>
+
+            <select
+              value={unit}
+              onChange={(e) =>
+                setUnit(e.target.value)
+              }
+              className="w-full rounded-2xl border border-orange-200 p-4 outline-none focus:border-orange-500 focus:ring-4 focus:ring-orange-100"
+            >
+              <option value="ft">
+                Feet (ft)
+              </option>
+
+              <option value="m">
+                Meter (m)
+              </option>
+            </select>
+          </div>
+
+          <div className="mb-5">
+            <label className="mb-2 block font-medium text-gray-700">
+              Floor Length ({unit})
             </label>
 
             <input
               type="number"
+              step="any"
               value={floorLength}
               onChange={(e) =>
                 setFloorLength(e.target.value)
@@ -85,11 +128,12 @@ export default function TileCalculator() {
 
           <div className="mb-5">
             <label className="mb-2 block font-medium text-gray-700">
-              Floor Width (ft)
+              Floor Width ({unit})
             </label>
 
             <input
               type="number"
+              step="any"
               value={floorWidth}
               onChange={(e) =>
                 setFloorWidth(e.target.value)
@@ -101,11 +145,12 @@ export default function TileCalculator() {
 
           <div className="mb-5">
             <label className="mb-2 block font-medium text-gray-700">
-              Tile Length (ft)
+              Tile Length ({unit})
             </label>
 
             <input
               type="number"
+              step="any"
               value={tileLength}
               onChange={(e) =>
                 setTileLength(e.target.value)
@@ -117,11 +162,12 @@ export default function TileCalculator() {
 
           <div className="mb-6">
             <label className="mb-2 block font-medium text-gray-700">
-              Tile Width (ft)
+              Tile Width ({unit})
             </label>
 
             <input
               type="number"
+              step="any"
               value={tileWidth}
               onChange={(e) =>
                 setTileWidth(e.target.value)
@@ -131,23 +177,36 @@ export default function TileCalculator() {
             />
           </div>
 
-          <button
-            onClick={calculateTiles}
-            className="w-full rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 py-3 font-semibold text-white transition-all duration-300 hover:scale-[1.02]"
-          >
-            Calculate Tiles
-          </button>
+          <div className="flex gap-4">
+            <button
+              onClick={calculateTiles}
+              className="w-full rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 py-3 font-semibold text-white transition-all duration-300 hover:scale-[1.02]"
+            >
+              Calculate Tiles
+            </button>
+
+            <button
+              onClick={resetCalculator}
+              className="w-full rounded-2xl border border-orange-300 bg-white py-3 font-semibold text-orange-600 transition-all duration-300 hover:bg-orange-50"
+            >
+              Reset
+            </button>
+          </div>
 
           {result !== null && (
             <div className="mt-6 rounded-2xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-5 shadow-inner">
-              <h3 className="mb-3 text-xl font-semibold text-gray-700">
-                Tiles Needed
+
+              <h3 className="text-2xl font-bold text-gray-900">
+                Tiles Needed:
+                {" "}
+                {result}
               </h3>
 
-              <CalculatorResult
-                title={"Tiles Needed"}
-                result={String(result)}
-              />
+              <p className="mt-3 text-lg text-gray-700">
+                Recommended With 10% Extra:
+                {" "}
+                {extraTiles}
+              </p>
             </div>
           )}
         </div>
@@ -155,7 +214,9 @@ export default function TileCalculator() {
 
       {/* Formula Section */}
       <section className="mx-auto max-w-5xl px-6 pb-20">
+
         <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
+
           <h2 className="text-3xl font-bold text-gray-900">
             Tile Calculation Formula
           </h2>
@@ -166,92 +227,21 @@ export default function TileCalculator() {
           </p>
 
           <div className="mt-6 rounded-2xl border border-orange-100 bg-orange-50 p-6">
+
             <p className="text-2xl font-bold text-orange-600">
               Tiles Needed =
               Floor Area ÷ Tile Area
             </p>
+
           </div>
 
           <p className="mt-6 leading-8 text-gray-600">
             This calculator helps estimate the
             number of tiles required for
-            flooring, kitchens, bathrooms, and
-            wall installations.
+            flooring, kitchens, bathrooms,
+            and wall installations.
           </p>
-        </div>
-      </section>
 
-      {/* How To Use */}
-      <section className="mx-auto max-w-5xl px-6 pb-20">
-        <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:shadow-2xl">
-          <h2 className="text-3xl font-bold text-gray-900">
-            How To Use This Tile Calculator
-          </h2>
-
-          <div className="mt-6 space-y-4 text-lg text-gray-600">
-            <p>
-              1. Enter floor length.
-            </p>
-
-            <p>
-              2. Enter floor width.
-            </p>
-
-            <p>
-              3. Enter tile dimensions.
-            </p>
-
-            <p>
-              4. Click calculate to estimate
-              tiles required instantly.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="mx-auto max-w-5xl px-6 pb-20">
-        <h2 className="text-4xl font-extrabold text-gray-900">
-          Frequently Asked Questions
-        </h2>
-
-        <div className="mt-10 space-y-6">
-          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl transition-all duration-300 hover:shadow-2xl">
-            <h3 className="text-2xl font-bold text-gray-900">
-              How many tiles do I need?
-            </h3>
-
-            <p className="mt-3 leading-7 text-gray-600">
-              Tile quantity depends on floor
-              dimensions and tile size. This
-              calculator provides quick
-              estimation.
-            </p>
-          </div>
-
-          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl transition-all duration-300 hover:shadow-2xl">
-            <h3 className="text-2xl font-bold text-gray-900">
-              Should I buy extra tiles?
-            </h3>
-
-            <p className="mt-3 leading-7 text-gray-600">
-              Yes, it is recommended to buy 5%
-              to 10% extra tiles for cutting and
-              wastage.
-            </p>
-          </div>
-
-          <div className="rounded-3xl border border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 p-6 shadow-xl transition-all duration-300 hover:shadow-2xl">
-            <h3 className="text-2xl font-bold text-gray-900">
-              Is this tile calculator free?
-            </h3>
-
-            <p className="mt-3 leading-7 text-gray-600">
-              Yes, Calculator Hub provides free
-              construction calculators for
-              builders and homeowners.
-            </p>
-          </div>
         </div>
       </section>
 
