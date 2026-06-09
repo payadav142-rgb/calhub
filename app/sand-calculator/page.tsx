@@ -1,67 +1,41 @@
 import type { Metadata } from "next";
+
 import SandCalculatorClient from "./SandCalculatorClient";
 
 export const metadata: Metadata = {
   title:
-    "Sand Calculator | Sand Volume & Quantity Estimator",
+    "Sand Calculator | Sand Volume Estimator | CalHub",
 
   description:
-    "Free online sand calculator to estimate sand volume and quantity required for construction, plastering, masonry, flooring, concrete, and landscaping projects.",
+    "Free sand calculator to estimate sand volume required for construction, plastering, flooring, and concrete projects instantly.",
 
   keywords: [
     "sand calculator",
     "sand volume calculator",
-    "sand quantity calculator",
     "construction sand calculator",
-    "sand estimator",
-    "building sand calculator",
-    "masonry sand calculator",
+    "plaster sand calculator",
     "concrete sand calculator",
-    "flooring sand calculator",
-    "landscaping sand calculator",
+    "sand quantity estimator",
   ],
-
-  alternates: {
-    canonical:
-      "https://calhub.in/sand-calculator",
-  },
 
   openGraph: {
     title:
-      "Sand Calculator | Sand Volume & Quantity Estimator",
+      "Sand Calculator | Sand Volume Estimator",
 
     description:
-      "Calculate sand volume and quantity instantly for construction, plastering, flooring, concrete, and landscaping projects.",
+      "Free sand calculator to estimate sand volume required for construction, plastering, flooring, and concrete projects instantly.",
 
     url:
       "https://calhub.in/sand-calculator",
 
-    siteName: "Calculator Hub",
-
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Sand Calculator",
-      },
-    ],
-
-    locale: "en_US",
+    siteName: "CalHub",
 
     type: "website",
   },
 
-  twitter: {
-    card: "summary_large_image",
-
-    title:
-      "Sand Calculator | Sand Volume & Quantity Estimator",
-
-    description:
-      "Estimate sand requirements instantly for construction and landscaping projects.",
-
-    images: ["/og-image.jpg"],
+  alternates: {
+    canonical:
+      "https://calhub.in/sand-calculator",
   },
 };
 
