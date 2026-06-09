@@ -1,17 +1,21 @@
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import GravelCalculatorClient from "./GravelCalculatorClient";
 
 export const metadata: Metadata = {
-  title: "Gravel Calculator | Calculator Hub",
+  title:
+    "Gravel Calculator - Estimate Gravel Volume Online",
+    
   description:
-    "Free gravel calculator to estimate gravel quantity for driveways, landscaping, foundations, and construction projects.",
+    "Free online gravel calculator to calculate gravel volume for driveways, landscaping, foundations, and construction projects.",
+
   keywords: [
     "gravel calculator",
-    "gravel quantity calculator",
-    "construction gravel calculator",
+    "gravel volume calculator",
+    "construction calculator",
     "driveway gravel calculator",
-    "gravel estimate",
+    "landscaping calculator",
   ],
+
   alternates: {
     canonical:
       "https://calhub.in/gravel-calculator",
@@ -19,5 +23,7 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <GravelCalculatorClient />;
+  return (
+    <GravelCalculatorClient />
+  );
 }
