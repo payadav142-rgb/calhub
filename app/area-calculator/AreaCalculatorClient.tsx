@@ -22,42 +22,12 @@ export default function AreaCalculatorClient() {
   const [result, setResult] =
     useState<number | null>(null);
 
-  const convertToFeet = (
-    value: number,
-    unit: string
-  ) => {
-    switch (unit) {
-      case "m":
-        return value * 3.28084;
-
-      case "cm":
-        return value * 0.0328084;
-
-      case "inch":
-        return value * 0.0833333;
-
-      default:
-        return value;
-    }
-  };
-
   const calculateArea = () => {
     if (!length || !width) return;
 
-    const lengthInFeet =
-      convertToFeet(
-        parseFloat(length),
-        lengthUnit
-      );
-
-    const widthInFeet =
-      convertToFeet(
-        parseFloat(width),
-        widthUnit
-      );
-
     const area =
-      lengthInFeet * widthInFeet;
+      parseFloat(length) *
+      parseFloat(width);
 
     setResult(area);
   };
@@ -68,6 +38,28 @@ export default function AreaCalculatorClient() {
     setLengthUnit("ft");
     setWidthUnit("ft");
     setResult(null);
+  };
+
+  const getAreaUnit = () => {
+    if (
+      lengthUnit === widthUnit
+    ) {
+      switch (lengthUnit) {
+        case "m":
+          return "sq m";
+
+        case "cm":
+          return "sq cm";
+
+        case "inch":
+          return "sq inch";
+
+        default:
+          return "sq ft";
+      }
+    }
+
+    return "mixed units";
   };
 
   const downloadPDF = () => {
@@ -100,7 +92,7 @@ export default function AreaCalculatorClient() {
     doc.text(
       `Total Area: ${result.toFixed(
         2
-      )} sq ft`,
+      )} ${getAreaUnit()}`,
       20,
       60
     );
@@ -256,16 +248,18 @@ export default function AreaCalculatorClient() {
             <div className="mt-6 rounded-2xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-5 shadow-inner">
               <h2 className="text-2xl font-bold text-gray-900">
                 Total Area:{" "}
-                {result.toFixed(2)} sq ft
+                {result.toFixed(2)}{" "}
+                {getAreaUnit()}
               </h2>
 
               <p className="mt-3 text-gray-600">
                 The total calculated area
                 is{" "}
-                {result.toFixed(2)} square
-                feet. This result can help
-                estimate flooring, paint,
-                tiles, concrete, and other
+                {result.toFixed(2)}{" "}
+                {getAreaUnit()}. This
+                result can help estimate
+                flooring, paint, tiles,
+                concrete, and other
                 construction materials.
               </p>
 
@@ -332,8 +326,7 @@ export default function AreaCalculatorClient() {
             values, select the unit, and
             click the calculate button.
             The calculator will instantly
-            display the total area in
-            square feet.
+            display the total area.
           </p>
 
           <div className="mt-6 rounded-2xl border border-orange-100 bg-orange-50 p-5">
