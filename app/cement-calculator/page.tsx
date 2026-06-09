@@ -1,45 +1,38 @@
-import type { Metadata } from "next";
-import CementCalculatorClient from "./CementCalculatorClient";
+import { Metadata } from "next";
+import CementCalculator from "./CementCalculatorClient";
 
 export const metadata: Metadata = {
-  title: "Cement Calculator - Free Cement Estimation Tool",
+  title:
+    "Cement Calculator for Construction Projects | CalHub",
 
   description:
-    "Calculate cement bags required for construction projects. Free online cement calculator for builders, contractors, engineers, and homeowners.",
+    "Free cement calculator for estimating cement bags required for slabs, foundations, concrete, and construction projects.",
 
   keywords: [
     "cement calculator",
-    "cement estimation",
     "cement bags calculator",
-    "construction calculator",
-    "building materials calculator",
+    "construction cement calculator",
+    "concrete cement calculator",
+    "cement estimation calculator",
+    "cement quantity calculator",
   ],
 
   alternates: {
-    canonical: "/cement-calculator",
+    canonical:
+      "https://calhub.in/cement-calculator",
   },
 
   openGraph: {
-    title: "Cement Calculator - Free Cement Estimation Tool",
+    title:
+      "Cement Calculator | CalHub",
 
     description:
-      "Estimate cement bags required for construction projects quickly and accurately.",
+      "Estimate cement bags required for construction and concrete work instantly.",
 
     url:
       "https://calhub.in/cement-calculator",
 
-    siteName: "Calculator Hub",
-
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Cement Calculator",
-      },
-    ],
-
-    locale: "en_US",
+    siteName: "CalHub",
 
     type: "website",
   },
@@ -48,15 +41,13 @@ export const metadata: Metadata = {
     card: "summary_large_image",
 
     title:
-      "Cement Calculator - Free Cement Estimation Tool",
+      "Cement Calculator | CalHub",
 
     description:
-      "Calculate cement bags required for construction projects.",
-
-    images: ["/og-image.jpg"],
+      "Free cement calculator for concrete and construction projects.",
   },
 };
 
 export default function Page() {
-  return <CementCalculatorClient />;
+  return <CementCalculator />;
 }
