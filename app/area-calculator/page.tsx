@@ -1,48 +1,38 @@
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import AreaCalculatorClient from "./AreaCalculatorClient";
 
 export const metadata: Metadata = {
   title:
-    "Area Calculator | Free Square Foot Area Calculator",
+    "Area Calculator for Rooms, Flooring & Construction | CalHub",
 
   description:
-    "Calculate area instantly using length and width. Free online area calculator for rooms, flooring, land measurement, construction projects, and material estimation.",
+    "Free online area calculator for rooms, flooring, plots, land, and construction projects. Calculate square feet instantly with formulas, examples, FAQs, and PDF reports.",
 
   keywords: [
     "area calculator",
-    "square foot calculator",
+    "square feet calculator",
     "room area calculator",
-    "land area calculator",
-    "floor area calculator",
+    "flooring area calculator",
     "construction area calculator",
+    "plot area calculator",
+    "land area calculator",
   ],
 
   alternates: {
-    canonical: "/area-calculator",
+    canonical:
+      "https://calhub.in/area-calculator",
   },
 
   openGraph: {
     title:
-      "Area Calculator | Calculator Hub",
+      "Area Calculator | CalHub",
 
     description:
-      "Free online area calculator for rooms, flooring, land measurement, and construction projects.",
+      "Calculate room, flooring, plot, and construction area instantly with CalHub's free online area calculator.",
 
-    url:
-      "https://calhub.in/area-calculator",
+    url: "https://calhub.in/area-calculator",
 
-    siteName: "Calculator Hub",
-
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Area Calculator",
-      },
-    ],
-
-    locale: "en_US",
+    siteName: "CalHub",
 
     type: "website",
   },
@@ -51,12 +41,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
 
     title:
-      "Area Calculator | Calculator Hub",
+      "Area Calculator | CalHub",
 
     description:
-      "Free online area calculator for construction and flooring projects.",
-
-    images: ["/og-image.jpg"],
+      "Free online area calculator for construction, flooring, rooms, and plots.",
   },
 };
 
