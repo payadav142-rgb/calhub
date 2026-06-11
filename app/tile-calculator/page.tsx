@@ -1,22 +1,21 @@
 import { Metadata } from "next";
-
 import TileCalculatorClient from "./TileCalculatorClient";
 
 export const metadata: Metadata = {
   title:
-    "Tile Calculator - Floor & Wall Tile Estimator | CalHub",
-    
+    "Tile Calculator for Flooring & Wall Tiles | CalHub",
+
   description:
-    "Use the free Tile Calculator by CalHub to estimate tiles required for flooring, bathrooms, kitchens, walls, and construction projects instantly.",
+    "Free online tile calculator to estimate floor and wall tile requirements. Calculate tiles needed instantly with formulas, examples, FAQs, and PDF reports.",
 
   keywords: [
     "tile calculator",
     "floor tile calculator",
     "wall tile calculator",
-    "tiles estimator",
-    "construction calculator",
-    "tile quantity calculator",
-    "CalHub",
+    "tile estimator",
+    "flooring calculator",
+    "construction tile calculator",
+    "bathroom tile calculator",
   ],
 
   alternates: {
@@ -26,10 +25,10 @@ export const metadata: Metadata = {
 
   openGraph: {
     title:
-      "Tile Calculator - Floor & Wall Tile Estimator | CalHub",
+      "Tile Calculator | CalHub",
 
     description:
-      "Calculate tile quantity instantly for flooring, kitchens, bathrooms, and wall installation projects with CalHub.",
+      "Calculate floor and wall tile requirements instantly with CalHub's free tile calculator.",
 
     url:
       "https://calhub.in/tile-calculator",
@@ -43,10 +42,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
 
     title:
-      "Tile Calculator - Floor & Wall Tile Estimator | CalHub",
+      "Tile Calculator | CalHub",
 
     description:
-      "Estimate tiles required for flooring and wall installations instantly with CalHub.",
+      "Free online tile calculator for flooring, walls, kitchens, and bathrooms.",
   },
 };
 
