@@ -1,37 +1,54 @@
 import type { Metadata } from "next";
+
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
-  title: "About Us | Calculator Hub",
+  title:
+    "About CalHub | Free Construction Calculators & Building Tools",
+
   description:
-    "Learn more about Calculator Hub, a free online platform offering professional construction calculators for builders, contractors, engineers, and homeowners.",
+    "Learn about CalHub, a free online platform offering construction calculators for builders, contractors, engineers, architects, and homeowners. Estimate materials, costs, quantities, and measurements instantly.",
+
   keywords: [
-    "about calculator hub",
+    "about calhub",
+    "calhub",
     "construction calculators",
     "building calculators",
-    "free construction tools",
-    "online calculators",
     "construction estimation tools",
+    "free construction calculators",
+    "online building tools",
+    "material estimation calculator",
+    "contractor tools",
+    "builder calculators",
   ],
+
   alternates: {
     canonical: "https://calhub.in/about",
   },
+
   openGraph: {
-    title: "About Us | Calculator Hub",
+    title:
+      "About CalHub | Free Construction Calculators",
+
     description:
-      "Professional builder tools and construction calculators for accurate material estimation.",
+      "CalHub provides free construction calculators for cement, concrete, bricks, steel, paint, roofing, flooring, plaster, sand, and more.",
+
     url: "https://calhub.in/about",
-    siteName: "Calculator Hub",
-    images: ["/og-image.jpg"],
+
+    siteName: "CalHub",
+
     type: "website",
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "About Us | Calculator Hub",
+
+    title:
+      "About CalHub | Free Construction Calculators",
+
     description:
-      "Professional builder tools and construction calculators.",
-    images: ["/og-image.jpg"],
+      "Professional construction calculators and estimation tools for builders, engineers, contractors, and homeowners.",
   },
 };
 
@@ -43,39 +60,58 @@ export default function AboutPage() {
       <section className="mx-auto max-w-5xl px-6 py-20">
         <div className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-10 shadow-xl">
           <h1 className="text-5xl font-extrabold text-black">
-            About Calculator Hub
+            About CalHub
           </h1>
 
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Calculator Hub is a free online platform providing professional
-            construction calculators for builders, engineers, contractors, and
-            homeowners.
+            CalHub is a free online platform
+            designed to provide accurate and
+            easy-to-use construction calculators
+            for builders, contractors, engineers,
+            architects, students, and homeowners.
           </p>
 
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Our mission is to make construction calculations fast, simple, and
-            accessible for everyone. Whether you are planning a small home
-            renovation or managing a large construction project, our tools help
-            you estimate materials quickly and accurately.
+            Our mission is to simplify
+            construction planning by helping
+            users estimate materials, costs,
+            quantities, and measurements quickly
+            and accurately. Whether you are
+            building a house, renovating a room,
+            planning a driveway, or managing a
+            large construction project, CalHub
+            provides tools that save time and
+            reduce calculation errors.
           </p>
 
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            We provide calculators for bricks, cement, concrete, steel weight,
-            plaster, sand, gravel, paint, tiles, roofing, flooring, excavation,
-            and many other construction-related calculations.
+            We offer a growing collection of
+            calculators including concrete
+            calculators, cement calculators,
+            brick calculators, paint calculators,
+            flooring calculators, roofing
+            calculators, plaster calculators,
+            steel weight calculators, excavation
+            calculators, sand calculators, gravel
+            calculators, tile calculators, and
+            many more.
           </p>
 
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Every calculator is designed to be simple, mobile-friendly, and
-            completely free to use. Our goal is to save time, reduce errors,
-            and help users make better construction decisions.
+            Every calculator on CalHub is
+            completely free, mobile-friendly,
+            fast, and designed to deliver
+            reliable estimates for real-world
+            construction projects.
           </p>
 
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             <div className="rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 p-8 text-white">
-              <h2 className="text-4xl font-extrabold">19+</h2>
+              <h2 className="text-4xl font-extrabold">
+                19+
+              </h2>
 
-              <p className="mt-3 text-gray-300">
+              <p className="mt-3 text-orange-100">
                 Construction Calculators
               </p>
             </div>
@@ -91,9 +127,11 @@ export default function AboutPage() {
             </div>
 
             <div className="rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 p-8 text-white">
-              <h2 className="text-4xl font-extrabold">24/7</h2>
+              <h2 className="text-4xl font-extrabold">
+                24/7
+              </h2>
 
-              <p className="mt-3 text-gray-300">
+              <p className="mt-3 text-orange-100">
                 Available Online
               </p>
             </div>
