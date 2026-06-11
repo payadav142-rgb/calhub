@@ -1,4 +1,7 @@
-export const metadata = {
+import type { Metadata } from "next";
+import PlasterCalculatorClient from "./PlasterCalculatorClient";
+
+export const metadata: Metadata = {
   title:
     "Plaster Calculator for Walls, Ceilings & Construction | CalHub",
 
@@ -24,27 +27,23 @@ export const metadata = {
   },
 
   openGraph: {
-    title:
-      "Plaster Calculator | CalHub",
-
+    title: "Plaster Calculator | CalHub",
     description:
       "Calculate plaster volume for walls, ceilings, and construction projects instantly with CalHub's free plaster calculator.",
-
     url:
       "https://calhub.in/plaster-calculator",
-
     siteName: "CalHub",
-
     type: "website",
   },
 
   twitter: {
     card: "summary_large_image",
-
-    title:
-      "Plaster Calculator | CalHub",
-
+    title: "Plaster Calculator | CalHub",
     description:
       "Free online plaster calculator for wall plastering, ceiling plastering, and construction material estimation.",
   },
 };
+
+export default function Page() {
+  return <PlasterCalculatorClient />;
+}
