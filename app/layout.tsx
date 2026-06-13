@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "CalHub - Free Construction Calculators",
   description:
     "Free online construction calculators for bricks, cement, concrete, steel, paint, tiles and more.",
+    manifest: "/manifest.webmanifest",
   keywords: [
     "construction calculator",
     "brick calculator",
