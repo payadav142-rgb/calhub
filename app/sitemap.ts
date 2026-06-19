@@ -123,5 +123,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/unit-converter`,
       lastModified: new Date(),
     },
+    {
+  url: `${baseUrl}/blog/construction-cost-guide`,
+  lastModified: new Date(),
+  changeFrequency: "weekly",
+  priority: 0.8,
+},
   ];
 }
