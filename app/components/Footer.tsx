@@ -23,10 +23,10 @@ export default function Footer() {
           <p className="mt-4 text-gray-600">
             Contact:{" "}
             <a
-              href="mailto:support@calhub.in"
+              href="mailto:calculatorhubin@gmail.com"
               className="text-orange-500 hover:underline"
             >
-              support@calhub.in
+              calculatorhubin@gmail.com
             </a>
           </p>
         </div>

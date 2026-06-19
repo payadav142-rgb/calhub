@@ -158,7 +158,7 @@ export default function TermsPage() {
           <p className="mt-4 leading-8 text-gray-600">
             For questions regarding these
             Terms & Conditions, please contact
-            us at support@calhub.in.
+            us at calculatorhubin@gmail.com.
           </p>
 
         </div>

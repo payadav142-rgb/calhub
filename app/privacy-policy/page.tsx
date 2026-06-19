@@ -139,7 +139,7 @@ export default function PrivacyPolicyPage() {
 
           <p className="mt-4 leading-8 text-gray-600">
             If you have any questions regarding this Privacy Policy,
-            please contact us at support@calhub.in or visit our Contact
+            please contact us at calculatorhubin@gmail.com or visit our Contact
             page.
           </p>
 

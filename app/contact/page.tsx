@@ -72,10 +72,10 @@ export default function ContactPage() {
               </p>
 
               <a
-                href="mailto:support@calhub.in"
+                href="mailto:calculatorhubin@gmail.com"
                 className="mt-3 block font-semibold text-orange-600 hover:underline"
               >
-                support@calhub.in
+                calculatorhubin@gmail.com
               </a>
             </div>
 
