@@ -20,19 +20,38 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden items-center gap-8 md:flex">
-          <Link href="/" className="font-medium text-gray-700 transition hover:text-orange-500">
+          <Link
+            href="/"
+            className="font-medium text-gray-700 transition hover:text-orange-500"
+          >
             Home
           </Link>
 
-          <Link href="/about" className="font-medium text-gray-700 transition hover:text-orange-500">
+          <Link
+            href="/about"
+            className="font-medium text-gray-700 transition hover:text-orange-500"
+          >
             About
           </Link>
 
-          <Link href="/contact" className="font-medium text-gray-700 transition hover:text-orange-500">
+          <Link
+            href="/blog/construction-cost-guide"
+            className="font-medium text-gray-700 transition hover:text-orange-500"
+          >
+            Blog
+          </Link>
+
+          <Link
+            href="/contact"
+            className="font-medium text-gray-700 transition hover:text-orange-500"
+          >
             Contact
           </Link>
 
-          <Link href="/privacy-policy" className="font-medium text-gray-700 transition hover:text-orange-500">
+          <Link
+            href="/privacy-policy"
+            className="font-medium text-gray-700 transition hover:text-orange-500"
+          >
             Privacy
           </Link>
 
@@ -58,23 +77,51 @@ export default function Navbar() {
         <div className="border-t border-orange-100 bg-gradient-to-br from-orange-50 via-white to-amber-50 px-6 py-6 md:hidden">
           <div className="flex flex-col gap-5">
 
-            <Link href="/" onClick={() => setMenuOpen(false)} className="text-lg font-medium text-gray-700 hover:text-orange-500">
+            <Link
+              href="/"
+              onClick={() => setMenuOpen(false)}
+              className="text-lg font-medium text-gray-700 hover:text-orange-500"
+            >
               Home
             </Link>
 
-            <Link href="/about" onClick={() => setMenuOpen(false)} className="text-lg font-medium text-gray-700 hover:text-orange-500">
+            <Link
+              href="/about"
+              onClick={() => setMenuOpen(false)}
+              className="text-lg font-medium text-gray-700 hover:text-orange-500"
+            >
               About
             </Link>
 
-            <Link href="/contact" onClick={() => setMenuOpen(false)} className="text-lg font-medium text-gray-700 hover:text-orange-500">
+            <Link
+              href="/blog/construction-cost-guide"
+              onClick={() => setMenuOpen(false)}
+              className="text-lg font-medium text-gray-700 hover:text-orange-500"
+            >
+              Blog
+            </Link>
+
+            <Link
+              href="/contact"
+              onClick={() => setMenuOpen(false)}
+              className="text-lg font-medium text-gray-700 hover:text-orange-500"
+            >
               Contact
             </Link>
 
-            <Link href="/privacy-policy" onClick={() => setMenuOpen(false)} className="text-lg font-medium text-gray-700 hover:text-orange-500">
+            <Link
+              href="/privacy-policy"
+              onClick={() => setMenuOpen(false)}
+              className="text-lg font-medium text-gray-700 hover:text-orange-500"
+            >
               Privacy Policy
             </Link>
 
-            <Link href="/terms-and-conditions" onClick={() => setMenuOpen(false)} className="text-lg font-medium text-gray-700 hover:text-orange-500">
+            <Link
+              href="/terms-and-conditions"
+              onClick={() => setMenuOpen(false)}
+              className="text-lg font-medium text-gray-700 hover:text-orange-500"
+            >
               Terms & Conditions
             </Link>
 
