@@ -354,6 +354,100 @@ export default function Home() {
         </div>
       </section>
 
+
+            {/* Latest Construction Guides */}
+      <section className="px-6 pb-20">
+        <div className="text-center">
+          <h2 className="text-4xl font-extrabold text-black">
+            Latest Construction Guides
+          </h2>
+
+          <p className="mt-4 text-lg text-gray-600">
+            Learn construction estimation with detailed
+            step-by-step guides, practical examples,
+            formulas, and expert tips.
+          </p>
+        </div>
+
+        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <Link
+            href="/blog/construction-cost-guide"
+            className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+          >
+            <h3 className="text-xl font-bold text-black">
+              Construction Cost Guide
+            </h3>
+
+            <p className="mt-4 text-gray-600 leading-7">
+              Learn how to estimate house construction
+              cost using formulas, examples, and
+              material breakdowns.
+            </p>
+
+            <span className="mt-6 inline-block font-semibold text-orange-600">
+              Read Guide →
+            </span>
+          </Link>
+
+          <Link
+            href="/blog/brick-calculation-guide"
+            className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+          >
+            <h3 className="text-xl font-bold text-black">
+              Brick Calculation Guide
+            </h3>
+
+            <p className="mt-4 text-gray-600 leading-7">
+              Calculate the number of bricks required
+              for walls with easy formulas and real
+              construction examples.
+            </p>
+
+            <span className="mt-6 inline-block font-semibold text-orange-600">
+              Read Guide →
+            </span>
+          </Link>
+
+          <Link
+            href="/blog/concrete-mix-ratio-guide"
+            className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+          >
+            <h3 className="text-xl font-bold text-black">
+              Concrete Mix Ratio Guide
+            </h3>
+
+            <p className="mt-4 text-gray-600 leading-7">
+              Understand concrete grades, mix ratios
+              like 1:2:4 and 1:1.5:3 with practical
+              construction tips.
+            </p>
+
+            <span className="mt-6 inline-block font-semibold text-orange-600">
+              Read Guide →
+            </span>
+          </Link>
+
+          <Link
+            href="/blog/tile-estimate-guide"
+            className="rounded-3xl bg-gradient-to-br from-orange-50 via-white to-amber-50 p-8 shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+          >
+            <h3 className="text-xl font-bold text-black">
+              Tile Estimation Guide
+            </h3>
+
+            <p className="mt-4 text-gray-600 leading-7">
+              Learn how to estimate floor and wall
+              tiles accurately with formulas,
+              wastage calculations, and examples.
+            </p>
+
+            <span className="mt-6 inline-block font-semibold text-orange-600">
+              Read Guide →
+            </span>
+          </Link>
+        </div>
+      </section>
+
       {/* Stats Section */}
       <section className="px-6 pb-20">
         <div className="grid gap-6 md:grid-cols-3">
