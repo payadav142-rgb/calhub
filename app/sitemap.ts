@@ -6,7 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     // Home
     {
-      url: `${baseUrl}`,
+      url: baseUrl,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
@@ -128,7 +128,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
 
-    // Blog
+    // Blog Posts
     {
       url: `${baseUrl}/blog/construction-cost-guide`,
       lastModified: new Date(),
@@ -148,7 +148,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/blog/tile-estimation-guide`,
+      url: `${baseUrl}/blog/tile-estimate-guide`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
