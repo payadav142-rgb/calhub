@@ -1,20 +1,21 @@
 import { Metadata } from "next";
-import CementCalculator from "./CementCalculatorClient";
+import CementCalculatorClient from "./CementCalculatorClient";
 
 export const metadata: Metadata = {
   title:
-    "Cement Calculator for Construction Projects | CalHub",
+    "Cement Calculator for Concrete & Construction | CalHub",
 
   description:
-    "Free cement calculator for estimating cement bags required for slabs, foundations, concrete, and construction projects.",
+    "Free cement calculator to estimate cement bags required for concrete slabs, foundations, floors, and construction projects. Includes formulas, examples, unit conversion, FAQs, and PDF reports.",
 
   keywords: [
     "cement calculator",
-    "cement bags calculator",
-    "construction cement calculator",
-    "concrete cement calculator",
-    "cement estimation calculator",
+    "cement bag calculator",
     "cement quantity calculator",
+    "cement calculator for concrete",
+    "concrete cement calculator",
+    "cement bags required calculator",
+    "construction cement calculator",
   ],
 
   alternates: {
@@ -24,10 +25,10 @@ export const metadata: Metadata = {
 
   openGraph: {
     title:
-      "Cement Calculator | CalHub",
+      "Cement Calculator for Concrete & Construction | CalHub",
 
     description:
-      "Estimate cement bags required for construction and concrete work instantly.",
+      "Estimate cement bags for concrete and construction projects with CalHub's free cement calculator.",
 
     url:
       "https://calhub.in/cement-calculator",
@@ -44,10 +45,10 @@ export const metadata: Metadata = {
       "Cement Calculator | CalHub",
 
     description:
-      "Free cement calculator for concrete and construction projects.",
+      "Free online cement calculator for estimating cement bags required for concrete and construction projects.",
   },
 };
 
 export default function Page() {
-  return <CementCalculator />;
+  return <CementCalculatorClient />;
 }
