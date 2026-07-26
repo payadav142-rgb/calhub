@@ -1,22 +1,23 @@
-import type { Metadata } from "next";
+"use client";
+
+import { Metadata } from "next";
 import ExcavationCalculatorClient from "./ExcavationCalculatorClient";
 
 export const metadata: Metadata = {
   title:
-    "Excavation Calculator - Calculate Excavation Volume Easily | CalHub",
+    "Excavation Calculator for Foundations, Trenches & Earthwork | CalHub",
 
   description:
-    "Free excavation calculator to estimate excavation volume for foundations, trenches, basements, and earthwork projects. Supports feet, meters, and centimeters.",
+    "Free excavation calculator to estimate excavation volume for foundations, trenches, basements, landscaping, and earthwork projects using length, width, and depth.",
 
   keywords: [
     "excavation calculator",
     "excavation volume calculator",
     "earthwork calculator",
     "foundation excavation calculator",
-    "trench excavation calculator",
-    "construction calculator",
+    "trench volume calculator",
     "soil excavation calculator",
-    "calhub excavation calculator",
+    "excavation estimator",
   ],
 
   alternates: {
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
       "Excavation Calculator | CalHub",
 
     description:
-      "Calculate excavation volume instantly for construction and earthwork projects.",
+      "Calculate excavation volume for foundations, trenches, basements, and earthwork projects with CalHub's free excavation calculator.",
 
     url:
       "https://calhub.in/excavation-calculator",
@@ -38,10 +39,18 @@ export const metadata: Metadata = {
 
     type: "website",
   },
+
+  twitter: {
+    card: "summary_large_image",
+
+    title:
+      "Excavation Calculator | CalHub",
+
+    description:
+      "Free excavation calculator for foundations, trenches, basements, and earthwork projects.",
+  },
 };
 
 export default function Page() {
-  return (
-    <ExcavationCalculatorClient />
-  );
+  return <ExcavationCalculatorClient />;
 }
