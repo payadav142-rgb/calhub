@@ -1,20 +1,21 @@
 import { Metadata } from "next";
-import ConstructionCostCalculator from "./ConstructionCostCalculatorClient";
+import ConstructionCostCalculatorClient from "./ConstructionCostCalculatorClient";
 
 export const metadata: Metadata = {
   title:
-    "Construction Cost Calculator | House & Building Estimator | CalHub",
+    "Construction Cost Calculator for House & Building Projects | CalHub",
 
   description:
-    "Free construction cost calculator to estimate building, house, and renovation project costs instantly using area and cost per square foot.",
+    "Free construction cost calculator to estimate house, residential, commercial, and renovation project costs. Calculate total construction cost using area and cost per square foot or square meter.",
 
   keywords: [
     "construction cost calculator",
+    "house construction cost calculator",
     "building cost calculator",
-    "house construction calculator",
-    "construction estimator",
-    "home building cost calculator",
-    "construction budget calculator",
+    "construction estimate calculator",
+    "cost per square foot calculator",
+    "construction budgeting calculator",
+    "home construction calculator",
   ],
 
   alternates: {
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
       "Construction Cost Calculator | CalHub",
 
     description:
-      "Estimate construction costs for buildings, houses, and renovation projects instantly.",
+      "Estimate construction costs for houses, buildings, apartments, and renovation projects with CalHub's free construction cost calculator.",
 
     url:
       "https://calhub.in/construction-cost-calculator",
@@ -44,12 +45,10 @@ export const metadata: Metadata = {
       "Construction Cost Calculator | CalHub",
 
     description:
-      "Free construction cost estimator for houses and buildings.",
+      "Free construction cost calculator for estimating house and building project costs.",
   },
 };
 
 export default function Page() {
-  return (
-    <ConstructionCostCalculator />
-  );
+  return <ConstructionCostCalculatorClient />;
 }

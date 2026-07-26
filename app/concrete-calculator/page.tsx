@@ -1,23 +1,54 @@
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import ConcreteCalculatorClient from "./ConcreteCalculatorClient";
 
 export const metadata: Metadata = {
-  title: "Concrete Calculator - Calculate Concrete Volume | CalHub",
+  title:
+    "Concrete Calculator for Slabs, Foundations & Footings | CalHub",
+
   description:
-    "Use the free concrete calculator to estimate concrete volume for slabs, foundations, footings, driveways, and construction projects.",
+    "Free concrete calculator to estimate concrete volume for slabs, foundations, footings, columns, and construction projects. Calculate concrete requirements using length, width, and depth.",
+
   keywords: [
     "concrete calculator",
     "concrete volume calculator",
-    "cement concrete calculator",
-    "slab concrete calculator",
+    "concrete slab calculator",
     "foundation concrete calculator",
-    "concrete quantity calculator",
+    "footing concrete calculator",
+    "cement concrete calculator",
+    "construction concrete calculator",
   ],
+
   alternates: {
-    canonical: "/concrete-calculator",
+    canonical:
+      "https://calhub.in/concrete-calculator",
+  },
+
+  openGraph: {
+    title:
+      "Concrete Calculator | CalHub",
+
+    description:
+      "Calculate concrete volume for slabs, foundations, footings, and construction projects with CalHub's free concrete calculator.",
+
+    url:
+      "https://calhub.in/concrete-calculator",
+
+    siteName: "CalHub",
+
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+
+    title:
+      "Concrete Calculator | CalHub",
+
+    description:
+      "Free concrete calculator for slabs, foundations, footings, and construction projects.",
   },
 };
 
-export default function ConcreteCalculatorPage() {
+export default function Page() {
   return <ConcreteCalculatorClient />;
 }

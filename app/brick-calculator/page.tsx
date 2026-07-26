@@ -6,16 +6,16 @@ export const metadata: Metadata = {
     "Brick Calculator for Wall Construction | CalHub",
 
   description:
-    "Free brick calculator to estimate the number of bricks required for wall construction. Calculate brick quantity for walls, buildings, and masonry projects with examples, formulas, and PDF reports.",
+    "Free brick calculator to estimate the number of bricks required for wall construction, masonry, and building projects. Calculate brick quantity using wall length and height.",
 
   keywords: [
     "brick calculator",
     "brick quantity calculator",
-    "brick wall calculator",
-    "bricks required calculator",
     "wall brick calculator",
-    "brick calculation",
+    "brick estimation calculator",
     "construction brick calculator",
+    "masonry calculator",
+    "brick calculator for wall",
   ],
 
   alternates: {
@@ -25,10 +25,10 @@ export const metadata: Metadata = {
 
   openGraph: {
     title:
-      "Brick Calculator for Wall Construction | CalHub",
+      "Brick Calculator | CalHub",
 
     description:
-      "Estimate bricks required for wall construction, buildings, and masonry projects with CalHub's free brick calculator.",
+      "Estimate the number of bricks required for walls, buildings, and masonry projects with CalHub's free brick calculator.",
 
     url:
       "https://calhub.in/brick-calculator",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
       "Brick Calculator | CalHub",
 
     description:
-      "Free online brick calculator for estimating bricks required for wall construction.",
+      "Free brick calculator for wall construction and masonry projects.",
   },
 };
 

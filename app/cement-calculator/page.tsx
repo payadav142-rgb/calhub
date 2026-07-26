@@ -1,21 +1,21 @@
 import { Metadata } from "next";
-import CementCalculatorClient from "./CementCalculatorClient";
+import CementCalculator from "./CementCalculatorClient";
 
 export const metadata: Metadata = {
   title:
-    "Cement Calculator for Concrete & Construction | CalHub",
+    "Cement Calculator for Concrete, Slabs & Foundations | CalHub",
 
   description:
-    "Free cement calculator to estimate cement bags required for concrete slabs, foundations, floors, and construction projects. Includes formulas, examples, unit conversion, FAQs, and PDF reports.",
+    "Free cement calculator to estimate cement bags required for concrete, slabs, foundations, columns, and construction projects. Calculate cement quantity using length, width, and height.",
 
   keywords: [
     "cement calculator",
     "cement bag calculator",
     "cement quantity calculator",
-    "cement calculator for concrete",
+    "cement estimation calculator",
     "concrete cement calculator",
-    "cement bags required calculator",
-    "construction cement calculator",
+    "foundation cement calculator",
+    "slab cement calculator",
   ],
 
   alternates: {
@@ -25,10 +25,10 @@ export const metadata: Metadata = {
 
   openGraph: {
     title:
-      "Cement Calculator for Concrete & Construction | CalHub",
+      "Cement Calculator | CalHub",
 
     description:
-      "Estimate cement bags for concrete and construction projects with CalHub's free cement calculator.",
+      "Calculate cement bags required for concrete, slabs, foundations, and construction projects with CalHub's free cement calculator.",
 
     url:
       "https://calhub.in/cement-calculator",
@@ -45,10 +45,10 @@ export const metadata: Metadata = {
       "Cement Calculator | CalHub",
 
     description:
-      "Free online cement calculator for estimating cement bags required for concrete and construction projects.",
+      "Free cement calculator for concrete, slabs, foundations, and construction projects.",
   },
 };
 
 export default function Page() {
-  return <CementCalculatorClient />;
+  return <CementCalculator />;
 }
