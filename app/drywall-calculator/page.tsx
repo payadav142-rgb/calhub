@@ -3,18 +3,19 @@ import DrywallCalculatorClient from "./DrywallCalculatorClient";
 
 export const metadata: Metadata = {
   title:
-    "Drywall Calculator | Sheetrock & Wall Panel Estimator | CalHub",
+    "Drywall Calculator – Estimate Drywall Sheets for Walls & Ceilings | CalHub",
 
   description:
-    "Free drywall calculator to estimate drywall sheets needed for walls and ceilings using wall dimensions and drywall sheet area.",
+    "Free Drywall Calculator to estimate the number of drywall sheets needed for walls and ceilings. Calculate drywall requirements quickly using wall dimensions and sheet size.",
 
   keywords: [
     "drywall calculator",
+    "drywall sheet calculator",
     "sheetrock calculator",
-    "drywall sheet estimator",
-    "wall panel calculator",
-    "gypsum board calculator",
-    "construction drywall calculator",
+    "wall drywall calculator",
+    "ceiling drywall calculator",
+    "drywall estimator",
+    "drywall material calculator",
   ],
 
   alternates: {
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
       "Drywall Calculator | CalHub",
 
     description:
-      "Estimate drywall sheets required for walls and ceilings instantly.",
+      "Estimate drywall sheets required for walls and ceilings with CalHub's free Drywall Calculator.",
 
     url:
       "https://calhub.in/drywall-calculator",
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
       "Drywall Calculator | CalHub",
 
     description:
-      "Free drywall sheet estimator for construction projects.",
+      "Free Drywall Calculator to estimate drywall sheets for construction and remodeling projects.",
   },
 };
 
