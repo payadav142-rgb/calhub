@@ -3,18 +3,19 @@ import AsphaltCalculatorClient from "./AsphaltCalculatorClient";
 
 export const metadata: Metadata = {
   title:
-    "Asphalt Calculator for Roads & Driveways | CalHub",
+    "Asphalt Calculator for Roads, Driveways & Paving | CalHub",
 
   description:
-    "Free asphalt calculator for estimating asphalt quantity for roads, parking lots, paving, and driveways. Calculate asphalt volume instantly.",
+    "Free asphalt calculator to estimate asphalt volume for roads, driveways, parking lots, and paving projects. Calculate asphalt quantity using length, width, and thickness.",
 
   keywords: [
     "asphalt calculator",
-    "paving calculator",
-    "road asphalt calculator",
-    "driveway asphalt calculator",
     "asphalt volume calculator",
-    "parking lot asphalt calculator",
+    "asphalt quantity calculator",
+    "driveway asphalt calculator",
+    "road asphalt calculator",
+    "paving calculator",
+    "asphalt thickness calculator",
   ],
 
   alternates: {
@@ -27,10 +28,9 @@ export const metadata: Metadata = {
       "Asphalt Calculator | CalHub",
 
     description:
-      "Estimate asphalt quantity for paving and construction projects instantly.",
+      "Calculate asphalt volume for roads, driveways, parking lots, and paving projects with CalHub's free asphalt calculator.",
 
-    url:
-      "https://calhub.in/asphalt-calculator",
+    url: "https://calhub.in/asphalt-calculator",
 
     siteName: "CalHub",
 
@@ -44,12 +44,10 @@ export const metadata: Metadata = {
       "Asphalt Calculator | CalHub",
 
     description:
-      "Free asphalt calculator for roads, parking lots, paving, and driveways.",
+      "Free asphalt calculator for roads, driveways, parking lots, and paving projects.",
   },
 };
 
 export default function Page() {
-  return (
-    <AsphaltCalculatorClient />
-  );
+  return <AsphaltCalculatorClient />;
 }
