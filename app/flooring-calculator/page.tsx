@@ -3,10 +3,10 @@ import FlooringCalculatorClient from "./FlooringCalculatorClient";
 
 export const metadata: Metadata = {
   title:
-    "Flooring Calculator for Tile, Wood & Vinyl Flooring | CalHub",
+    "Flooring Calculator for Tiles, Wood, Vinyl & Laminate | CalHub",
 
   description:
-    "Free flooring calculator to estimate floor area and flooring cost for tile, laminate, vinyl, hardwood, marble, and renovation projects.",
+    "Free flooring calculator to estimate flooring area and total flooring cost for tile, wood, laminate, vinyl, marble, and renovation projects using room length and width.",
 
   keywords: [
     "flooring calculator",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
       "Flooring Calculator | CalHub",
 
     description:
-      "Calculate flooring area and estimated flooring cost for tile, wood, vinyl, laminate, and marble flooring projects.",
+      "Calculate flooring area and estimated flooring cost for tiles, wood, laminate, vinyl, and marble flooring projects.",
 
     url:
       "https://calhub.in/flooring-calculator",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
       "Flooring Calculator | CalHub",
 
     description:
-      "Free flooring calculator to estimate floor area and flooring installation cost.",
+      "Free flooring calculator for estimating floor area and flooring cost.",
   },
 };
 
