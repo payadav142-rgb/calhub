@@ -1,22 +1,21 @@
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import FlooringCalculatorClient from "./FlooringCalculatorClient";
 
 export const metadata: Metadata = {
   title:
-    "Flooring Calculator - Estimate Flooring Area & Cost | CalHub",
+    "Flooring Calculator for Tile, Wood & Vinyl Flooring | CalHub",
 
   description:
-    "Free flooring calculator to estimate flooring area and flooring cost for tiles, vinyl, wood, marble, and laminate flooring projects.",
+    "Free flooring calculator to estimate floor area and flooring cost for tile, laminate, vinyl, hardwood, marble, and renovation projects.",
 
   keywords: [
     "flooring calculator",
-    "tile flooring calculator",
     "floor area calculator",
-    "flooring cost calculator",
-    "laminate flooring calculator",
+    "tile flooring calculator",
+    "wood flooring calculator",
     "vinyl flooring calculator",
-    "marble flooring calculator",
-    "construction flooring calculator",
+    "laminate flooring calculator",
+    "flooring cost calculator",
   ],
 
   alternates: {
@@ -29,7 +28,7 @@ export const metadata: Metadata = {
       "Flooring Calculator | CalHub",
 
     description:
-      "Estimate flooring area and flooring cost instantly for construction and renovation projects.",
+      "Calculate flooring area and estimated flooring cost for tile, wood, vinyl, laminate, and marble flooring projects.",
 
     url:
       "https://calhub.in/flooring-calculator",
@@ -38,10 +37,18 @@ export const metadata: Metadata = {
 
     type: "website",
   },
+
+  twitter: {
+    card: "summary_large_image",
+
+    title:
+      "Flooring Calculator | CalHub",
+
+    description:
+      "Free flooring calculator to estimate floor area and flooring installation cost.",
+  },
 };
 
 export default function Page() {
-  return (
-    <FlooringCalculatorClient />
-  );
+  return <FlooringCalculatorClient />;
 }
