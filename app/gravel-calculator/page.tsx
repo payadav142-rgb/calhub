@@ -6,19 +6,16 @@ export const metadata: Metadata = {
     "Gravel Calculator for Driveways, Landscaping & Construction | CalHub",
 
   description:
-    "Free online gravel calculator to estimate gravel volume for driveways, pathways, foundations, landscaping, drainage systems, and construction projects. Calculate gravel requirements instantly with formulas, examples, FAQs, and material estimates.",
+    "Free gravel calculator to estimate gravel volume and weight for driveways, landscaping, drainage, foundations, patios, and construction projects using length, width, and depth.",
 
   keywords: [
     "gravel calculator",
     "gravel volume calculator",
+    "gravel weight calculator",
     "driveway gravel calculator",
     "landscaping gravel calculator",
-    "construction gravel calculator",
-    "foundation gravel calculator",
-    "stone calculator",
-    "aggregate calculator",
+    "gravel estimator",
     "gravel quantity calculator",
-    "material estimation calculator",
   ],
 
   alternates: {
@@ -31,7 +28,7 @@ export const metadata: Metadata = {
       "Gravel Calculator | CalHub",
 
     description:
-      "Calculate gravel volume for driveways, landscaping, foundations, and construction projects instantly with CalHub's free gravel calculator.",
+      "Calculate gravel volume and estimated weight for driveways, landscaping, foundations, and construction projects with CalHub's free gravel calculator.",
 
     url:
       "https://calhub.in/gravel-calculator",
@@ -48,12 +45,10 @@ export const metadata: Metadata = {
       "Gravel Calculator | CalHub",
 
     description:
-      "Free online gravel calculator for driveways, landscaping, foundations, and construction projects.",
+      "Free gravel calculator for driveways, landscaping, foundations, and construction projects.",
   },
 };
 
 export default function Page() {
-  return (
-    <GravelCalculatorClient />
-  );
+  return <GravelCalculatorClient />;
 }
